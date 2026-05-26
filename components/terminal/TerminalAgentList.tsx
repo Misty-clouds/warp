@@ -175,7 +175,7 @@ export default function TerminalAgentList() {
               <div className="mt-auto pt-2">
                 <Link
                   href={agent.href}
-                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-xl) text-sm/7 font-medium transition-colors text-(--color-text) hover:bg-text/10 h-11 px-4 py-2 -ml-4"
+                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl text-sm/7 font-medium transition-colors text-(--color-text) hover:bg-text/10 h-11 px-4 py-2 -ml-4"
                 >
                   Learn more
                   <ArrowRightLgIcon />

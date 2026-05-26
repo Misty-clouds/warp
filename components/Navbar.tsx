@@ -26,6 +26,7 @@ import BriefcaseIcon from "./shared/icons/BriefcaseIcon";
 import NewspaperIcon from "./shared/icons/NewspaperIcon";
 import LightningIcon from "./shared/icons/LightningIcon";
 import TagIcon from "./shared/icons/TagIcon";
+import GlobeIcon from "./shared/icons/GlobeIcon";
 
 type FlyoutItem = {
   label: string;
@@ -72,44 +73,44 @@ const solutionsItems: FlyoutItem[] = [
     label: "Financial Services",
     description: "Secure, compliant AI development",
     href: "/enterprise/financial-services",
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z" /></svg>,
+    icon: <ShieldCheckIcon className="size-4" />,
   },
   {
     label: "Insurance",
     description: "Modernize policy & claims systems",
     href: "/enterprise/insurance",
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z" /></svg>,
+    icon: <ShieldCheckIcon className="size-4" />,
   },
   {
     label: "Telecommunications",
     description: "Scale with your network",
     href: "/enterprise/telecommunications",
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z" /></svg>,
+    icon: <GlobeIcon className="size-4" />,
   },
 ];
 
 const resourceDevItems: FlyoutItem[] = [
-  { label: "Docs", description: "API docs and guides", href: "https://docs.warp.dev/", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z" /></svg> },
-  { label: "Blog", description: "News and product updates", href: "/blog", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z" /></svg> },
-  { label: "Community", description: "Get help and connect", href: "https://docs.warp.dev/support-and-community", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z" /></svg> },
-  { label: "Events", description: "Webinars and sessions", href: "https://luma.com/warpdotdev", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z" /></svg> },
-  { label: "Changelog", description: "What's new in Warp", href: "https://docs.warp.dev/changelog", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z" /></svg> },
-  { label: "Roadmap", description: "See what we're building next", href: "https://github.com/warpdotdev/warp/issues", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M228.92,49.69a8,8,0,0,0-6.86-1.45L160.93,63.52,99.58,32.84a8,8,0,0,0-5.52-.6l-64,16A8,8,0,0,0,24,56V200a8,8,0,0,0,9.94,7.76l61.13-15.28,61.35,30.68A8.15,8.15,0,0,0,160,224a8,8,0,0,0,1.94-.24l64-16A8,8,0,0,0,232,200V56A8,8,0,0,0,228.92,49.69ZM104,52.94l48,24V203.06l-48-24ZM40,62.25l48-12v127.5l-48,12Zm176,131.5-48,12V78.25l48-12Z" /></svg> },
-  { label: "Support", description: "Help and issue tracking", href: "https://docs.warp.dev/support-and-community", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z" /></svg> },
+  { label: "Docs", description: "API docs and guides", href: "https://docs.warp.dev/", icon: <FileTextIcon className="size-4" /> },
+  { label: "Blog", description: "News and product updates", href: "/blog", icon: <PencilIcon className="size-4" /> },
+  { label: "Community", description: "Get help and connect", href: "https://docs.warp.dev/support-and-community", icon: <UsersIcon className="size-4" /> },
+  { label: "Events", description: "Webinars and sessions", href: "https://luma.com/warpdotdev", icon: <CalendarIcon className="size-4" /> },
+  { label: "Changelog", description: "What's new in Warp", href: "https://docs.warp.dev/changelog", icon: <ListDotsIcon className="size-4" /> },
+  { label: "Roadmap", description: "See what we're building next", href: "https://github.com/warpdotdev/warp/issues", icon: <MapIcon className="size-4" /> },
+  { label: "Support", description: "Help and issue tracking", href: "https://docs.warp.dev/support-and-community", icon: <ShieldCheckIcon className="size-4" /> },
 ];
 
 const resourceCompanyItems: FlyoutItem[] = [
-  { label: "About", description: "Our mission and team", href: "/about", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z" /></svg> },
-  { label: "How We Work", description: "Our culture and values", href: "https://notion.warp.dev/", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M232,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H24a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h72a8,8,0,0,0,8-8V56A8,8,0,0,0,232,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z" /></svg> },
-  { label: "Careers", description: "Join the team at Warp", href: "/careers", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z" /></svg> },
-  { label: "Press", description: "Media coverage and press kit", href: "/press", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M88,112a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H96A8,8,0,0,1,88,112Zm8,40h80a8,8,0,0,0,0-16H96a8,8,0,0,0,0,16ZM232,64V184a24,24,0,0,1-24,24H32A24,24,0,0,1,8,184.11V88a8,8,0,0,1,16,0v96a8,8,0,0,0,16,0V64A16,16,0,0,1,56,48H216A16,16,0,0,1,232,64Zm-16,0H56V184a23.84,23.84,0,0,1-1.37,8H208a8,8,0,0,0,8-8Z" /></svg> },
-  { label: "Newsroom", description: "Announcements and press releases", href: "/newsroom", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z" /></svg> },
+  { label: "About", description: "Our mission and team", href: "/about", icon: <SparklesIcon className="size-4" /> },
+  { label: "How We Work", description: "Our culture and values", href: "https://notion.warp.dev/", icon: <BookOpenIcon className="size-4" /> },
+  { label: "Careers", description: "Join the team at Warp", href: "/careers", icon: <BriefcaseIcon className="size-4" /> },
+  { label: "Press", description: "Media coverage and press kit", href: "/press", icon: <NewspaperIcon className="size-4" /> },
+  { label: "Newsroom", description: "Announcements and press releases", href: "/newsroom", icon: <LightningIcon className="size-4" /> },
 ];
 
 const enterpriseItems: FlyoutItem[] = [
-  { label: "Enterprise", description: "Warp for large engineering teams", href: "/enterprise", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z" /></svg> },
-  { label: "Security", description: "Enterprise-grade security and compliance", href: "/security", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z" /></svg> },
-  { label: "Customers", description: "Teams shipping faster with Warp", href: "/customers", icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z" /></svg> },
+  { label: "Enterprise", description: "Warp for large engineering teams", href: "/enterprise", icon: <TagIcon className="size-4" /> },
+  { label: "Security", description: "Enterprise-grade security and compliance", href: "/security", icon: <ShieldCheckIcon className="size-4" /> },
+  { label: "Customers", description: "Teams shipping faster with Warp", href: "/customers", icon: <UsersIcon className="size-4" /> },
 ];
 
 function FlyoutItemRow({ item, external }: { item: FlyoutItem; external?: boolean }) {
@@ -399,9 +400,7 @@ export default function Navbar() {
                 aria-label="Toggle menu"
                 className="inline-flex rounded-full p-1.5 text-(--color-text) hover:bg-text/10 lg:hidden"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                  <path fillRule="evenodd" d="M3.748 8.248a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75ZM3.748 15.75a.75.75 0 0 1 .75-.751h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
-                </svg>
+                <HamburgerIcon className="size-6" />
               </button>
             </div>
           </div>
@@ -415,15 +414,13 @@ export default function Navbar() {
                   aria-label="Close menu"
                   className="inline-flex rounded-full p-1.5 text-(--color-text) hover:bg-text/10"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                  </svg>
+                  <XMarkIcon className="size-6" />
                 </button>
               </div>
               <div className="mt-6 flex min-h-0 flex-1 flex-col gap-6">
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between text-3xl/10 font-medium text-(--color-text)">
-                    Products<ChevronDownLgIcon />
+                    Products<ChevronDownLgIcon className="size-5 opacity-50 transition-transform group-open:rotate-180" />
                   </summary>
                   <div className="mt-4 flex flex-col gap-1 pl-1">
                     {productsItems.map(item => <FlyoutItemProduct key={item.label} item={item} />)}
@@ -431,7 +428,7 @@ export default function Navbar() {
                 </details>
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between text-3xl/10 font-medium text-(--color-text)">
-                    Solutions<ChevronDownLgIcon />
+                    Solutions<ChevronDownLgIcon className="size-5 opacity-50 transition-transform group-open:rotate-180" />
                   </summary>
                   <div className="mt-4 flex flex-col gap-1 pl-1">
                     {solutionsItems.map(item => <FlyoutItemRow key={item.label} item={item} />)}
@@ -439,7 +436,7 @@ export default function Navbar() {
                 </details>
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between text-3xl/10 font-medium text-(--color-text)">
-                    Resources<ChevronDownLgIcon />
+                    Resources<ChevronDownLgIcon className="size-5 opacity-50 transition-transform group-open:rotate-180" />
                   </summary>
                   <div className="mt-4 flex flex-col gap-1 pl-1">
                     {[...resourceDevItems, ...resourceCompanyItems].map(item => (
@@ -449,7 +446,7 @@ export default function Navbar() {
                 </details>
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between text-3xl/10 font-medium text-(--color-text)">
-                    Enterprise<ChevronDownLgIcon />
+                    Enterprise<ChevronDownLgIcon className="size-5 opacity-50 transition-transform group-open:rotate-180" />
                   </summary>
                   <div className="mt-4 flex flex-col gap-1 pl-1">
                     {enterpriseItems.map(item => <FlyoutItemRow key={item.label} item={item} />)}
@@ -461,7 +458,7 @@ export default function Navbar() {
                   className="group inline-flex items-center justify-between text-3xl/10 font-medium text-(--color-text)"
                 >
                   Pricing
-                  <span className="inline-flex p-1.5 opacity-0 group-hover:opacity-100" aria-hidden="true"><ChevronRight /></span>
+                  <span className="inline-flex p-1.5 opacity-0 group-hover:opacity-100" aria-hidden="true"><ChevronRightIcon className="size-6" /></span>
                 </Link>
               </div>
               <div className="mt-8 flex flex-col gap-4 border-t border-(--color-border) pt-8">

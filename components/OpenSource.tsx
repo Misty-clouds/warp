@@ -58,7 +58,7 @@ export default function OpenSource() {
         <button
           type="button"
           aria-label="Play video: Warp Terminal is now open-source"
-          className="group/video relative block w-full cursor-pointer overflow-hidden border-0 bg-transparent p-0 text-inherit aspect-video rounded-[var(--img-radius)] bg-(--color-surface)"
+          className="group/video relative block w-full cursor-pointer overflow-hidden border-0 bg-transparent p-0 text-inherit aspect-video rounded-(--img-radius)"
         >
           <div className="absolute inset-0">
             <Image
@@ -70,7 +70,7 @@ export default function OpenSource() {
               quality={90}
             />
           </div>
-          <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+          <span aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent" />
           <span aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-center justify-center">
             <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-black shadow-xl transition-transform duration-200 ease-out group-hover/video:scale-110">
               <PlayIcon className="size-6 translate-x-px" />

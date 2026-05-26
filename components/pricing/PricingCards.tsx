@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import DottedTooltip from "@/components/shared/DottedTooltip";
+import ArrowRightIcon from "@/components/shared/icons/ArrowRightIcon";
+import InfoCircleIcon from "@/components/shared/icons/InfoCircleIcon";
 
 interface Feature {
   text: string;
@@ -237,17 +239,6 @@ const ANNUAL_PLANS_ROW2: Plan[] = MONTHLY_PLANS_ROW2.map((p) => {
   return p;
 });
 
-const ArrowIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-3.5" aria-hidden="true">
-    <path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd" />
-  </svg>
-);
-
-const InfoIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-5 shrink-0">
-    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z" />
-  </svg>
-);
 
 function FeatureItem({ feature }: { feature: Feature }) {
   return (
@@ -307,7 +298,7 @@ function CardInner({ plan, reloadOpen, onToggleReload }: {
           }}
         >
           {plan.cta}
-          <ArrowIcon />
+          <ArrowRightIcon className="size-3.5" />
         </Link>
       </div>
       <div>
@@ -327,7 +318,7 @@ function CardInner({ plan, reloadOpen, onToggleReload }: {
             onClick={onToggleReload}
             className="flex w-full items-center justify-center gap-2 rounded-lg border border-border/30 px-4 py-3 text-sm/6 text-(--color-text-secondary) transition-colors duration-(--duration-normal) hover:border-border/50 hover:text-(--color-text)"
           >
-            <InfoIcon />
+            <InfoCircleIcon className="size-5 shrink-0" />
             Reload credit discounts
           </button>
           {reloadOpen && (

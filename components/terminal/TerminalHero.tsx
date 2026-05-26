@@ -1,9 +1,14 @@
 "use client";
 
+"use client";
+
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import TerminalFeatureCarousel from "./TerminalFeatureCarousel";
+import AppleIcon from "@/components/shared/icons/AppleIcon";
+import CopyIcon from "@/components/shared/icons/CopyIcon";
+import CheckmarkIcon from "@/components/shared/icons/CheckmarkIcon";
 
 const carouselTabs = [
   {
@@ -136,16 +141,7 @@ export default function TerminalHero() {
               }}
             >
               Download
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="inline-block size-4 opacity-90"
-                aria-hidden="true"
-              >
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z" />
-              </svg>
+              <AppleIcon className="inline-block size-4 opacity-90" />
             </Link>
 
             <div className="flex items-center justify-between gap-6 rounded-full p-1 font-mono text-sm/7 bg-white/15 text-white flex-1 self-stretch rounded-l-none rounded-r-(--btn-radius) border-0 py-0 pr-0 pl-2">
@@ -159,27 +155,7 @@ export default function TerminalHero() {
                 className="group relative flex size-9 items-center justify-center rounded-full hover:bg-white/20 transition-colors"
                 aria-label="Copy brew command"
               >
-                {copied ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                  >
-                    <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z" />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                  >
-                    <path d="M184,64H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V72A8,8,0,0,0,184,64Zm-8,144H48V80H176ZM224,40V184a8,8,0,0,1-16,0V48H72a8,8,0,0,1,0-16H216A8,8,0,0,1,224,40Z" />
-                  </svg>
-                )}
+                {copied ? <CheckmarkIcon /> : <CopyIcon />}
               </button>
             </div>
           </div>

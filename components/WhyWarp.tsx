@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import WarpMark from "./shared/icons/WarpMark";
 import OzMark from "./shared/icons/OzMark";
+import LineChartIcon from "./shared/icons/LineChartIcon";
 
 const sections = [
   {
@@ -121,9 +122,7 @@ const sections = [
     screenshotHeight: 1005,
     icon: (
       <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-(--color-surface) text-(--color-text-secondary)">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4">
-          <path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z" />
-        </svg>
+        <LineChartIcon className="size-4" />
       </span>
     ),
     navIcon: (active: boolean) => (
@@ -134,9 +133,7 @@ const sections = [
           color: active ? "var(--color-text)" : "var(--color-text-secondary)",
         }}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4">
-          <path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z" />
-        </svg>
+        <LineChartIcon className="size-4" />
       </span>
     ),
   },

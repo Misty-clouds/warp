@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import PlusIcon from "@/components/shared/icons/PlusIcon";
+import MinusIcon from "@/components/shared/icons/MinusIcon";
 
 interface FAQItem {
   question: string;
@@ -223,17 +225,6 @@ const faqs: FAQItem[] = [
   },
 ];
 
-const PlusIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="h-lh shrink-0">
-    <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z" />
-  </svg>
-);
-
-const MinusIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="h-lh shrink-0">
-    <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z" />
-  </svg>
-);
 
 export default function PricingFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -267,7 +258,7 @@ export default function PricingFAQ() {
                   className="flex w-full items-start justify-between gap-6 py-4 text-left text-base/7 text-(--color-text)"
                 >
                   {faq.question}
-                  {isOpen ? <MinusIcon /> : <PlusIcon />}
+                  {isOpen ? <MinusIcon className="h-lh shrink-0" /> : <PlusIcon className="h-lh shrink-0" />}
                 </button>
                 <div
                   className="grid transition-[grid-template-rows]"

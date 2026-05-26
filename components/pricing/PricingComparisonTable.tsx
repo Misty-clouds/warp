@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import DottedTooltip from "@/components/shared/DottedTooltip";
+import CheckCircleIcon from "@/components/shared/icons/CheckCircleIcon";
+import ArrowRightIcon from "@/components/shared/icons/ArrowRightIcon";
 
 const plans = [
   { name: "Free", price: "$0 /mo", cta: "Download Now", href: "https://app.warp.dev/get_warp" },
@@ -155,18 +157,13 @@ const tableData: Group[] = [
   },
 ];
 
-const CheckIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" aria-label="Included" className="inline-block size-5 text-(--color-accent-purple)">
-    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z" />
-  </svg>
-);
 
 const DashCell = () => (
   <span aria-label="Not included" className="text-(--color-muted)">—</span>
 );
 
 function CellContent({ value }: { value: CellValue }) {
-  if (value === CHECK) return <CheckIcon />;
+  if (value === CHECK) return <CheckCircleIcon className="inline-block size-5 text-(--color-accent-purple)" />;
   if (value === DASH) return <DashCell />;
   return <>{value}</>;
 }
@@ -178,11 +175,6 @@ function RowLabel({ row }: { row: Row }) {
   return <>{row.label}</>;
 }
 
-const ArrowIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-3.5" aria-hidden="true">
-    <path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd" />
-  </svg>
-);
 
 export default function PricingComparisonTable() {
   const [activeTab, setActiveTab] = useState(0);
@@ -225,7 +217,7 @@ export default function PricingComparisonTable() {
                         }}
                       >
                         {plan.cta}
-                        <ArrowIcon />
+                        <ArrowRightIcon className="size-3.5" />
                       </Link>
                     </div>
                   </div>

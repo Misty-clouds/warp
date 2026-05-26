@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import WarpMark from "@/components/shared/icons/WarpMark";
-import ClaudeIcon from "@/components/shared/icons/ClaudeIcon";
-import ArrowRightLgIcon from "@/components/shared/icons/ArrowRightLgIcon";
+import WarpMark from "@/components/icons/WarpMark";
+import ClaudeIcon from "@/components/icons/ClaudeIcon";
+import ArrowRightLgIcon from "@/components/icons/ArrowRightLgIcon";
 
 interface Agent {
   name: string;

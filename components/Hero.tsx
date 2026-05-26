@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import AppleIcon from "./shared/icons/AppleIcon";
-import CopyIcon from "./shared/icons/CopyIcon";
-import CheckmarkIcon from "./shared/icons/CheckmarkIcon";
+import AppleIcon from "./icons/AppleIcon";
+import CopyIcon from "./icons/CopyIcon";
+import CheckmarkIcon from "./icons/CheckmarkIcon";
 
 const slides = [
   {

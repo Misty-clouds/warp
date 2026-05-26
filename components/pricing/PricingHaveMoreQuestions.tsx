@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import ArrowRightIcon from "@/components/shared/icons/ArrowRightIcon";
+import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
 
 export default function PricingHaveMoreQuestions() {
   return (

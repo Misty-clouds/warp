@@ -1,15 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import XIcon from "./shared/icons/XIcon";
+import XIcon from "./icons/XIcon";
 
 export default function Banner() {
-  const [dismissed, setDismissed] = useState(true);
-
-  useEffect(() => {
-    setDismissed(localStorage.getItem("site-banner-dismissed") === "1");
-  }, []);
+  const [dismissed, setDismissed] = useState(() => {
+    if (typeof window === "undefined") return true;
+    return localStorage.getItem("site-banner-dismissed") === "1";
+  });
 
   if (dismissed) return null;
 

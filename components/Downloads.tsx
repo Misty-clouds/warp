@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import CopyIcon from "./shared/icons/CopyIcon";
-import CheckmarkIcon from "./shared/icons/CheckmarkIcon";
-import AppleIcon from "./shared/icons/AppleIcon";
-import WindowsIcon from "./shared/icons/WindowsIcon";
+import CopyIcon from "./icons/CopyIcon";
+import CheckmarkIcon from "./icons/CheckmarkIcon";
+import AppleIcon from "./icons/AppleIcon";
+import WindowsIcon from "./icons/WindowsIcon";
 
 function CopyCommand({ command, id }: { command: string; id: string }) {
   const [copied, setCopied] = useState(false);

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import DottedTooltip from "@/components/shared/DottedTooltip";
-import ArrowRightIcon from "@/components/shared/icons/ArrowRightIcon";
-import InfoCircleIcon from "@/components/shared/icons/InfoCircleIcon";
+import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
+import InfoCircleIcon from "@/components/icons/InfoCircleIcon";
 
 interface Feature {
   text: string;

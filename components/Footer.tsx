@@ -1,7 +1,5 @@
-import Link from "next/link";
-import WarpLogoFull from "./shared/icons/WarpLogoFull";
-import ExternalLinkIcon from "./shared/icons/ExternalLinkIcon";
-import ShieldCheckIcon from "./shared/icons/ShieldCheckIcon";
+import ExternalLinkIcon from "./icons/ExternalLinkIcon";
+import ShieldCheckIcon from "./icons/ShieldCheckIcon";
 
 const footerNav = [
   {

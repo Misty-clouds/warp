@@ -19,12 +19,6 @@ function BentoCard({
   bgClass = "bg-(--color-surface)",
   photoBg,
 }: BentoCardProps) {
-  const innerRounded = roundedClass
-    .split(" ")
-    .map((c) => c + "+1px")
-    .join(" ")
-    .replace(/\+1px/g, "");
-
   return (
     <div
       className={`relative ${colSpan === 3 ? "lg:col-span-3" : colSpan === 2 ? "lg:col-span-2" : ""}`}

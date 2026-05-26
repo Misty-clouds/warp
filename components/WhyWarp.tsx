@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import WarpMark from "./shared/icons/WarpMark";
-import OzMark from "./shared/icons/OzMark";
-import LineChartIcon from "./shared/icons/LineChartIcon";
+import WarpMark from "./icons/WarpMark";
+import OzMark from "./icons/OzMark";
+import LineChartIcon from "./icons/LineChartIcon";
 
 const sections = [
   {

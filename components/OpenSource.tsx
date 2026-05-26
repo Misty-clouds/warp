@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import PlayIcon from "./shared/icons/PlayIcon";
-import ArrowRightIcon from "./shared/icons/ArrowRightIcon";
+import PlayIcon from "./icons/PlayIcon";
+import ArrowRightIcon from "./icons/ArrowRightIcon";
 
 const YOUTUBE_ID = "eRsoRbJs8O0";
 

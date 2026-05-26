@@ -3,30 +3,30 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import WarpLogoFull from "./shared/icons/WarpLogoFull";
-import WarpMark from "./shared/icons/WarpMark";
-import OzMark from "./shared/icons/OzMark";
-import AppleIcon from "./shared/icons/AppleIcon";
-import GitHubIcon from "./shared/icons/GitHubIcon";
-import ChevronDownIcon from "./shared/icons/ChevronDownIcon";
-import ChevronRightIcon from "./shared/icons/ChevronRightIcon";
-import ChevronDownLgIcon from "./shared/icons/ChevronDownLgIcon";
-import HamburgerIcon from "./shared/icons/HamburgerIcon";
-import XMarkIcon from "./shared/icons/XMarkIcon";
-import ShieldCheckIcon from "./shared/icons/ShieldCheckIcon";
-import FileTextIcon from "./shared/icons/FileTextIcon";
-import PencilIcon from "./shared/icons/PencilIcon";
-import UsersIcon from "./shared/icons/UsersIcon";
-import CalendarIcon from "./shared/icons/CalendarIcon";
-import ListDotsIcon from "./shared/icons/ListDotsIcon";
-import MapIcon from "./shared/icons/MapIcon";
-import SparklesIcon from "./shared/icons/SparklesIcon";
-import BookOpenIcon from "./shared/icons/BookOpenIcon";
-import BriefcaseIcon from "./shared/icons/BriefcaseIcon";
-import NewspaperIcon from "./shared/icons/NewspaperIcon";
-import LightningIcon from "./shared/icons/LightningIcon";
-import TagIcon from "./shared/icons/TagIcon";
-import GlobeIcon from "./shared/icons/GlobeIcon";
+import WarpLogoFull from "./icons/WarpLogoFull";
+import WarpMark from "./icons/WarpMark";
+import OzMark from "./icons/OzMark";
+import AppleIcon from "./icons/AppleIcon";
+import GitHubIcon from "./icons/GitHubIcon";
+import ChevronDownIcon from "./icons/ChevronDownIcon";
+import ChevronRightIcon from "./icons/ChevronRightIcon";
+import ChevronDownLgIcon from "./icons/ChevronDownLgIcon";
+import HamburgerIcon from "./icons/HamburgerIcon";
+import XMarkIcon from "./icons/XMarkIcon";
+import ShieldCheckIcon from "./icons/ShieldCheckIcon";
+import FileTextIcon from "./icons/FileTextIcon";
+import PencilIcon from "./icons/PencilIcon";
+import UsersIcon from "./icons/UsersIcon";
+import CalendarIcon from "./icons/CalendarIcon";
+import ListDotsIcon from "./icons/ListDotsIcon";
+import MapIcon from "./icons/MapIcon";
+import SparklesIcon from "./icons/SparklesIcon";
+import BookOpenIcon from "./icons/BookOpenIcon";
+import BriefcaseIcon from "./icons/BriefcaseIcon";
+import NewspaperIcon from "./icons/NewspaperIcon";
+import LightningIcon from "./icons/LightningIcon";
+import TagIcon from "./icons/TagIcon";
+import GlobeIcon from "./icons/GlobeIcon";
 
 type FlyoutItem = {
   label: string;
@@ -154,14 +154,12 @@ type ActiveFlyout = "products" | "solutions" | "resources" | "enterprise" | null
 export default function Navbar() {
   const [activeFlyout, setActiveFlyout] = useState<ActiveFlyout>(null);
   const [flyoutLeft, setFlyoutLeft] = useState(0);
+  const [flyoutTop, setFlyoutTop] = useState("4.5rem");
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const flyoutPanelRef = useRef<HTMLDivElement>(null);
   const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -190,38 +188,42 @@ export default function Navbar() {
     leaveTimerRef.current = setTimeout(() => setActiveFlyout(null), 200);
   }, []);
 
-  const openFlyout = useCallback((name: ActiveFlyout, trigger: HTMLElement) => {
-    cancelLeave();
-    setFlyoutLeft(trigger.getBoundingClientRect().left);
-    setActiveFlyout(name);
-  }, [cancelLeave]);
-
-  const toggleFlyout = (name: ActiveFlyout, trigger: HTMLElement) => {
-    setFlyoutLeft(trigger.getBoundingClientRect().left);
-    setActiveFlyout(prev => prev === name ? null : name);
-  };
-
-  const getFlyoutTop = (): string => {
+  const getFlyoutTop = useCallback((): string => {
     if (!headerRef.current) return "4.5rem";
     const bottom = headerRef.current.getBoundingClientRect().bottom;
     return `${bottom - 12}px`;
+  }, []);
+
+  const positionFlyout = useCallback((trigger: HTMLElement) => {
+    setFlyoutLeft(trigger.getBoundingClientRect().left);
+    setFlyoutTop(getFlyoutTop());
+  }, [getFlyoutTop]);
+
+  const openFlyout = useCallback((name: ActiveFlyout, trigger: HTMLElement) => {
+    cancelLeave();
+    positionFlyout(trigger);
+    setActiveFlyout(name);
+  }, [cancelLeave, positionFlyout]);
+
+  const toggleFlyout = (name: ActiveFlyout, trigger: HTMLElement) => {
+    positionFlyout(trigger);
+    setActiveFlyout(prev => prev === name ? null : name);
   };
 
   const flyoutPanelClass = "fixed z-9999 rounded-[calc(var(--radius)*3)] bg-[#0C0C0C] p-2 shadow-lg ring-1 ring-(--color-border)";
 
   const renderFlyoutPanel = () => {
     if (!activeFlyout) return null;
-    const top = getFlyoutTop();
-    const sharedProps = {
-      ref: flyoutPanelRef,
-      onMouseEnter: cancelLeave,
-      onMouseLeave: scheduleLeave,
-      style: { top, left: flyoutLeft },
-    };
 
     if (activeFlyout === "products") {
       return (
-        <div {...sharedProps} className={`${flyoutPanelClass} w-max max-w-[calc(100%-3rem)] lg:max-w-2xl`}>
+        <div
+          ref={flyoutPanelRef}
+          onMouseEnter={cancelLeave}
+          onMouseLeave={scheduleLeave}
+          style={{ top: flyoutTop, left: flyoutLeft }}
+          className={`${flyoutPanelClass} w-max max-w-[calc(100%-3rem)] lg:max-w-2xl`}
+        >
           <FlyoutItemProduct item={productsItems[0]} />
           <FlyoutItemProduct item={productsItems[1]} />
           <FlyoutItemProduct item={productsItems[2]} />
@@ -230,14 +232,26 @@ export default function Navbar() {
     }
     if (activeFlyout === "solutions") {
       return (
-        <div {...sharedProps} className={`${flyoutPanelClass} w-max max-w-[calc(100%-3rem)] lg:max-w-2xl`}>
+        <div
+          ref={flyoutPanelRef}
+          onMouseEnter={cancelLeave}
+          onMouseLeave={scheduleLeave}
+          style={{ top: flyoutTop, left: flyoutLeft }}
+          className={`${flyoutPanelClass} w-max max-w-[calc(100%-3rem)] lg:max-w-2xl`}
+        >
           {solutionsItems.map(item => <FlyoutItemRow key={item.label} item={item} />)}
         </div>
       );
     }
     if (activeFlyout === "resources") {
       return (
-        <div {...sharedProps} className={`${flyoutPanelClass} w-[calc(100%-3rem)] max-w-3xl`}>
+        <div
+          ref={flyoutPanelRef}
+          onMouseEnter={cancelLeave}
+          onMouseLeave={scheduleLeave}
+          style={{ top: flyoutTop, left: flyoutLeft }}
+          className={`${flyoutPanelClass} w-[calc(100%-3rem)] max-w-3xl`}
+        >
           <div className="flex p-2 divide-x divide-(--color-border) *:flex-1 [&>*:first-child]:pr-4 [&>*:not(:first-child)]:pl-4">
             <div className="min-w-44">
               <div className="mb-1 px-3 py-1">
@@ -265,7 +279,13 @@ export default function Navbar() {
     }
     if (activeFlyout === "enterprise") {
       return (
-        <div {...sharedProps} className={`${flyoutPanelClass} w-max max-w-[calc(100%-3rem)] lg:max-w-2xl`}>
+        <div
+          ref={flyoutPanelRef}
+          onMouseEnter={cancelLeave}
+          onMouseLeave={scheduleLeave}
+          style={{ top: flyoutTop, left: flyoutLeft }}
+          className={`${flyoutPanelClass} w-max max-w-[calc(100%-3rem)] lg:max-w-2xl`}
+        >
           {enterpriseItems.map(item => <FlyoutItemRow key={item.label} item={item} />)}
         </div>
       );
@@ -275,7 +295,7 @@ export default function Navbar() {
 
   return (
     <>
-      {mounted && createPortal(renderFlyoutPanel(), document.body)}
+      {typeof document !== "undefined" && createPortal(renderFlyoutPanel(), document.body)}
 
       <header ref={headerRef} className="sticky top-0 z-10 bg-background/70 backdrop-blur-md supports-backdrop-filter:bg-background/60">
         <nav ref={navRef}>

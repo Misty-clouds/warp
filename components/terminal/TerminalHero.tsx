@@ -6,9 +6,9 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import TerminalFeatureCarousel from "./TerminalFeatureCarousel";
-import AppleIcon from "@/components/shared/icons/AppleIcon";
-import CopyIcon from "@/components/shared/icons/CopyIcon";
-import CheckmarkIcon from "@/components/shared/icons/CheckmarkIcon";
+import AppleIcon from "@/components/icons/AppleIcon";
+import CopyIcon from "@/components/icons/CopyIcon";
+import CheckmarkIcon from "@/components/icons/CheckmarkIcon";
 
 const carouselTabs = [
   {

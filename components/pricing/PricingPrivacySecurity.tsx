@@ -1,7 +1,7 @@
 import Link from "next/link";
-import ShieldWarningIcon from "@/components/shared/icons/ShieldWarningIcon";
-import SlidersIcon from "@/components/shared/icons/SlidersIcon";
-import SearchIcon from "@/components/shared/icons/SearchIcon";
+import ShieldWarningIcon from "@/components/icons/ShieldWarningIcon";
+import SlidersIcon from "@/components/icons/SlidersIcon";
+import SearchIcon from "@/components/icons/SearchIcon";
 
 const features = [
   {

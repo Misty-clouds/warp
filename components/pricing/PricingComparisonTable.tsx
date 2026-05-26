@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import DottedTooltip from "@/components/shared/DottedTooltip";
-import CheckCircleIcon from "@/components/shared/icons/CheckCircleIcon";
-import ArrowRightIcon from "@/components/shared/icons/ArrowRightIcon";
+import CheckCircleIcon from "@/components/icons/CheckCircleIcon";
+import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
 
 const plans = [
   { name: "Free", price: "$0 /mo", cta: "Download Now", href: "https://app.warp.dev/get_warp" },

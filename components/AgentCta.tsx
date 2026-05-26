@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AppleIcon from "./shared/icons/AppleIcon";
+import AppleIcon from "./icons/AppleIcon";
 
 export default function AgentCta() {
   return (

@@ -1,7 +1,7 @@
-import LockIcon from "@/components/shared/icons/LockIcon";
-import ShieldWarningIcon from "@/components/shared/icons/ShieldWarningIcon";
-import SlidersIcon from "@/components/shared/icons/SlidersIcon";
-import KeyIcon from "@/components/shared/icons/KeyIcon";
+import LockIcon from "@/components/icons/LockIcon";
+import ShieldWarningIcon from "@/components/icons/ShieldWarningIcon";
+import SlidersIcon from "@/components/icons/SlidersIcon";
+import KeyIcon from "@/components/icons/KeyIcon";
 
 const features = [
   {

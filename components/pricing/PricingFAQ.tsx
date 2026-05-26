@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import PlusIcon from "@/components/shared/icons/PlusIcon";
-import MinusIcon from "@/components/shared/icons/MinusIcon";
+import PlusIcon from "@/components/icons/PlusIcon";
+import MinusIcon from "@/components/icons/MinusIcon";
 
 interface FAQItem {
   question: string;

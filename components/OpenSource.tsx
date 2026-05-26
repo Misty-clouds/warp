@@ -1,15 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PlayIcon from "./icons/PlayIcon";
 import ArrowRightIcon from "./icons/ArrowRightIcon";
+import XMarkIcon from "./icons/XMarkIcon";
 
 const YOUTUBE_ID = "eRsoRbJs8O0";
 
 export default function OpenSource() {
-  const [playing, setPlaying] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const close = useCallback(() => setOpen(false), []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.classList.add("overflow-hidden");
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [open, close]);
 
   return (
     <section className="py-(--space-section)" id="open-source">
@@ -40,8 +56,54 @@ export default function OpenSource() {
           </div>
         </div>
 
-        {playing ? (
-          <div className="aspect-video w-full overflow-hidden rounded-(--img-radius) bg-(--color-surface)">
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-label="Play video: Warp Terminal is now open-source"
+          aria-haspopup="dialog"
+          className="group/video relative block aspect-video w-full cursor-pointer overflow-hidden rounded-(--img-radius) border-0 bg-(--color-surface) p-0 text-inherit"
+        >
+          <div className="absolute inset-0 *:size-full *:object-cover">
+            <Image
+              src="/images/open-source-poster.jpg"
+              alt="Warp open-source announcement video poster"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              quality={90}
+            />
+          </div>
+          <span aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent" />
+          <span aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-center justify-center">
+            <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-black shadow-xl transition-transform duration-200 ease-out group-hover/video:scale-110">
+              <PlayIcon className="size-6 translate-x-px" />
+            </span>
+          </span>
+        </button>
+      </div>
+
+      {open && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Warp Terminal is now open-source"
+          className="fixed inset-0 z-9999 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-8 animate-[fade-in_150ms_ease-out]"
+        >
+          <button
+            type="button"
+            onClick={close}
+            aria-label="Close video"
+            className="absolute inset-0 cursor-default"
+          />
+          <button
+            type="button"
+            onClick={close}
+            aria-label="Close video"
+            className="absolute right-4 top-4 z-10 inline-flex size-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-colors hover:bg-white/20 sm:right-6 sm:top-6"
+          >
+            <XMarkIcon className="size-5" />
+          </button>
+          <div className="relative z-10 aspect-video w-full max-w-6xl overflow-hidden rounded-(--img-radius) bg-black shadow-2xl">
             <iframe
               src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
               title="Warp Terminal is now open-source"
@@ -50,32 +112,8 @@ export default function OpenSource() {
               className="size-full border-0"
             />
           </div>
-        ) : (
-          <button
-            type="button"
-            onClick={() => setPlaying(true)}
-            aria-label="Play video: Warp Terminal is now open-source"
-            className="group/video relative block aspect-video w-full cursor-pointer overflow-hidden rounded-(--img-radius) border-0 bg-(--color-surface) p-0 text-inherit"
-          >
-            <div className="absolute inset-0 *:size-full *:object-cover">
-              <Image
-                src="/images/open-source-poster.jpg"
-                alt="Warp open-source announcement video poster"
-                fill
-                className="object-cover"
-                sizes="100vw"
-                quality={90}
-              />
-            </div>
-            <span aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent" />
-            <span aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-center justify-center">
-              <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-black shadow-xl transition-transform duration-200 ease-out group-hover/video:scale-110">
-                <PlayIcon className="size-6 translate-x-px" />
-              </span>
-            </span>
-          </button>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 }

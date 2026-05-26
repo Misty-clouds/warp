@@ -43,10 +43,10 @@ export default function Hero() {
       <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-16 px-6 lg:px-10">
         <div className="flex flex-col gap-16">
           <div className="flex flex-col items-start gap-6">
-            <h1 className="max-w-5xl text-balance text-[clamp(2.5rem,5vw,var(--heading-size))] leading-[1.1] text-(--color-text) [font-family:var(--font-display)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
+            <h1 className="max-w-5xl text-balance text-[clamp(2.5rem,5vw,var(--heading-size))] leading-[1.1] text-(--color-text) font-display [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
               Ship better software with any agent
             </h1>
-            <div className="flex max-w-3xl flex-col gap-4 text-[calc(var(--body-size)*1.125)] leading-(--body-line-height) text-(--color-text-secondary) [font-family:var(--font-sans)] [font-weight:var(--body-weight)]">
+            <div className="flex max-w-3xl flex-col gap-4 text-[calc(var(--body-size)*1.125)] leading-(--body-line-height) text-(--color-text-secondary) font-sans [font-weight:var(--body-weight)]">
               <p>
                 Warp is an open agentic development environment born from the terminal. Run coding agents locally and in the cloud, across any model, any harness, repo, or tool.
               </p>
@@ -81,7 +81,7 @@ export default function Hero() {
                 </div>
               </div>
               <a
-                className="inline-flex shrink-0 items-center justify-center gap-1 rounded-xl bg-(--color-text)/10 text-sm/7 font-medium text-(--color-text) hover:bg-(--color-text)/15 transition-colors h-11 px-4 py-2 w-full sm:w-auto"
+                className="inline-flex shrink-0 items-center justify-center gap-1 rounded-xl bg-text/10 text-sm/7 font-medium text-(--color-text) hover:bg-text/15 transition-colors h-11 px-4 py-2 w-full sm:w-auto"
                 href="/contact-sales"
               >
                 Contact Sales

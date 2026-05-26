@@ -83,7 +83,7 @@ export default function Testimonials() {
           id="testimonials-panel"
           role="tabpanel"
           aria-live="polite"
-          className="relative mx-auto mt-16 min-h-[24rem] max-w-5xl text-center sm:mt-20 sm:min-h-[28rem] lg:min-h-[32rem]"
+          className="relative mx-auto mt-16 min-h-96 max-w-5xl text-center sm:mt-20 sm:min-h-112 lg:min-h-128"
         >
           {testimonials.map((t, i) => (
             <div

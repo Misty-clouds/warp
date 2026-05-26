@@ -127,7 +127,7 @@ function RevealItem({ children, delay = 0 }: { children: React.ReactNode; delay?
   return (
     <div
       ref={ref}
-      className={`transition-[opacity,transform] duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${delayClass} ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}
+      className={`transition-[opacity,transform] duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] ${delayClass} ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}
     >
       {children}
     </div>
@@ -168,7 +168,7 @@ export default function WhyWarp() {
             <div className="mb-5 text-xs font-medium tracking-[0.28em] text-(--color-text-secondary) uppercase">
               Why Warp
             </div>
-            <h2 className="text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-(--color-text) [font-family:var(--font-display)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
+            <h2 className="text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-(--color-text) font-display [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
               Be more productive. Stay in control.
             </h2>
           </div>
@@ -217,10 +217,10 @@ export default function WhyWarp() {
                           {section.eyebrow}
                         </span>
                       </div>
-                      <h3 className="max-w-2xl text-balance text-3xl/10 text-(--color-text) [font-family:var(--font-display)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)] sm:text-4xl/11">
+                      <h3 className="max-w-2xl text-balance text-3xl/10 text-(--color-text) font-display [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)] sm:text-4xl/11">
                         {section.headline}
                       </h3>
-                      <p className="max-w-3xl text-(length:--body-size) leading-(--body-line-height) text-(--color-text-secondary) [font-family:var(--font-sans)]">
+                      <p className="max-w-3xl text-(length:--body-size) leading-(--body-line-height) text-(--color-text-secondary) font-sans">
                         {section.description}
                       </p>
                     </div>

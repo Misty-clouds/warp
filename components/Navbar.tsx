@@ -118,7 +118,7 @@ function FlyoutItemRow({ item, external }: { item: FlyoutItem; external?: boolea
       href={item.href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className="group flex items-start gap-3 rounded-(--radius-lg) p-3 hover:bg-text/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-text)"
+      className="group flex items-start gap-3 rounded-lg p-3 hover:bg-text/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-text)"
     >
       <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-text/5 text-(--color-text-secondary) ring-1 ring-inset ring-(--color-border)">
         {item.icon}
@@ -135,7 +135,7 @@ function FlyoutItemProduct({ item }: { item: FlyoutItem }) {
   return (
     <a
       href={item.href}
-      className="group flex items-start gap-3 rounded-(--radius-lg) p-3 hover:bg-text/5"
+      className="group flex items-start gap-3 rounded-lg p-3 hover:bg-text/5"
     >
       <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center">
         {item.icon}
@@ -270,7 +270,7 @@ export default function Navbar() {
                 </button>
                 {activeFlyout === "resources" && (
                   <div
-                    className={`${flyoutPanelBase} w-[44rem]`}
+                    className={`${flyoutPanelBase} w-176`}
                     onMouseEnter={cancelLeave}
                     onMouseLeave={scheduleLeave}
                   >
@@ -376,7 +376,7 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="fixed inset-0 z-[9999] flex flex-col overflow-y-auto bg-(--color-background) px-6 py-6 lg:hidden lg:px-10">
+          <div className="fixed inset-0 z-9999 flex flex-col overflow-y-auto bg-(--color-background) px-6 py-6 lg:hidden lg:px-10">
             <div className="flex justify-end">
               <button
                 onClick={() => setMobileOpen(false)}

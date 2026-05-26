@@ -79,7 +79,7 @@ function LogoMarquee() {
                   <img src={logo.src} alt={`${logo.name} logo`} className="h-6 w-auto" />
                 </div>
                 {logo.chip && (
-                  <span className="pointer-events-none absolute top-full mt-2 whitespace-nowrap rounded-full px-2.5 py-1 text-[10px]/[1.15] tracking-wide bg-(--color-text)/10 text-(--color-text) translate-y-1 opacity-0 transition-all duration-200 group-hover/logo:pointer-events-auto group-hover/logo:translate-y-0 group-hover/logo:opacity-100">
+                  <span className="pointer-events-none absolute top-full mt-2 whitespace-nowrap rounded-full px-2.5 py-1 text-[10px]/[1.15] tracking-wide bg-text/10 text-(--color-text) translate-y-1 opacity-0 transition-all duration-200 group-hover/logo:pointer-events-auto group-hover/logo:translate-y-0 group-hover/logo:opacity-100">
                     <a href={logo.chipUrl} target="_blank" rel="noopener noreferrer">{logo.chip}</a>
                   </span>
                 )}

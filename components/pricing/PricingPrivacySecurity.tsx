@@ -27,25 +27,13 @@ const features = [
 export default function PricingPrivacySecurity() {
   return (
     <section className="py-(--space-section)" id="privacy-security">
-      <div
-        className="mx-auto w-full px-6 lg:px-10 flex flex-col gap-10 sm:gap-16"
-        style={{ maxWidth: "var(--content-max-width)" }}
-      >
+      <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10">
         <div className="flex max-w-2xl flex-col gap-6">
           <div className="flex flex-col gap-2">
             <div className="font-mono text-xs/7 font-medium uppercase tracking-widest text-(--color-text-secondary)">
               Your privacy and security
             </div>
-            <h2
-              className="text-pretty text-(--color-text)"
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontWeight: "var(--heading-weight)",
-                fontSize: "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
-                lineHeight: 1.15,
-                letterSpacing: "var(--heading-letter-spacing)",
-              }}
-            >
+            <h2 className="text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-(--color-text) [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
               Transparency and control at every touchpoint.
             </h2>
           </div>

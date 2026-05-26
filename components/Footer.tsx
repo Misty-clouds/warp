@@ -60,10 +60,7 @@ export default function Footer() {
   return (
     <footer className="pt-0" id="footer">
       <div className="bg-(--color-surface) py-(--space-section) text-(--color-text)">
-        <div
-          className="mx-auto w-full px-6 lg:px-10 flex flex-col gap-16"
-          style={{ maxWidth: "var(--content-max-width)" }}
-        >
+        <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-16 px-6 lg:px-10">
           <div className="text-sm/7">
             <nav className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5">
               {footerNav.map((col) => (
@@ -106,7 +103,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-2 rounded-full bg-(--color-text)/5 px-3 py-1 text-xs/5 text-(--color-text-secondary) transition-colors hover:bg-(--color-text)/10"
                 href="https://status.warp.dev"
               >
-                <span className="size-2 shrink-0 rounded-full" style={{ backgroundColor: "oklch(0.72 0.19 145)" }} />
+                <span className="size-2 shrink-0 rounded-full bg-[oklch(0.72_0.19_145)]" />
                 All Systems Operational
               </a>
             </div>

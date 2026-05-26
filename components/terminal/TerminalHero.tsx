@@ -98,32 +98,12 @@ export default function TerminalHero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_55%)]" />
       </div>
 
-      <div
-        className="mx-auto w-full px-6 lg:px-10 relative flex flex-col items-center gap-6 text-center text-white"
-        style={{ maxWidth: "var(--content-max-width)" }}
-      >
-        <h1
-          className="text-balance text-white max-w-4xl"
-          style={{
-            fontFamily: "var(--font-heading)",
-            fontWeight: "var(--heading-weight)",
-            fontSize: "clamp(2.5rem, 5vw, var(--heading-size))",
-            lineHeight: 1.1,
-            letterSpacing: "var(--heading-letter-spacing)",
-          }}
-        >
+      <div className="relative mx-auto flex w-full max-w-(--content-max-width) flex-col items-center gap-6 px-6 text-center text-white lg:px-10">
+        <h1 className="max-w-4xl text-balance text-[clamp(2.5rem,5vw,var(--heading-size))] leading-[1.1] text-white [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
           The best place to build with agents
         </h1>
 
-        <p
-          className="max-w-3xl text-white/75"
-          style={{
-            fontFamily: "var(--font-body)",
-            fontWeight: "var(--body-weight)",
-            fontSize: "calc(var(--body-size) * 1.125)",
-            lineHeight: "var(--body-line-height)",
-          }}
-        >
+        <p className="max-w-3xl text-[calc(var(--body-size)*1.125)] leading-(--body-line-height) text-white/75 [font-family:var(--font-body)] [font-weight:var(--body-weight)]">
           Ship faster in a modern terminal designed to help you go from prompt
           to production
         </p>
@@ -134,11 +114,7 @@ export default function TerminalHero() {
               href="https://app.warp.dev/get_warp?package=dmg"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex self-stretch shrink-0 items-center justify-center gap-1.5 rounded-l-(--btn-radius) px-5 text-sm/7 font-medium hover:opacity-85 transition-opacity"
-              style={{
-                background: "var(--btn-bg)",
-                color: "var(--btn-text-color)",
-              }}
+              className="inline-flex shrink-0 items-center justify-center gap-1.5 self-stretch rounded-l-(--btn-radius) bg-(--btn-bg) px-5 text-sm/7 font-medium text-(--btn-text-color) transition-opacity hover:opacity-85"
             >
               Download
               <AppleIcon className="inline-block size-4 opacity-90" />
@@ -163,10 +139,7 @@ export default function TerminalHero() {
       </div>
 
       <div className="mt-10 sm:mt-16">
-        <div
-          className="mx-auto w-full px-6 lg:px-10"
-          style={{ maxWidth: "var(--content-max-width)" }}
-        >
+        <div className="mx-auto w-full max-w-(--content-max-width) px-6 lg:px-10">
           <TerminalFeatureCarousel tabs={carouselTabs} autoAdvanceMs={6000} />
         </div>
       </div>

@@ -20,23 +20,12 @@ const sections = [
     screenshotWidth: 1608,
     screenshotHeight: 1005,
     icon: (
-      <span
-        className="no-frame inline-flex shrink-0 items-center justify-center size-6 rounded-md"
-        style={{ backgroundColor: "#0b0b0b", color: "#ffffff", boxShadow: "inset 0 0 0 1px #1f1f1f" }}
-      >
+      <span className="no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#0b0b0b] text-white shadow-[inset_0_0_0_1px_#1f1f1f]">
         <WarpMark className="size-3.5" />
       </span>
     ),
     navIcon: (active: boolean) => (
-      <span
-        className="no-frame inline-flex shrink-0 items-center justify-center size-6 rounded-md transition-opacity"
-        style={{
-          backgroundColor: "#0b0b0b",
-          color: "#ffffff",
-          boxShadow: "inset 0 0 0 1px #1f1f1f",
-          opacity: active ? 1 : undefined,
-        }}
-      >
+      <span className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#0b0b0b] text-white shadow-[inset_0_0_0_1px_#1f1f1f] transition-opacity ${active ? "opacity-100" : ""}`}>
         <WarpMark className="size-3.5" />
       </span>
     ),
@@ -54,22 +43,12 @@ const sections = [
     screenshotWidth: 1608,
     screenshotHeight: 1005,
     icon: (
-      <span
-        className="no-frame inline-flex shrink-0 items-center justify-center size-6 rounded-md"
-        style={{ backgroundColor: "#bda6f7", color: "#111111" }}
-      >
+      <span className="no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#bda6f7] text-[#111111]">
         <OzMark className="size-4" />
       </span>
     ),
     navIcon: (active: boolean) => (
-      <span
-        className="no-frame inline-flex shrink-0 items-center justify-center size-6 rounded-md transition-opacity"
-        style={{
-          backgroundColor: "#bda6f7",
-          color: "#111111",
-          opacity: active ? 1 : 0.45,
-        }}
-      >
+      <span className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#bda6f7] text-[#111111] transition-opacity ${active ? "opacity-100" : "opacity-45"}`}>
         <OzMark className="size-4" />
       </span>
     ),
@@ -87,23 +66,12 @@ const sections = [
     screenshotWidth: 1608,
     screenshotHeight: 1005,
     icon: (
-      <span
-        className="no-frame inline-flex shrink-0 items-center justify-center size-6 rounded-md"
-        style={{ backgroundColor: "#1c1a26", color: "#c7aeff", boxShadow: "inset 0 0 0 1px #373245" }}
-      >
+      <span className="no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#1c1a26] text-[#c7aeff] shadow-[inset_0_0_0_1px_#373245]">
         <WarpMark className="size-3.5" />
       </span>
     ),
     navIcon: (active: boolean) => (
-      <span
-        className="no-frame inline-flex shrink-0 items-center justify-center size-6 rounded-md transition-opacity"
-        style={{
-          backgroundColor: "#1c1a26",
-          color: "#c7aeff",
-          boxShadow: "inset 0 0 0 1px #373245",
-          opacity: active ? 1 : 0.45,
-        }}
-      >
+      <span className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#1c1a26] text-[#c7aeff] shadow-[inset_0_0_0_1px_#373245] transition-opacity ${active ? "opacity-100" : "opacity-45"}`}>
         <WarpMark className="size-3.5" />
       </span>
     ),
@@ -127,11 +95,7 @@ const sections = [
     ),
     navIcon: (active: boolean) => (
       <span
-        className="flex size-6 shrink-0 items-center justify-center rounded-md transition-colors"
-        style={{
-          backgroundColor: active ? "var(--color-panel)" : "var(--color-surface)",
-          color: active ? "var(--color-text)" : "var(--color-text-secondary)",
-        }}
+        className={`flex size-6 shrink-0 items-center justify-center rounded-md transition-colors ${active ? "bg-(--color-panel) text-(--color-text)" : "bg-(--color-surface) text-(--color-text-secondary)"}`}
       >
         <LineChartIcon className="size-4" />
       </span>
@@ -142,6 +106,7 @@ const sections = [
 function RevealItem({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const delayClass = delay === 240 ? "delay-[240ms]" : delay === 160 ? "delay-[160ms]" : delay === 80 ? "delay-[80ms]" : "delay-0";
 
   useEffect(() => {
     const el = ref.current;
@@ -162,14 +127,7 @@ function RevealItem({ children, delay = 0 }: { children: React.ReactNode; delay?
   return (
     <div
       ref={ref}
-      style={{
-        transitionDelay: `${delay}ms`,
-        transitionDuration: "600ms",
-        transitionProperty: "opacity, transform",
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(20px)",
-      }}
+      className={`transition-[opacity,transform] duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${delayClass} ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}
     >
       {children}
     </div>
@@ -204,25 +162,13 @@ export default function WhyWarp() {
       id="home-agent-control"
       className="bg-(--color-background) py-(--space-section) text-(--color-text)"
     >
-      <div
-        className="mx-auto w-full px-6 lg:px-10 flex flex-col gap-14"
-        style={{ maxWidth: "var(--content-max-width)" }}
-      >
+      <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-14 px-6 lg:px-10">
         <RevealItem>
           <div className="max-w-3xl">
             <div className="mb-5 text-xs font-medium tracking-[0.28em] text-(--color-text-secondary) uppercase">
               Why Warp
             </div>
-            <h2
-              className="text-pretty text-(--color-text)"
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: "var(--heading-weight)",
-                fontSize: "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
-                lineHeight: 1.15,
-                letterSpacing: "var(--heading-letter-spacing)",
-              }}
-            >
+            <h2 className="text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-(--color-text) [font-family:var(--font-display)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
               Be more productive. Stay in control.
             </h2>
           </div>
@@ -271,32 +217,17 @@ export default function WhyWarp() {
                           {section.eyebrow}
                         </span>
                       </div>
-                      <h3
-                        className="max-w-2xl text-balance text-3xl/10 text-(--color-text) sm:text-4xl/11"
-                        style={{
-                          fontFamily: "var(--font-display)",
-                          fontWeight: "var(--heading-weight)",
-                          letterSpacing: "var(--heading-letter-spacing)",
-                        }}
-                      >
+                      <h3 className="max-w-2xl text-balance text-3xl/10 text-(--color-text) [font-family:var(--font-display)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)] sm:text-4xl/11">
                         {section.headline}
                       </h3>
-                      <p
-                        className="text-(--color-text-secondary) max-w-3xl"
-                        style={{ fontFamily: "var(--font-sans)", fontSize: "var(--body-size)", lineHeight: "var(--body-line-height)" }}
-                      >
+                      <p className="max-w-3xl text-(length:--body-size) leading-(--body-line-height) text-(--color-text-secondary) [font-family:var(--font-sans)]">
                         {section.description}
                       </p>
                     </div>
                     <div className="shrink-0">
                       <a
                         href={section.ctaHref}
-                        className="inline-flex shrink-0 items-center justify-center gap-1.5 text-sm/7 font-medium hover:opacity-85 h-9 px-3 py-1 w-full sm:w-auto"
-                        style={{
-                          background: "var(--btn-bg)",
-                          color: "var(--btn-text-color)",
-                          borderRadius: "var(--btn-radius)",
-                        }}
+                        className="inline-flex h-9 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-3 py-1 text-sm/7 font-medium text-(--btn-text-color) hover:opacity-85 sm:w-auto"
                       >
                         {section.ctaLabel}
                       </a>

@@ -13,32 +13,17 @@ export default function OpenSource() {
 
   return (
     <section className="py-(--space-section)" id="open-source">
-      <div
-        className="mx-auto w-full px-6 lg:px-10 flex flex-col gap-10 sm:gap-16"
-        style={{ maxWidth: "var(--content-max-width)" }}
-      >
+      <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10">
         <div className="flex max-w-2xl flex-col gap-6">
           <div className="flex flex-col gap-2">
             <div className="font-mono text-xs/7 font-medium uppercase tracking-widest text-(--color-text-secondary)">
               Open-source
             </div>
-            <h2
-              className="text-pretty text-(--color-text)"
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontWeight: "var(--heading-weight)",
-                fontSize: "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
-                lineHeight: 1.15,
-                letterSpacing: "var(--heading-letter-spacing)",
-              }}
-            >
+            <h2 className="text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-(--color-text) [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
               Warp Terminal is now open-source
             </h2>
           </div>
-          <div
-            className="text-(--color-text-secondary) text-pretty"
-            style={{ fontSize: "var(--body-size)", lineHeight: "var(--body-line-height)" }}
-          >
+          <div className="text-pretty text-(length:--body-size) leading-(--body-line-height) text-(--color-text-secondary)">
             <p>
               We&apos;re excited to build Warp alongside the community using an open-first workflow
               managed by Oz, our cloud agent orchestration platform.
@@ -47,14 +32,7 @@ export default function OpenSource() {
           <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
             <Link
               href="/blog/warp-is-now-open-source"
-              className="btn-hover inline-flex shrink-0 items-center justify-center gap-1.5 text-sm/7 font-medium hover:opacity-85 h-11 px-4 py-2 w-full sm:w-auto"
-              style={{
-                background: "var(--btn-bg)",
-                border: "var(--btn-border)",
-                color: "var(--btn-text-color)",
-                padding: "var(--btn-padding)",
-                borderRadius: "var(--btn-radius)",
-              }}
+              className="btn-hover inline-flex h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) p-(--btn-padding) text-sm/7 font-medium text-(--btn-text-color) [border:var(--btn-border)] hover:opacity-85 sm:w-auto"
             >
               Read more
               <ArrowRightIcon className="size-3.5" />
@@ -63,10 +41,7 @@ export default function OpenSource() {
         </div>
 
         {playing ? (
-          <div
-            className="aspect-video w-full overflow-hidden bg-(--color-surface)"
-            style={{ borderRadius: "var(--img-radius)" }}
-          >
+          <div className="aspect-video w-full overflow-hidden rounded-(--img-radius) bg-(--color-surface)">
             <iframe
               src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
               title="Warp Terminal is now open-source"
@@ -80,8 +55,7 @@ export default function OpenSource() {
             type="button"
             onClick={() => setPlaying(true)}
             aria-label="Play video: Warp Terminal is now open-source"
-            className="group/video relative block w-full cursor-pointer overflow-hidden border-0 bg-(--color-surface) p-0 text-inherit aspect-video"
-            style={{ borderRadius: "var(--img-radius)" }}
+            className="group/video relative block aspect-video w-full cursor-pointer overflow-hidden rounded-(--img-radius) border-0 bg-(--color-surface) p-0 text-inherit"
           >
             <div className="absolute inset-0 *:size-full *:object-cover">
               <Image

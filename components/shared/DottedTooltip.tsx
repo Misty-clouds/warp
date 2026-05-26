@@ -20,8 +20,7 @@ export default function DottedTooltip({ children, tooltip }: DottedTooltipProps)
         {children}
       </span>
       <span
-        className="pointer-events-none absolute bottom-full left-0 z-50 mb-2 w-max max-w-60 rounded-md bg-(--color-text) px-3 py-1.5 text-xs/5 text-(--color-background) shadow-lg transition-opacity duration-150"
-        style={{ opacity: open ? 1 : 0 }}
+        className={`pointer-events-none absolute bottom-full left-0 z-50 mb-2 w-max max-w-60 rounded-md bg-(--color-text) px-3 py-1.5 text-xs/5 text-(--color-background) shadow-lg transition-opacity duration-150 ${open ? "opacity-100" : "opacity-0"}`}
       >
         {tooltip}
       </span>

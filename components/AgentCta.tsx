@@ -15,16 +15,7 @@ export default function AgentCta() {
           />
         </div>
         <div className="relative z-10 flex flex-col items-center gap-8 px-6 py-20 text-center">
-          <h2
-            className="text-pretty max-w-4xl text-white"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: "var(--heading-weight)",
-              fontSize: "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
-              lineHeight: 1.15,
-              letterSpacing: "var(--heading-letter-spacing)",
-            }}
-          >
+          <h2 className="max-w-4xl text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-white [font-family:var(--font-display)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
             Start shipping with agents.
           </h2>
           <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
@@ -32,12 +23,7 @@ export default function AgentCta() {
               href="https://app.warp.dev/get_warp?package=dmg"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center justify-center gap-1.5 text-sm/7 font-medium hover:opacity-85 transition-opacity h-11 px-4 py-2 w-full sm:w-auto"
-              style={{
-                background: "var(--btn-bg)",
-                color: "var(--btn-text-color)",
-                borderRadius: "var(--btn-radius)",
-              }}
+              className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-4 py-2 text-sm/7 font-medium text-(--btn-text-color) transition-opacity hover:opacity-85 sm:w-auto"
             >
               Download <AppleIcon />
             </a>

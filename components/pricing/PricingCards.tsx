@@ -289,13 +289,7 @@ function CardInner({ plan, reloadOpen, onToggleReload }: {
       <div className="self-stretch">
         <Link
           href={plan.ctaHref}
-          className="btn-hover inline-flex w-full shrink-0 items-center justify-center gap-1.5 text-sm/7 font-medium hover:opacity-85 h-11 px-4 py-2"
-          style={{
-            background: "var(--btn-bg)",
-            border: "var(--btn-border)",
-            color: "var(--btn-text-color)",
-            borderRadius: "var(--btn-radius)",
-          }}
+          className="btn-hover inline-flex h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-4 py-2 text-sm/7 font-medium text-(--btn-text-color) [border:var(--btn-border)] hover:opacity-85"
         >
           {plan.cta}
           <ArrowRightIcon className="size-3.5" />
@@ -374,30 +368,12 @@ export default function PricingCards() {
 
   return (
     <section className="py-(--space-section)" id="pricing">
-      <div
-        className="mx-auto w-full px-6 lg:px-10 flex flex-col gap-16"
-        style={{ maxWidth: "var(--content-max-width)" }}
-      >
+      <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-16 px-6 lg:px-10">
         <div className="flex flex-col items-center gap-6">
-          <h1
-            className="text-balance text-(--color-text)"
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontWeight: "var(--heading-weight)",
-              fontSize: "clamp(2.5rem, 5vw, var(--heading-size))",
-              lineHeight: 1.1,
-              letterSpacing: "var(--heading-letter-spacing)",
-            }}
-          >
+          <h1 className="text-balance text-[clamp(2.5rem,5vw,var(--heading-size))] leading-[1.1] text-(--color-text) [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
             Pricing
           </h1>
-          <p
-            className="text-(--color-text-secondary) max-w-xl text-center"
-            style={{
-              fontSize: "calc(var(--body-size) * 1.125)",
-              lineHeight: "var(--body-line-height)",
-            }}
-          >
+          <p className="max-w-xl text-center text-[calc(var(--body-size)*1.125)] leading-(--body-line-height) text-(--color-text-secondary)">
             Start free and scale as your team grows. Simple, transparent pricing with no surprises.
           </p>
           <div className="flex items-center gap-3">

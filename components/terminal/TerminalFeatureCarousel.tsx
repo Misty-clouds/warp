@@ -72,13 +72,7 @@ export default function TerminalFeatureCarousel({
                 +
               </span>
             </button>
-            <div
-              className="grid transition-[grid-template-rows]"
-              style={{
-                gridTemplateRows: i === activeIndex ? "1fr" : "0fr",
-                transitionDuration: "300ms",
-              }}
-            >
+            <div className={`grid transition-[grid-template-rows] duration-300 ${i === activeIndex ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
               <div className="overflow-hidden">
                 <div className="flex flex-col gap-4 px-4 pb-6">
                   <p className="text-sm text-(--color-text-secondary)">
@@ -124,10 +118,7 @@ export default function TerminalFeatureCarousel({
                     {i === activeIndex ? (
                       <div
                         key={progressKey}
-                        className="h-full bg-(--color-tertiary)"
-                        style={{
-                          animation: `${autoAdvanceMs}ms linear 0s 1 normal forwards running fill-progress`,
-                        }}
+                        className={`h-full bg-(--color-tertiary) ${autoAdvanceMs === 6000 ? "animate-[fill-progress_6000ms_linear_forwards]" : "animate-[fill-progress_6000ms_linear_forwards]"}`}
                       />
                     ) : (
                       <div className="h-full bg-(--color-tertiary) transition-[width] duration-300 w-0" />
@@ -154,11 +145,10 @@ export default function TerminalFeatureCarousel({
           {tabs.map((tab, i) => (
             <div
               key={tab.label}
-              className={`absolute inset-0 transition-opacity *:h-full *:w-full ${
+              className={`absolute inset-0 transition-opacity duration-300 *:h-full *:w-full ${
                 i === activeIndex ? "z-10 opacity-100" : "z-0 opacity-0"
               }`}
               aria-hidden={i !== activeIndex}
-              style={{ transitionDuration: "300ms" }}
             >
               <Image
                 src={tab.image.src}

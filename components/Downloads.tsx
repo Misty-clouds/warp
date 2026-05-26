@@ -22,7 +22,7 @@ function CopyCommand({ command, id }: { command: string; id: string }) {
     <div className="flex items-center justify-between gap-6 rounded-full p-1 font-mono text-sm/7 ring-1 ring-inset bg-(--color-surface) text-(--color-text-secondary) ring-(--color-border)">
       <div className="flex items-center gap-2 pl-3">
         <div className="text-current/60 select-none">$</div>
-        <span style={{ textTransform: "none", letterSpacing: "normal" }} id={id}>{command}</span>
+        <span className="normal-case tracking-normal" id={id}>{command}</span>
       </div>
       <button
         type="button"
@@ -66,34 +66,22 @@ function PackageRow({ name, sub, pkgs }: { name: string; sub?: string; pkgs: { l
   );
 }
 
-const headingStyle = {
-  fontFamily: "var(--font-heading)",
-  fontWeight: "var(--heading-weight)",
-  fontSize: "clamp(1.25rem, 2.5vw, 1.5rem)",
-  lineHeight: 1.2,
-  letterSpacing: "var(--heading-letter-spacing)",
-};
+const headingClassName = "text-(--color-text) text-[clamp(1.25rem,2.5vw,1.5rem)] leading-[1.2] [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]";
 
 export default function Downloads() {
   return (
     <section id="global-downloads-footer" className="bg-transparent py-(--space-section)">
-      <div
-        className="mx-auto w-full px-6 lg:px-10 flex flex-col gap-10 sm:gap-16"
-        style={{ maxWidth: "var(--content-max-width)" }}
-      >
+      <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10">
         <div className="flex max-w-2xl flex-col gap-6">
           <div className="flex flex-col gap-2">
             <div className="font-mono text-xs/7 font-medium uppercase tracking-widest text-(--color-text-secondary)">
               All Downloads
             </div>
-            <h2 className="text-pretty text-(--color-text)" style={headingStyle}>
+            <h2 className={`text-pretty ${headingClassName}`}>
               Get Warp today
             </h2>
           </div>
-          <p
-            className="text-(--color-text-secondary) text-pretty"
-            style={{ fontSize: "var(--body-size)", lineHeight: "var(--body-line-height)" }}
-          >
+          <p className="text-(--color-text-secondary) text-pretty text-(length:--body-size) leading-(--body-line-height)">
             Get early access to unreleased and experimental features with{" "}
             <Link href="/download-preview" className="link-underline-reveal hover:opacity-80">
               Warp Preview
@@ -106,7 +94,7 @@ export default function Downloads() {
           <div className="flex flex-col gap-6 py-(--space-lg) first:pt-0 last:pb-0 lg:px-(--space-lg) lg:py-0 lg:first:pl-0 lg:last:pr-0">
             <div className="flex flex-col gap-3">
               <div className="text-(--color-text)"><AppleIcon className="inline-block size-10" /></div>
-              <h3 className="text-(--color-text)" style={headingStyle}>Mac</h3>
+              <h3 className={headingClassName}>Mac</h3>
             </div>
             <div className="flex gap-3">
               <a
@@ -128,11 +116,10 @@ export default function Downloads() {
                 <img
                   src="/icons/linux-dark.svg"
                   alt=""
-                  className="inline-block bg-transparent align-middle size-10"
-                  style={{ background: "none", boxShadow: "none", border: "none", borderRadius: 0 }}
+                  className="inline-block size-10 rounded-none border-0 bg-transparent align-middle shadow-none"
                 />
               </div>
-              <h3 className="text-(--color-text)" style={headingStyle}>Linux</h3>
+              <h3 className={headingClassName}>Linux</h3>
             </div>
             <div className="flex gap-3">
               <a
@@ -174,7 +161,7 @@ export default function Downloads() {
           <div className="flex flex-col gap-6 py-(--space-lg) first:pt-0 last:pb-0 lg:px-(--space-lg) lg:py-0 lg:first:pl-0 lg:last:pr-0">
             <div className="flex flex-col gap-3">
               <div className="text-(--color-text)"><WindowsIcon className="inline-block size-10" /></div>
-              <h3 className="text-(--color-text)" style={headingStyle}>Windows</h3>
+              <h3 className={headingClassName}>Windows</h3>
             </div>
             <div className="flex gap-3">
               <a

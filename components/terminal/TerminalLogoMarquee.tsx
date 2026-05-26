@@ -33,10 +33,7 @@ function LogoItem({ logo }: { logo: (typeof logos)[0] }) {
           alt={logo.name}
           width={logo.width}
           height={logo.height}
-          style={{
-            height: `${marqueeLogoHeight}px`,
-            width: `${Math.round((logo.width / logo.height) * marqueeLogoHeight)}px`,
-          }}
+          className="h-6 w-auto"
         />
       </div>
       {logo.since && logo.href && (
@@ -63,10 +60,7 @@ function LogoSet({ suffix }: { suffix: string }) {
 export default function TerminalLogoMarquee() {
   return (
     <section className="py-(--space-section)">
-      <div
-        className="mx-auto w-full px-6 lg:px-10 mb-8"
-        style={{ maxWidth: "var(--content-max-width)" }}
-      >
+      <div className="mx-auto mb-8 w-full max-w-(--content-max-width) px-6 lg:px-10">
         <p className="text-center text-sm/7 font-semibold text-(--color-text-secondary)">
           Trusted by over 800,000 developers and thousands of engineering teams
           at leading companies
@@ -74,10 +68,7 @@ export default function TerminalLogoMarquee() {
       </div>
 
       <div className="relative overflow-hidden pb-10 mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div
-          className="flex w-max animate-[scroll-left_var(--scroll-duration)_linear_infinite]"
-          style={{ "--scroll-duration": "calc(40s * var(--motion-speed, 1))" } as React.CSSProperties}
-        >
+        <div className="flex w-max animate-[scroll-left_calc(40s*var(--motion-speed,1))_linear_infinite]">
           <LogoSet suffix="a" />
           <LogoSet suffix="b" />
         </div>

@@ -18,39 +18,16 @@ export default function PricingHaveMoreQuestions() {
         </div>
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex flex-col items-center gap-8 px-6 py-20 text-center">
-          <h2
-            className="text-pretty text-white max-w-4xl"
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontWeight: "var(--heading-weight)",
-              fontSize: "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
-              lineHeight: 1.15,
-              letterSpacing: "var(--heading-letter-spacing)",
-            }}
-          >
+          <h2 className="max-w-4xl text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-white [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
             Have more questions?
           </h2>
-          <p
-            className="text-white/80 max-w-3xl text-pretty"
-            style={{
-              fontSize: "var(--body-size)",
-              lineHeight: "var(--body-line-height)",
-            }}
-          >
+          <p className="max-w-3xl text-pretty text-(length:--body-size) leading-(--body-line-height) text-white/80">
             Talk to our team about which plan is right for you.
           </p>
           <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
             <Link
               href="/contact-sales"
-              className="btn-hover inline-flex shrink-0 items-center justify-center gap-1.5 text-sm/7 font-medium hover:opacity-85 h-11 px-4 py-2 w-full sm:w-auto"
-              style={{
-                background: "var(--btn-bg)",
-                border: "var(--btn-border)",
-                color: "var(--btn-text-color)",
-                padding: "var(--btn-padding)",
-                borderRadius: "var(--btn-radius)",
-                textTransform: "var(--btn-transform)" as React.CSSProperties["textTransform"],
-              }}
+              className="btn-hover inline-flex h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) p-(--btn-padding) text-sm/7 font-medium text-(--btn-text-color) [border:var(--btn-border)] [text-transform:var(--btn-transform)] hover:opacity-85 sm:w-auto"
             >
               Contact Sales
               <ArrowRightIcon className="size-3.5" />

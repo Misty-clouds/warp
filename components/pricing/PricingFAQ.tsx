@@ -233,16 +233,7 @@ export default function PricingFAQ() {
     <section className="py-(--space-section)" id="faqs">
       <div className="mx-auto flex max-w-3xl flex-col gap-6 px-6 lg:max-w-5xl lg:px-10">
         <div className="flex flex-col gap-6">
-          <h2
-            className="text-pretty text-(--color-text)"
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontWeight: "var(--heading-weight)",
-              fontSize: "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
-              lineHeight: 1.15,
-              letterSpacing: "var(--heading-letter-spacing)",
-            }}
-          >
+          <h2 className="text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-(--color-text) [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
             Pricing FAQ
           </h2>
         </div>
@@ -260,13 +251,7 @@ export default function PricingFAQ() {
                   {faq.question}
                   {isOpen ? <MinusIcon className="h-lh shrink-0" /> : <PlusIcon className="h-lh shrink-0" />}
                 </button>
-                <div
-                  className="grid transition-[grid-template-rows]"
-                  style={{
-                    gridTemplateRows: isOpen ? "1fr" : "0fr",
-                    transitionDuration: "300ms",
-                  }}
-                >
+                <div className={`grid transition-[grid-template-rows] duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
                   <div className="overflow-hidden">
                     <div className="-mt-2 flex flex-col gap-2 pr-12 pb-4 text-sm/7 text-(--color-text-secondary)">
                       {faq.answer}

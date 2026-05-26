@@ -56,27 +56,13 @@ export default function TerminalNativeCarousel({ tabs, autoAdvanceMs = 6000 }: P
                 {mobileOpen === i ? "−" : "+"}
               </span>
             </button>
-            <div
-              className="grid transition-[grid-template-rows] duration-300"
-              style={{ gridTemplateRows: mobileOpen === i ? "1fr" : "0fr" }}
-            >
+            <div className={`grid transition-[grid-template-rows] duration-300 ${mobileOpen === i ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
               <div className="overflow-hidden">
                 <div className="flex flex-col gap-4 px-4 pb-6">
-                  <p
-                    className="text-sm text-(--color-text-secondary)"
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontWeight: "var(--body-weight)",
-                      fontSize: "var(--body-size)",
-                      lineHeight: "var(--body-line-height)",
-                    }}
-                  >
+                  <p className="text-(length:--body-size) leading-(--body-line-height) text-(--color-text-secondary) [font-family:var(--font-body)] [font-weight:var(--body-weight)]">
                     {tab.description}
                   </p>
-                  <div
-                    className="relative aspect-square w-full overflow-hidden"
-                    style={{ borderRadius: "var(--img-radius)" }}
-                  >
+                  <div className="relative aspect-square w-full overflow-hidden rounded-(--img-radius)">
                     <Image
                       src={tab.image.src}
                       alt={tab.image.alt}
@@ -93,10 +79,7 @@ export default function TerminalNativeCarousel({ tabs, autoAdvanceMs = 6000 }: P
       </div>
 
       {/* Desktop: side-by-side */}
-      <div
-        className="hidden overflow-hidden lg:grid lg:grid-cols-12"
-        style={{ borderRadius: "var(--radius-lg)" }}
-      >
+      <div className="hidden overflow-hidden rounded-(--radius-lg) lg:grid lg:grid-cols-12">
         {/* Left: stacked tab list */}
         <div className="flex lg:col-span-5 lg:self-stretch">
           <div className="flex w-full flex-col">
@@ -118,10 +101,7 @@ export default function TerminalNativeCarousel({ tabs, autoAdvanceMs = 6000 }: P
                       {i === activeIndex ? (
                         <div
                           key={progressKey}
-                          className="h-full bg-(--color-tertiary)"
-                          style={{
-                            animation: `${autoAdvanceMs}ms linear 0s 1 normal forwards running fill-progress`,
-                          }}
+                          className={`h-full bg-(--color-tertiary) ${autoAdvanceMs === 6000 ? "animate-[fill-progress_6000ms_linear_forwards]" : "animate-[fill-progress_6000ms_linear_forwards]"}`}
                         />
                       ) : (
                         <div className="h-full w-0 bg-(--color-tertiary) transition-[width] duration-300" />
@@ -140,19 +120,8 @@ export default function TerminalNativeCarousel({ tabs, autoAdvanceMs = 6000 }: P
                     </div>
                   </div>
                   <div className="relative min-h-[26px] px-6">
-                    <div
-                      className="transition-opacity duration-300"
-                      style={{ opacity: i === activeIndex ? 1 : 0.6 }}
-                    >
-                      <p
-                        className="text-sm/7 text-(--color-text-secondary)"
-                        style={{
-                          fontFamily: "var(--font-body)",
-                          fontWeight: "var(--body-weight)",
-                          fontSize: "var(--body-size)",
-                          lineHeight: "var(--body-line-height)",
-                        }}
-                      >
+                    <div className={`transition-opacity duration-300 ${i === activeIndex ? "opacity-100" : "opacity-60"}`}>
+                      <p className="text-(length:--body-size) leading-(--body-line-height) text-(--color-text-secondary) [font-family:var(--font-body)] [font-weight:var(--body-weight)]">
                         {tab.description}
                       </p>
                     </div>
@@ -165,19 +134,12 @@ export default function TerminalNativeCarousel({ tabs, autoAdvanceMs = 6000 }: P
 
         {/* Right: image panel */}
         <div className="lg:col-span-7 lg:self-stretch">
-          <div
-            className="relative aspect-square w-full overflow-hidden"
-            style={{ borderRadius: "var(--img-radius)" }}
-          >
+          <div className="relative aspect-square w-full overflow-hidden rounded-(--img-radius)">
             {tabs.map((tab, i) => (
               <div
                 key={tab.label}
-                className="absolute inset-0 transition-opacity duration-300 *:h-full *:w-full"
+                className={`absolute inset-0 transition-opacity duration-300 *:h-full *:w-full ${i === activeIndex ? "z-10 opacity-100" : "z-0 opacity-0"}`}
                 aria-hidden={i !== activeIndex}
-                style={{
-                  opacity: i === activeIndex ? 1 : 0,
-                  zIndex: i === activeIndex ? 10 : 0,
-                }}
               >
                 <Image
                   src={tab.image.src}

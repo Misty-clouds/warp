@@ -56,16 +56,13 @@ const partners = [
 ];
 
 const marqueeLogoHeight = 24;
+const headingClassName = "text-pretty text-(--color-text) text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] [font-family:var(--font-display)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]";
+const bodyClassName = "text-(--color-text-secondary) text-pretty text-(length:--body-size) leading-(--body-line-height) [font-family:var(--font-sans)]";
 
 function LogoMarquee() {
   return (
     <div className="relative overflow-hidden pb-10 mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-      <div
-        className="flex w-max"
-        style={{
-          animation: "scroll-left 40s linear infinite",
-        }}
-      >
+      <div className="flex w-max animate-[scroll-left_40s_linear_infinite]">
         {[false, true, true].map((hidden, groupIdx) => (
           <div
             key={groupIdx}
@@ -83,11 +80,7 @@ function LogoMarquee() {
                     alt={`${logo.name} logo`}
                     width={logo.width}
                     height={logo.height}
-                    style={{
-                      color: "transparent",
-                      height: `${marqueeLogoHeight}px`,
-                      width: `${Math.round((logo.width / logo.height) * marqueeLogoHeight)}px`,
-                    }}
+                    className="h-6 w-auto"
                   />
                 </div>
                 {logo.chip && (
@@ -129,7 +122,6 @@ function PartnerCard({ partner }: { partner: typeof partners[0] }) {
         width={partner.logoWidth}
         height={partner.logoHeight}
         className="relative z-10 max-h-8 w-auto max-w-40 object-contain"
-        style={{ color: "transparent" }}
       />
     </div>
   );
@@ -138,29 +130,14 @@ function PartnerCard({ partner }: { partner: typeof partners[0] }) {
 export default function Partners() {
   return (
     <section className="py-16" id="partners">
-      <div
-        className="mx-auto w-full px-6 lg:px-10"
-        style={{ maxWidth: "var(--content-max-width)" }}
-      >
+      <div className="mx-auto w-full max-w-(--content-max-width) px-6 lg:px-10">
         {/* Mobile layout */}
         <div className="flex flex-col gap-10 sm:hidden">
           <div className="flex min-w-0 flex-col gap-6">
-            <h2
-              className="text-pretty text-(--color-text)"
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: "var(--heading-weight)",
-                fontSize: "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
-                lineHeight: 1.15,
-                letterSpacing: "var(--heading-letter-spacing)",
-              }}
-            >
+            <h2 className={headingClassName}>
               Proud partner of industry leaders
             </h2>
-            <p
-              className="text-(--color-text-secondary) text-pretty"
-              style={{ fontFamily: "var(--font-sans)", fontSize: "var(--body-size)", lineHeight: "var(--body-line-height)" }}
-            >
+            <p className={bodyClassName}>
               Trusted by over 800,000 developers and thousands of engineering teams at leading companies
             </p>
             <div className="pt-4">
@@ -175,22 +152,10 @@ export default function Partners() {
         {/* Desktop layout */}
         <div className="hidden sm:grid grid-cols-1 items-center gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
           <div className="flex min-w-0 flex-col gap-6">
-            <h2
-              className="text-pretty text-(--color-text)"
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: "var(--heading-weight)",
-                fontSize: "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
-                lineHeight: 1.15,
-                letterSpacing: "var(--heading-letter-spacing)",
-              }}
-            >
+            <h2 className={headingClassName}>
               Proud partner of industry leaders
             </h2>
-            <p
-              className="text-(--color-text-secondary) text-pretty"
-              style={{ fontFamily: "var(--font-sans)", fontSize: "var(--body-size)", lineHeight: "var(--body-line-height)" }}
-            >
+            <p className={bodyClassName}>
               Trusted by over 800,000 developers and thousands of engineering teams at leading companies
             </p>
             <div className="pt-4">

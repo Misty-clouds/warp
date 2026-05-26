@@ -21,15 +21,7 @@ const agents: Agent[] = [
       "Pair Claude Code with Warp for expert agents in full harness, streaming logs, and notifications.",
     href: "/agents/claude-code",
     icon: (
-      <div
-        className="inline-flex shrink-0 items-center justify-center ring-1 ring-white/10"
-        style={{
-          width: 24,
-          height: 24,
-          borderRadius: 6,
-          backgroundColor: "rgb(217, 119, 87)",
-        }}
-      >
+      <div className="inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[rgb(217,119,87)] ring-1 ring-white/10">
         <ClaudeIcon />
       </div>
     ),
@@ -41,22 +33,14 @@ const agents: Agent[] = [
       "Run the OpenAI Codex CLI in Warp with vertical tabs, notifications, and code review.",
     href: "/agents/codex",
     icon: (
-      <div
-        className="inline-flex shrink-0 items-center justify-center ring-1 ring-white/10"
-        style={{
-          width: 24,
-          height: 24,
-          borderRadius: 6,
-          backgroundColor: "rgb(255, 255, 255)",
-        }}
-      >
+      <div className="inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-white ring-1 ring-white/10">
         <Image
           src="/logos/openai-black.svg"
           alt=""
           aria-hidden
           width={17}
           height={17}
-          style={{ width: 17, height: 17, objectFit: "contain" }}
+          className="size-[17px] object-contain"
         />
       </div>
     ),
@@ -68,15 +52,7 @@ const agents: Agent[] = [
       "Level up Opencode with Warp's agentic workflows, context sharing, and session management.",
     href: "/agents/opencode",
     icon: (
-      <div
-        className="inline-flex shrink-0 items-center justify-center ring-1 ring-white/10"
-        style={{
-          width: 24,
-          height: 24,
-          borderRadius: 6,
-          backgroundColor: "rgb(0, 0, 0)",
-        }}
-      >
+      <div className="inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-black ring-1 ring-white/10">
         <Image
           src="/logos/open-code.svg"
           alt=""
@@ -95,15 +71,7 @@ const agents: Agent[] = [
       "Supercharge the Gemini CLI with remote control, rich context, and multi-session views.",
     href: "/agents/gemini-cli",
     icon: (
-      <div
-        className="inline-flex shrink-0 items-center justify-center ring-1 ring-white/10"
-        style={{
-          width: 24,
-          height: 24,
-          borderRadius: 6,
-          backgroundColor: "transparent",
-        }}
-      >
+      <div className="inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-transparent ring-1 ring-white/10">
         <Image
           src="/logos/gemini-cli.svg"
           alt=""
@@ -122,15 +90,7 @@ const agents: Agent[] = [
       "The built-in coding agent at the center of Warp's agentic development environment.",
     href: "/agents/warp-agent",
     icon: (
-      <div
-        className="inline-flex shrink-0 items-center justify-center ring-1 ring-white/10 text-white"
-        style={{
-          width: 24,
-          height: 24,
-          borderRadius: 6,
-          backgroundColor: "rgb(18, 18, 18)",
-        }}
-      >
+      <div className="inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[rgb(18,18,18)] text-white ring-1 ring-white/10">
         <WarpMark className="size-3.5" />
       </div>
     ),
@@ -140,22 +100,9 @@ const agents: Agent[] = [
 export default function TerminalAgentList() {
   return (
     <section className="py-(--space-section)">
-      <div
-        className="mx-auto w-full px-6 lg:px-10 flex flex-col gap-10 sm:gap-16"
-        style={{ maxWidth: "var(--content-max-width)" }}
-      >
+      <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10">
         <div className="flex max-w-2xl flex-col gap-6">
-          <h2
-            className="text-pretty text-(--color-text)"
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontWeight: "var(--heading-weight)",
-              fontSize:
-                "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
-              lineHeight: 1.15,
-              letterSpacing: "var(--heading-letter-spacing)",
-            }}
-          >
+          <h2 className="text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-(--color-text) [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
             Built with any agent
           </h2>
         </div>

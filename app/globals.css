@@ -53,9 +53,9 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
-  --font-mono: var(--font-dm-mono), "DM Mono", ui-monospace, monospace;
-  --font-display: "Matter", var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-sans: var(--font-inter, "Inter"), system-ui, sans-serif;
+  --font-mono: var(--font-dm-mono, "DM Mono"), ui-monospace, monospace;
+  --font-display: "Matter", var(--font-inter, "Inter"), system-ui, sans-serif;
 
   --color-background: #121212;
   --color-surface: oklch(22% 0.004 84.6);

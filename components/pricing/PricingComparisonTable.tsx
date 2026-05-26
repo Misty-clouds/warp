@@ -181,10 +181,7 @@ export default function PricingComparisonTable() {
 
   return (
     <section className="py-(--space-section)" id="comparison">
-      <div
-        className="mx-auto w-full px-6 lg:px-10"
-        style={{ maxWidth: "var(--content-max-width)" }}
-      >
+      <div className="mx-auto w-full max-w-(--content-max-width) px-6 lg:px-10">
         {/* Desktop table */}
         <table className="w-full table-fixed border-collapse text-left text-sm/5 max-lg:hidden">
           <colgroup>
@@ -208,13 +205,7 @@ export default function PricingComparisonTable() {
                     <div className="mt-auto">
                       <Link
                         href={plan.href}
-                        className="btn-hover inline-flex w-full shrink-0 items-center justify-center gap-1.5 text-sm/7 font-medium hover:opacity-85 h-10 px-0"
-                        style={{
-                          background: "var(--btn-bg)",
-                          border: "var(--btn-border)",
-                          color: "var(--btn-text-color)",
-                          borderRadius: "var(--btn-radius)",
-                        }}
+                        className="btn-hover inline-flex h-10 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-0 text-sm/7 font-medium text-(--btn-text-color) [border:var(--btn-border)] hover:opacity-85"
                       >
                         {plan.cta}
                         <ArrowRightIcon className="size-3.5" />

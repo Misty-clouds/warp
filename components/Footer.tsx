@@ -1,11 +1,7 @@
 import Link from "next/link";
 import WarpLogoFull from "./shared/icons/WarpLogoFull";
-
-const ExternalIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-3.5 shrink-0">
-    <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z" />
-  </svg>
-);
+import ExternalLinkIcon from "./shared/icons/ExternalLinkIcon";
+import ShieldCheckIcon from "./shared/icons/ShieldCheckIcon";
 
 const footerNav = [
   {
@@ -85,7 +81,7 @@ export default function Footer() {
                           className="inline-flex items-center gap-1 hover:opacity-80"
                         >
                           {link.label}
-                          {link.external && <ExternalIcon />}
+                          {link.external && <ExternalLinkIcon className="size-3.5 shrink-0" />}
                         </a>
                       </li>
                     ))}
@@ -100,9 +96,7 @@ export default function Footer() {
               <div className="flex flex-wrap items-center gap-4">
                 <span>All Rights Reserved © 2026</span>
                 <span className="inline-flex items-center gap-1.5 text-(--color-text-secondary)">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4">
-                    <path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z" />
-                  </svg>
+                  <ShieldCheckIcon className="size-4" />
                   SOC 2 Certified
                 </span>
               </div>

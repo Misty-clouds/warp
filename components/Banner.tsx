@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import XIcon from "./shared/icons/XIcon";
 
 export default function Banner() {
   const [dismissed, setDismissed] = useState(true);
@@ -37,17 +38,7 @@ export default function Banner() {
         onClick={dismiss}
         className="absolute right-3 flex size-7 items-center justify-center rounded text-gray-500 transition-colors hover:bg-black/5 hover:text-gray-900"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="currentColor"
-          viewBox="0 0 256 256"
-          className="size-4"
-          aria-hidden="true"
-        >
-          <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" />
-        </svg>
+        <XIcon className="size-4" />
       </button>
     </div>
   );

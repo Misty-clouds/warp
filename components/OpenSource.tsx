@@ -1,17 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const PlayIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-6 translate-x-[1px]">
-    <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z" />
-  </svg>
-);
-
-const ArrowIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-3.5" aria-hidden="true">
-    <path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd" />
-  </svg>
-);
+import PlayIcon from "./shared/icons/PlayIcon";
+import ArrowRightIcon from "./shared/icons/ArrowRightIcon";
 
 export default function OpenSource() {
   return (
@@ -60,7 +50,7 @@ export default function OpenSource() {
               }}
             >
               Read more
-              <ArrowIcon />
+              <ArrowRightIcon className="size-3.5" />
             </Link>
           </div>
         </div>
@@ -83,7 +73,7 @@ export default function OpenSource() {
           <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
           <span aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-center justify-center">
             <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-black shadow-xl transition-transform duration-200 ease-out group-hover/video:scale-110">
-              <PlayIcon />
+              <PlayIcon className="size-6 translate-x-px" />
             </span>
           </span>
         </button>

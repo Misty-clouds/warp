@@ -1,4 +1,4 @@
-import TerminalFeatureCarousel from "./TerminalFeatureCarousel";
+import TerminalNativeCarousel from "./TerminalNativeCarousel";
 
 const tabs = [
   {
@@ -74,7 +74,7 @@ export default function TerminalNativeSection() {
           </p>
         </div>
 
-        <TerminalFeatureCarousel tabs={tabs} autoAdvanceMs={6000} aspect="square" />
+        <TerminalNativeCarousel tabs={tabs} autoAdvanceMs={6000} />
       </div>
     </section>
   );

@@ -55,6 +55,8 @@ const partners = [
   },
 ];
 
+const marqueeLogoHeight = 24;
+
 function LogoMarquee() {
   return (
     <div className="relative overflow-hidden pb-10 mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
@@ -81,8 +83,11 @@ function LogoMarquee() {
                     alt={`${logo.name} logo`}
                     width={logo.width}
                     height={logo.height}
-                    className="h-6 w-auto"
-                    style={{ color: "transparent" }}
+                    style={{
+                      color: "transparent",
+                      height: `${marqueeLogoHeight}px`,
+                      width: `${Math.round((logo.width / logo.height) * marqueeLogoHeight)}px`,
+                    }}
                   />
                 </div>
                 {logo.chip && (

@@ -4,48 +4,25 @@ const logos = [
   {
     name: "GitHub",
     dark: "/logos/terminal/github-dark.svg",
-    light: "/logos/terminal/github-light.svg",
     width: 88,
     height: 25,
     href: "https://github.com",
     since: "Since 2023",
   },
-  {
-    name: "Amazon",
-    dark: "/logos/terminal/amazon-dark.svg",
-    light: "/logos/terminal/amazon-light.svg",
-    width: 76,
-    height: 23,
-  },
-  {
-    name: "Asana",
-    dark: "/logos/terminal/asana-dark.svg",
-    light: "/logos/terminal/asana-light.svg",
-    width: 123,
-    height: 24,
-  },
-  {
-    name: "Nvidia",
-    dark: "/logos/terminal/nvidia-dark.svg",
-    light: "/logos/terminal/nvidia-light.svg",
-    width: 111,
-    height: 23,
-  },
-  {
-    name: "Retool",
-    dark: "/logos/terminal/retool-dark.svg",
-    light: "/logos/terminal/retool-light.svg",
-    width: 113,
-    height: 24,
-  },
-  {
-    name: "Docker",
-    dark: "/logos/terminal/docker-dark.svg",
-    light: "/logos/terminal/docker-light.svg",
-    width: 100,
-    height: 23,
-  },
+  { name: "Amazon", dark: "/logos/terminal/amazon-dark.svg", width: 76, height: 23 },
+  { name: "Asana", dark: "/logos/terminal/asana-dark.svg", width: 123, height: 24 },
+  { name: "Nvidia", dark: "/logos/terminal/nvidia-dark.svg", width: 111, height: 23 },
+  { name: "Retool", dark: "/logos/terminal/retool-dark.svg", width: 113, height: 24 },
+  { name: "Docker", dark: "/logos/terminal/docker-dark.svg", width: 100, height: 23 },
+  { name: "VMware", dark: "/logos/terminal/vmware-dark.svg", width: 118, height: 18 },
+  { name: "Ramp", dark: "/logos/terminal/ramp-dark.svg", width: 86, height: 23 },
+  { name: "DoorDash", dark: "/logos/terminal/doordash-dark.svg", width: 147, height: 17 },
+  { name: "Amplitude", dark: "/logos/terminal/amplitude-dark.svg", width: 154, height: 33 },
+  { name: "Peloton", dark: "/logos/terminal/peloton-dark.svg", width: 125, height: 37 },
+  { name: "Teamworks", dark: "/logos/terminal/teamworks-dark.svg", width: 148, height: 37 },
 ];
+
+const marqueeLogoHeight = 24;
 
 function LogoItem({ logo }: { logo: (typeof logos)[0] }) {
   return (
@@ -56,7 +33,10 @@ function LogoItem({ logo }: { logo: (typeof logos)[0] }) {
           alt={logo.name}
           width={logo.width}
           height={logo.height}
-          style={{ height: "1.5rem", width: "auto" }}
+          style={{
+            height: `${marqueeLogoHeight}px`,
+            width: `${Math.round((logo.width / logo.height) * marqueeLogoHeight)}px`,
+          }}
         />
       </div>
       {logo.since && logo.href && (
@@ -66,6 +46,16 @@ function LogoItem({ logo }: { logo: (typeof logos)[0] }) {
           </a>
         </span>
       )}
+    </div>
+  );
+}
+
+function LogoSet({ suffix }: { suffix: string }) {
+  return (
+    <div className="flex shrink-0 items-center gap-12 pr-12">
+      {logos.map((logo) => (
+        <LogoItem key={`${logo.name}-${suffix}`} logo={logo} />
+      ))}
     </div>
   );
 }
@@ -88,16 +78,8 @@ export default function TerminalLogoMarquee() {
           className="flex w-max animate-[scroll-left_var(--scroll-duration)_linear_infinite]"
           style={{ "--scroll-duration": "calc(40s * var(--motion-speed, 1))" } as React.CSSProperties}
         >
-          <div className="flex shrink-0 items-center gap-12 pr-12" aria-hidden="false">
-            {logos.map((logo) => (
-              <LogoItem key={logo.name} logo={logo} />
-            ))}
-          </div>
-          <div className="flex shrink-0 items-center gap-12 pr-12" aria-hidden="true">
-            {logos.map((logo) => (
-              <LogoItem key={`${logo.name}-dup`} logo={logo} />
-            ))}
-          </div>
+          <LogoSet suffix="a" />
+          <LogoSet suffix="b" />
         </div>
       </div>
     </section>

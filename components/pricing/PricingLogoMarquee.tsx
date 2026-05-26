@@ -1,65 +1,40 @@
 import Image from "next/image";
 
 const logos = [
-  {
-    name: "GitHub",
-    darkSrc: "/logos/terminal/github-dark.svg",
-    lightSrc: "/logos/terminal/github-light.svg",
-    width: 88,
-    height: 25,
-  },
-  {
-    name: "Amazon",
-    darkSrc: "/logos/terminal/amazon-dark.svg",
-    lightSrc: "/logos/terminal/amazon-light.svg",
-    width: 76,
-    height: 23,
-  },
-  {
-    name: "Asana",
-    darkSrc: "/logos/terminal/asana-dark.svg",
-    lightSrc: "/logos/terminal/asana-light.svg",
-    width: 77,
-    height: 20,
-  },
-  {
-    name: "Nvidia",
-    darkSrc: "/logos/terminal/nvidia-dark.svg",
-    lightSrc: "/logos/terminal/nvidia-light.svg",
-    width: 74,
-    height: 14,
-  },
-  {
-    name: "Retool",
-    darkSrc: "/logos/terminal/retool-dark.svg",
-    lightSrc: "/logos/terminal/retool-light.svg",
-    width: 74,
-    height: 20,
-  },
-  {
-    name: "Docker",
-    darkSrc: "/logos/terminal/docker-dark.svg",
-    lightSrc: "/logos/terminal/docker-light.svg",
-    width: 74,
-    height: 20,
-  },
+  { name: "GitHub", dark: "/logos/terminal/github-dark.svg", width: 88, height: 25 },
+  { name: "Amazon", dark: "/logos/terminal/amazon-dark.svg", width: 76, height: 23 },
+  { name: "Asana", dark: "/logos/terminal/asana-dark.svg", width: 123, height: 24 },
+  { name: "Nvidia", dark: "/logos/terminal/nvidia-dark.svg", width: 111, height: 23 },
+  { name: "Retool", dark: "/logos/terminal/retool-dark.svg", width: 113, height: 24 },
+  { name: "Docker", dark: "/logos/terminal/docker-dark.svg", width: 100, height: 23 },
+  { name: "VMware", dark: "/logos/terminal/vmware-dark.svg", width: 118, height: 18 },
+  { name: "Ramp", dark: "/logos/terminal/ramp-dark.svg", width: 86, height: 23 },
+  { name: "DoorDash", dark: "/logos/terminal/doordash-dark.svg", width: 147, height: 17 },
+  { name: "Amplitude", dark: "/logos/terminal/amplitude-dark.svg", width: 154, height: 33 },
+  { name: "Peloton", dark: "/logos/terminal/peloton-dark.svg", width: 125, height: 37 },
+  { name: "Teamworks", dark: "/logos/terminal/teamworks-dark.svg", width: 148, height: 37 },
 ];
 
-function LogoSet() {
+const marqueeLogoHeight = 24;
+
+function LogoSet({ suffix }: { suffix: string }) {
   return (
     <div className="flex shrink-0 items-center gap-12 pr-12">
       {logos.map((logo) => (
         <div
-          key={logo.name}
+          key={`${logo.name}-${suffix}`}
           className="group/logo relative flex w-auto shrink-0 flex-col items-center opacity-40 grayscale transition-opacity hover:opacity-70"
         >
           <div className="flex h-7 items-center">
             <Image
-              src={logo.darkSrc}
+              src={logo.dark}
               alt={logo.name}
               width={logo.width}
               height={logo.height}
-              style={{ height: "1.5rem", width: "auto" }}
+              style={{
+                height: `${marqueeLogoHeight}px`,
+                width: `${Math.round((logo.width / logo.height) * marqueeLogoHeight)}px`,
+              }}
             />
           </div>
         </div>
@@ -81,11 +56,11 @@ export default function PricingLogoMarquee() {
       </div>
       <div className="relative overflow-hidden pb-10 mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
         <div
-          className="flex w-max animate-scroll-left"
-          style={{ "--scroll-duration": "40s" } as React.CSSProperties}
+          className="flex w-max animate-[scroll-left_var(--scroll-duration)_linear_infinite]"
+          style={{ "--scroll-duration": "calc(40s * var(--motion-speed, 1))" } as React.CSSProperties}
         >
-          <LogoSet />
-          <LogoSet />
+          <LogoSet suffix="a" />
+          <LogoSet suffix="b" />
         </div>
       </div>
     </section>

@@ -27,7 +27,7 @@
 }
 
 .animated-border {
-  background: conic-gradient(from 0deg, transparent 30%, var(--color-accent-purple) 60%, transparent 70%);
+  background: conic-gradient(from 0deg, transparent 30%, var(--color-tertiary) 60%, transparent 70%);
 }
 
 .animate-spin-slow {
@@ -65,7 +65,7 @@
   --color-text-secondary: oklch(71.5% 0.008 84.6);
   --color-muted: oklch(48% 0.007 84.6);
   --color-accent-purple: #cbb0f7;
-  --color-tertiary: var(--color-text);
+  --color-tertiary: #c178ff;
   --color-accent: oklch(72% 0.12 145);
 
   --space-lg: 1.5rem;

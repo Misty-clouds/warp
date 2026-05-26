@@ -78,7 +78,7 @@ export default function Footer() {
                           href={link.href}
                           target={link.external ? "_blank" : undefined}
                           rel={link.external ? "noopener noreferrer" : undefined}
-                          className="inline-flex items-center gap-1 hover:opacity-80"
+                          className="link-underline-reveal inline-flex items-center gap-1"
                         >
                           {link.label}
                           {link.external && <ExternalLinkIcon className="size-3.5 shrink-0" />}

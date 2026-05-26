@@ -43,42 +43,42 @@ const MONTHLY_PLANS: Plan[] = [
       {
         text: "Limited Warp Agent access",
         dotted: true,
-        tooltip: "Up to 150 AI credits for the first 2 months, then 60/month",
+        tooltip: "Limited choice of models and minimal free credits unless BYOK is enabled",
       },
       {
         text: "Limited cloud agents access",
         dotted: true,
-        tooltip: "Run up to 4 concurrent cloud agents with 2 vCPUs and 4 GiB RAM",
+        tooltip: "Cloud connected, background agents that run automatically from schedules, CI, webhooks, or integration events.",
       },
       {
         text: "Bring your own API key*",
         dotted: true,
-        tooltip: "Connect your own OpenAI, Anthropic, or other provider API keys",
+        tooltip: "Power the Warp Agent using your own API key for OpenAI, Anthropic, or Google models. Available to individual users and organizations with 10 or fewer employees. Larger organizations need a Warp Business or Enterprise plan.",
       },
       {
         text: "Custom inference endpoint support*",
         dotted: true,
-        tooltip: "Route AI requests to a custom inference endpoint you control",
+        tooltip: "Connect an OpenAI-compatible inference endpoint to power Warp Agent. Available to individual users and organizations with 10 or fewer employees. Larger organizations need a Warp Business or Enterprise plan.",
       },
       {
         text: "Use any harness in the cloud (beta)",
         dotted: true,
-        tooltip: "Choose from available cloud execution environments for your agents",
+        tooltip: "Bring Claude Code, Codex, and the Warp Agent into Oz cloud environments, and mix and match them across workflows.",
       },
       {
         text: "Individually configured data controls",
         dotted: true,
-        tooltip: "Each user can configure their own Zero Data Retention and privacy settings",
+        tooltip: "Configure app telemetry and data settings in Settings > Privacy. Warp does not allow contracted model providers to retain, store, or train models on your data.",
       },
       {
         text: "Limited Warp Drive and collaboration feature access",
         dotted: true,
-        tooltip: "Access to 10 workflows and 3 notebooks in shared Warp Drive; up to 5 shared sessions",
+        tooltip: "Create and share a limited number of workflows, notebooks, and shared sessions.",
       },
       {
         text: "Limited cloud conversation storage",
         dotted: true,
-        tooltip: "Store up to 30 AI conversations in the cloud",
+        tooltip: "Save and continue past AI conversations across devices. Free includes up to 30 cloud-stored conversations.",
       },
     ],
   },
@@ -101,7 +101,7 @@ const MONTHLY_PLANS: Plan[] = [
       {
         text: "Reload credits with volume-based discounts, auto-reload, and team-wide spend cap",
         dotted: true,
-        tooltip: "Purchase additional credits beyond your monthly allotment at discounted rates; configure auto-reload and team spending limits",
+        tooltip: "Add-on credits for extra AI usage. Reload credits are tied to individual users, roll over to future billing cycles, and are valid for 12 months.",
       },
       { text: "Extended cloud agents access" },
       { text: "Highest codebase indexing limits" },
@@ -109,7 +109,7 @@ const MONTHLY_PLANS: Plan[] = [
       {
         text: "Unlimited cloud conversation storage",
         dotted: true,
-        tooltip: "Store an unlimited number of AI conversations in the cloud",
+        tooltip: "Cloud-synced conversations let you view and continue past AI conversations across devices.",
       },
       { text: "Private email support" },
     ],
@@ -129,12 +129,12 @@ const MONTHLY_PLANS: Plan[] = [
       {
         text: "12× the included credits of Build",
         dotted: true,
-        tooltip: "18,000 monthly AI credits vs 1,500 in the Build plan",
+        tooltip: "Save 17% on included credits compared to Reload Credits",
       },
       {
         text: "Reload credits with volume-based discounts, auto-reload, and team-wide spend cap",
         dotted: true,
-        tooltip: "Purchase additional credits at discounted rates; configure auto-reload and team spending limits",
+        tooltip: "Add-on credits for extra AI usage. Reload credits are tied to individual users, roll over to future billing cycles, and are valid for 12 months.",
       },
     ],
   },
@@ -157,12 +157,12 @@ const MONTHLY_PLANS_ROW2: Plan[] = [
       {
         text: "Team usage metrics",
         dotted: true,
-        tooltip: "Track credit consumption, agent activity, and spending across all team members",
+        tooltip: "View team-level usage to understand AI adoption, credit consumption, and activity across your team.",
       },
       {
         text: "Admin-configurable data controls",
         dotted: true,
-        tooltip: "Admins can enforce Zero Data Retention and other privacy policies for all team members",
+        tooltip: "Admins can configure team-level data settings, including telemetry and data collection controls. Warp does not allow contracted model providers to retain, store, or train models on your data.",
       },
       { text: "SAML-based SSO" },
     ],
@@ -180,48 +180,48 @@ const MONTHLY_PLANS_ROW2: Plan[] = [
       {
         text: "Custom shared credit pools and usage terms",
         dotted: true,
-        tooltip: "Negotiate custom credit volumes and pricing terms for your organization",
+        tooltip: "Custom credit allocation, usage terms, and commercial structure based on your organization's needs.",
       },
       {
         text: "Advanced spend controls",
         dotted: true,
-        tooltip: "Set granular per-user and organization-wide spending limits",
+        tooltip: "Configure team-wide and per-user spend limits, usage policies, and custom controls for your organization.",
       },
       {
         text: "Enterprise admin controls",
         dotted: true,
-        tooltip: "Advanced administrative features including multi-admin support and custom policy enforcement",
+        tooltip: "Advanced controls for governance, security, and usage management, including AI autonomy controls, model selection, Codebase Context controls, agent attribution, secret redaction, domain capture, and auditability.",
       },
       {
         text: "Enterprise Analytics API",
         dotted: true,
-        tooltip: "Export usage, billing, and activity data programmatically via API integration",
+        tooltip: "Pull team-level usage data into your own dashboards, cost allocation tools, or audit pipelines. Includes access to summary metrics, per-user rollups, and message-level activity metadata.",
       },
       { text: "Multi-admin support" },
       {
         text: "Bring your own LLM",
         dotted: true,
-        tooltip: "Integrate and use your organization's own hosted language models with Warp",
+        tooltip: "Use your cloud AI provider or approved inference infrastructure while Warp manages routing, orchestration, governance, and observability. Supports providers such as AWS Bedrock, Google Vertex AI, Azure AI Foundry, and internal gateways.",
       },
       {
         text: "Self-host cloud agents on your infrastructure",
         dotted: true,
-        tooltip: "Run Warp cloud agents entirely within your own cloud environment for maximum data control",
+        tooltip: "Run Warp cloud agents on your own infrastructure, including Docker, Kubernetes, or custom internal compute environments.",
       },
       {
         text: "Custom codebase indexing",
         dotted: true,
-        tooltip: "Index codebases beyond standard limits with custom file counts tailored to your needs",
+        tooltip: "Custom limits and controls for larger organizations and complex codebases.",
       },
       {
         text: "Cross-harness agent memory (Research Preview)",
         dotted: true,
-        tooltip: "Agents can share context and memory across different cloud execution environments",
+        tooltip: "Carry preferences, project knowledge, and learnings across harnesses and sessions.",
       },
       {
         text: "White-glove onboarding and implementation engineer support",
         dotted: true,
-        tooltip: "Dedicated Warp implementation engineers assist with your team's setup, configuration, and integration",
+        tooltip: "A structured multi-week implementation program with hands-on guidance from Warp engineers to help your team deploy production Oz Cloud Agent automations.",
       },
       { text: "Dedicated account manager and a shared Slack channel with your team" },
     ],
@@ -270,7 +270,7 @@ function CardInner({ plan, reloadOpen, onToggleReload }: {
         <div className="flex items-center gap-3">
           <h3 className="text-2xl/8 tracking-tight text-(--color-text)">{plan.name}</h3>
           {plan.recommended && (
-            <div className="inline-flex rounded-full px-2.5 py-0.5 text-xs/5 font-medium bg-(--color-accent-purple) text-black">
+            <div className="inline-flex rounded-full px-2.5 py-0.5 text-xs/5 font-medium bg-(--color-tertiary) text-(--color-background)">
               Recommended
             </div>
           )}
@@ -312,20 +312,31 @@ function CardInner({ plan, reloadOpen, onToggleReload }: {
         </ul>
       </div>
       {plan.hasReloadSection && (
-        <div className="mt-auto pt-6 border-t border-border/20">
+        <div className="relative mt-auto pt-6 border-t border-border/20">
+          {reloadOpen && (
+            <div className="absolute bottom-full left-0 right-0 mb-2 rounded-xl bg-(--color-panel) p-4 text-xs/5 text-(--color-text-secondary) shadow-lg ring-1 ring-inset ring-border/20 z-10">
+              <p className="mb-3 text-(--color-text-secondary)">Purchase additional credits when included monthly credits run out.</p>
+              <ul className="mb-3 space-y-1.5">
+                <li>• $10 for 400 credits</li>
+                <li>• $20 for 1,000 credits <span className="text-(--color-muted)">(20% discount)</span></li>
+                <li>• $50 for 3,000 credits <span className="text-(--color-muted)">(35% discount)</span></li>
+                <li>• $100 for 6,500 credits <span className="text-(--color-muted)">(40% discount)</span></li>
+              </ul>
+              <p className="text-(--color-muted)">Note: Reload Credits are tied to individual users, roll over to future billing cycles, and are valid for 12 months.</p>
+            </div>
+          )}
           <button
             type="button"
             onClick={onToggleReload}
-            className="flex w-full items-center justify-center gap-2 rounded-lg border border-border/30 px-4 py-3 text-sm/6 text-(--color-text-secondary) transition-colors duration-(--duration-normal) hover:border-border/50 hover:text-(--color-text)"
+            className={`flex w-full items-center justify-center gap-2 rounded-lg border px-4 py-3 text-sm/6 transition-colors duration-(--duration-normal) ${
+              reloadOpen
+                ? "border-border/50 text-(--color-text)"
+                : "border-border/30 text-(--color-text-secondary) hover:border-border/50 hover:text-(--color-text)"
+            }`}
           >
             <InfoCircleIcon className="size-5 shrink-0" />
             Reload credit discounts
           </button>
-          {reloadOpen && (
-            <div className="mt-3 rounded-lg bg-(--color-panel) p-3 text-xs/5 text-(--color-text-secondary)">
-              Reload credits offer volume-based discounts: larger purchases get better per-credit rates. Credits roll over month to month and remain valid for 12 months.
-            </div>
-          )}
         </div>
       )}
     </div>
@@ -418,7 +429,7 @@ export default function PricingCards() {
                 Annually
               </button>
             </div>
-            <span className="text-sm/7 font-medium italic text-(--color-accent-purple)">10% off</span>
+            <span className="text-sm/7 font-medium italic text-(--color-tertiary)">10% off</span>
           </div>
         </div>
 

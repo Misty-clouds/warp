@@ -163,7 +163,7 @@ const DashCell = () => (
 );
 
 function CellContent({ value }: { value: CellValue }) {
-  if (value === CHECK) return <CheckCircleIcon className="inline-block size-5 text-(--color-accent-purple)" />;
+  if (value === CHECK) return <CheckCircleIcon className="inline-block size-5 text-(--color-tertiary)" />;
   if (value === DASH) return <DashCell />;
   return <>{value}</>;
 }

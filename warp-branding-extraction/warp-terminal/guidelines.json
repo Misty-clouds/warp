@@ -1,0 +1,2364 @@
+{
+  "metadata": {
+    "version": "0.1.0",
+    "last_updated": "",
+    "extracted_at": "2026-05-25 18:35:33.576707+00:00",
+    "project_name": "Warp Style Guide",
+    "status": "Production Ready"
+  },
+  "profile": {
+    "brand_name": "Warp",
+    "source_url": "https://www.warp.dev",
+    "page_type_category": "Core Marketing",
+    "page_type": "Homepage",
+    "industry": "Developer Tools / AI",
+    "primary_purpose": "Drive downloads and adoption of Warp terminal as the premier platform for building with AI coding agents",
+    "main_cta": "Download Warp",
+    "copy_tone": [
+      "Confident",
+      "Technical",
+      "Direct"
+    ],
+    "brand_signature": "Dark, immersive interface with deep charcoal backgrounds and atmospheric textural hero imagery featuring aurora-like gradients. Clean, minimal typography with Matter headings paired with Inter body text creates a premium developer tool aesthetic that emphasizes clarity and precision.",
+    "visual_language": {
+      "keywords": [
+        "dark-mode",
+        "developer-centric",
+        "terminal-native",
+        "atmospheric",
+        "minimal",
+        "precise",
+        "immersive"
+      ],
+      "accent_strategy": "Subtle tertiary purple accent (--color-tertiary) used sparingly for progress indicators and interactive states; primary palette relies on warm neutrals (olive tones) against deep dark backgrounds",
+      "highlights": "Atmospheric gradient overlays on hero imagery with radial light effects; product screenshots with subtle ring borders for definition"
+    },
+    "strategy": {
+      "target_audience": [
+        "Senior software engineers and developers who work heavily in terminal environments and seek productivity improvements",
+        "Engineering teams at tech companies evaluating AI-powered development tools for code review and automation",
+        "DevOps and infrastructure engineers managing cloud deployments who need efficient CLI workflows",
+        "Technical leaders and CTOs exploring enterprise-ready AI agent platforms for their organizations"
+      ],
+      "executive_synthesis": "Warp's visual identity strategically positions the product at the intersection of familiar developer tooling and cutting-edge AI capabilities. The dark, terminal-native aesthetic immediately signals to developers that this is a tool built for them, while the atmospheric hero imagery and premium typography elevate it beyond typical CLI tools. The multi-agent tabbed showcase (Warp Agent, Claude Code, Codex, OpenCode, Gemini) communicates platform versatility and openness. Enterprise trust signals through the logo bar featuring GitHub, Amazon, and Nvidia, combined with enterprise navigation, support both individual adoption and organizational purchasing decisions."
+    },
+    "style_classification": {
+      "primary_style": "Cyberpunk",
+      "confidence": "High",
+      "category_style": "Contemporary Aesthetic",
+      "reasoning": "The visual impression from the screenshot immediately signals a dark, futuristic, developer-focused aesthetic. The hero section features a dramatic aurora gradient (pink, purple, teal, cyan) with particle effects against pure black backgrounds\u2014this is the quintessential \"neon on dark\" Cyberpunk signature. The color profile confirms this: dominant #121212 backgrounds with vibrant accent purples (#CBB0F7), teals, and pinks creating high contrast neon glows. The typography uses Sans-Serif Modern (Inter) and Monospace (DM Mono) for code/terminal elements\u2014both explicitly listed as Cyberpunk type characteristics. The layout is Grid-Based Strict with card-based sections and dense information architecture (security features, integrations, download options), matching Cyberpunk's Dense/Packed layout profile. The glass blur effects (backdrop-filter: blur) and linear gradients in the surfaces profile add to the high-tech, futuristic feel. The overall mood is dystopian-adjacent tech: terminal windows, code editors, AI agents, and developer tooling presented with a premium, cutting-edge visual language.",
+      "secondary_style": "Corporate",
+      "reasoning_secondary": "The Corporate modifier applies because despite the bold Cyberpunk aesthetic, the design maintains enterprise credibility signals: prominent logo bar featuring major tech companies (DoorDash, OpenAI, GitHub, Amazon, Anthropic), a dedicated \"Designed for security. Built for organizations\" section emphasizing SOC 2 compliance and enterprise controls, and structured feature grids with icon+text patterns common in B2B SaaS. The typography hierarchy is professional and readable (not chaotic), the layout follows clean 12-column grids with generous whitespace between sections, and the overall information architecture prioritizes trust and competence\u2014hallmarks of Corporate style. This is Cyberpunk filtered through enterprise design requirements."
+    }
+  },
+  "layout": {
+    "classification": [
+      "centered_symmetric",
+      "card_based"
+    ],
+    "grid": {
+      "columns": 12,
+      "gutter": "1.5rem",
+      "max_width": "80rem"
+    },
+    "breakpoints": {
+      "mobile": "0px - 1023px (1 Column, 24px gutter)",
+      "tablet": "1024px - 1279px (8 Columns, 24px gutter)",
+      "desktop": "1280px+ (12 Columns, 24px gutter)",
+      "large": null
+    },
+    "section_separation": "Sections are separated by generous vertical whitespace (py-[var(--space-section)], approximately 4rem \u00d7 density multiplier). Alternating background colors between pure black (#000000) and very dark charcoal (#121212). Some sections have gradient backgrounds (hero, agent workflows) transitioning from teal to purple. No visible divider lines or borders between sections\u2014separation achieved through whitespace and subtle background color shifts. Cards and feature sections use dark surfaces (#1C1C1C, #2C2B29) that float against the black background with subtle borders (rgba(255,255,255,0.1)).",
+    "ascii_template": "```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 [warp]  Product  Releases  Showcase  Enterprise  Pricing \u2502\n\u2502                                      [Search] [Download \u25bc]\u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                           \u2502\n\u2502                    [HERO SECTION]                        \u2502\n\u2502              The best place to                           \u2502\n\u2502              build with agents                           \u2502\n\u2502                                                           \u2502\n\u2502                   [Search bar...]                        \u2502\n\u2502                                                           \u2502\n\u2502         [Large terminal/code window mockup with          \u2502\n\u2502          colorful aurora/gradient background and         \u2502\n\u2502          particle effects]                               \u2502\n\u2502                                                           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                           \u2502\n\u2502           [Logo bar: DOORDASH OPENAI1 REPLIT             \u2502\n\u2502            VERCEL GitHub amazon ANTHROPIC Stripe]        \u2502\n\u2502                                                           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                           \u2502\n\u2502              Build, review, and ship in                  \u2502\n\u2502                  one surface.                            \u2502\n\u2502        [Subheading about workflows]                      \u2502\n\u2502                                                           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u2502\n\u2502  \u2502  [VS Code    \u2502  \u2502 [Searchable  \u2502  \u2502              \u2502  \u2502\n\u2502  \u2502   style UI   \u2502  \u2502  Code Review \u2502  \u2502              \u2502  \u2502\n\u2502  \u2502   mockup]    \u2502  \u2502   mockup]    \u2502  \u2502              \u2502  \u2502\n\u2502  \u2502              \u2502  \u2502              \u2502  \u2502              \u2502  \u2502\n\u2502  \u2502 Vsible files \u2502  \u2502 Integrate... \u2502  \u2502 Notification \u2502  \u2502\n\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2502\n\u2502                                                           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u2502\n\u2502  \u2502 [Copilot     \u2502  \u2502  [Drive      \u2502  \u2502 [Notif       \u2502  \u2502\n\u2502  \u2502  Appearance  \u2502  \u2502   mockup]    \u2502  \u2502  mockup]     \u2502  \u2502\n\u2502  \u2502   mockup]    \u2502  \u2502              \u2502  \u2502              \u2502  \u2502\n\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2502\n\u2502                                                           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                           \u2502\n\u2502          Agent workflows that feel native.               \u2502\n\u2502                                                           \u2502\n\u2502              [Feature descriptions with                  \u2502\n\u2502               terminal window mockups on                 \u2502\n\u2502               gradient teal/blue/purple                  \u2502\n\u2502               background]                                \u2502\n\u2502                                                           \u2502\n\u2502  \u2022 Natural tasks                                         \u2502\n\u2502  \u2022 Step-by-step                                          \u2502\n\u2502  \u2022 Right-in-place                                        \u2502\n\u2502  \u2022 Interactive code review                               \u2502\n\u2502                                                           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                           \u2502\n\u2502         Designed for security. Built for                 \u2502\n\u2502              organizations.                              \u2502\n\u2502                                                           \u2502\n\u2502  [6-column grid of security/enterprise features]        \u2502\n\u2502  \u2022 On-premise & self-hosted  \u2022 SOC 2 compliance         \u2502\n\u2502  \u2022 Access controls           \u2022 Session recording        \u2502\n\u2502  \u2022 Audit logs               \u2022 Advanced integration      \u2502\n\u2502                                                           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                           \u2502\n\u2502              Built with any agent                        \u2502\n\u2502                                                           \u2502\n\u2502  [6-column grid of AI/agent integrations]               \u2502\n\u2502  \u2022 Claude (Anthropic)        \u2022 GitHub Copilot           \u2502\n\u2502  \u2022 Custom AI                 \u2022 OpenAI                   \u2502\n\u2502  \u2022 Gemini (Google)           \u2022 Amazon Q                 \u2502\n\u2502                                                           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                           \u2502\n\u2502                  Get Warp today                          \u2502\n\u2502     Get better access to development environment         \u2502\n\u2502                                                           \u2502\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u2502\n\u2502  \u2502    Mac      \u2502  \u2502    Linux    \u2502  \u2502   Windows   \u2502     \u2502\n\u2502  \u2502  [macOS]    \u2502  \u2502  [Linux]    \u2502  \u2502  [Windows]  \u2502     \u2502\n\u2502  \u2502[Input email]\u2502  \u2502[Input email]\u2502  \u2502[Input email]\u2502     \u2502\n\u2502  \u2502[Download]   \u2502  \u2502[Download]   \u2502  \u2502[Download]   \u2502     \u2502\n\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2502\n\u2502                                                           \u2502\n\u2502        [Terminal command examples for each OS]           \u2502\n\u2502                                                           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                       [FOOTER]                           \u2502\n\u2502                                                           \u2502\n\u2502  Product      Features      About        Blog            \u2502\n\u2502  \u2022 Terminal   \u2022 IDE Support \u2022 Careers    \u2022 Community     \u2502\n\u2502  \u2022 AI         \u2022 Security    \u2022 Press      \u2022 Docs          \u2502\n\u2502  \u2022 Teams      \u2022 Integrations\u2022 Contact    \u2022 Status        \u2502\n\u2502                                                           \u2502\n\u2502  \u00a9 2025 DevTools  [Social icons]  Terms  Privacy         \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n---VISUAL ANNOTATIONS---\n\n**NAV:**\n- Background: Dark navy/charcoal (#0D1117 approx)\n- Logo: \"warp\" in lowercase, left-aligned\n- Buttons/CTAs: \"Download \u25bc\" (white text, dropdown button, right-aligned)\n- Typography: Clean sans-serif, minimal weight\n- Layout: Horizontal navigation with product links, right-aligned CTAs\n\n**HERO:**\n- Background: Vibrant aurora gradient (pink, purple, teal, cyan) with particle/snow effects\n- Main headline: Large white text, bold weight\n- Terminal mockup: Dark-themed code editor overlaid on gradient\n- Imagery: Abstract, ethereal gradient with bokeh lights suggesting AI/magic\n- Search bar: White/light with subtle shadow\n- Colors: Dominant pink (#FF1CF7), cyan (#00FFD1), purple (#8B5CF6)\n- Mood: Futuristic, innovative, magical\n\n**LOGO BAR:**\n- Background: Dark charcoal/black\n- Layout: Horizontal scroll of grayscale company logos\n- Treatment: Monochrome logos (DoorDash, OpenAI, Replit, Vercel, GitHub, Amazon, Anthropic, Stripe)\n\n**BUILD/REVIEW SECTION:**\n- Background: Black (#000000)\n- Headline: White, large, centered\n- Layout: 3-column grid of feature cards\n- Cards: Dark surface (#1C1C1C) with subtle borders, rounded corners\n- Mockups: Screenshot-style with light purple/lavender backgrounds\n- Colors: Accent purple/lavender (#B4A7D6) backgrounds on mockups\n- Typography: Clean, readable, minimal\n\n**FEATURE GRID (3x2):**\n- Background: Dark black\n- Cards: Dark charcoal surfaces with mockup screenshots\n- Mockups show: VS Code UI, code review interface, notification panels\n- Treatment: Glass-morphism effect, subtle shadows\n- Colors: Teal (#14B8A6), purple accents\n\n**AGENT WORKFLOWS:**\n- Background: Gradient (teal to blue to purple) - vibrant, similar to hero\n- Terminal windows: Dark themed code editors floating on gradient\n- Colors: Teal (#14B8A6), cyan, purple gradient\n- Typography: White text for features, left-aligned descriptions\n- Imagery: Terminal/code windows with syntax highlighting (green, orange, white text)\n- Treatment: Floating windows with shadows, layered depth\n\n**SECURITY SECTION:**\n- Background: Pure black\n- Headline: White, bold, centered\n- Layout: 6-column grid of icon + text features\n- Icons: Minimal line icons in white/gray\n- Typography: White headings, gray descriptions\n- Mood: Professional, enterprise-focused\n\n**INTEGRATIONS:**\n- Background: Black\n- Headline: White, centered\n- Layout: 6-column grid (2 rows \u00d7 3 columns)\n- Icons: Branded logos (Anthropic, GitHub, Google, OpenAI, Amazon, Custom)\n- Treatment: Icon + label cards with subtle borders\n- Colors: Brand colors for each logo\n\n**GET WARP CTA:**\n- Background: Black\n- Headline: Large white text\n- Layout: 3-column (Mac, Linux, Windows)\n- Cards: Dark surfaces (#1C1C1C) with OS icons\n- Buttons/CTAs: \"Download\" (primary button, likely purple/blue gradient for each OS)\n- Input fields: Email capture fields with light borders\n- Terminal commands: Code snippets below each OS card (gray monospace text)\n- Typography: Bold headlines, clean body text\n\n**FOOTER:**\n- Background: Very dark charcoal/black\n- Layout: 4-column grid with links\n- Typography: Gray text (#6B7280), white on hover\n- Sections: Product, Features, About, Blog\n- Social icons: Monochrome, likely Twitter/X, GitHub, Discord\n- Legal: Copyright, Terms, Privacy (small gray text)\n- Colors: Muted grays, minimal contrast\n\n**OVERALL THEME:**\n- Dark mode throughout (black backgrounds)\n- Accent colors: Purple (#8B5CF6), Teal (#14B8A6), Pink (#FF1CF7)\n- Gradients: Vibrant multi-color (hero, workflow sections)\n- Typography: Modern sans-serif (likely Inter or similar)\n- Imagery: Terminal/code mockups, abstract gradients, particle effects\n- Mood: Developer-focused, futuristic, AI-powered, premium",
+    "insights": []
+  },
+  "colors": {
+    "baseline": [
+      {
+        "name": "Background Root",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "Primary page background and terminal foundation.",
+          "when_to_use": [
+            "--color-background",
+            "--btn-text-color"
+          ]
+        },
+        "hex": "#121212",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Background Soft",
+            "hex": "#121212",
+            "alpha": 0.7,
+            "aliases": [
+              "bg-[var(--color-background)]/70"
+            ]
+          },
+          {
+            "name": "Black",
+            "hex": "#000000",
+            "alpha": null,
+            "aliases": [
+              "--color-black",
+              "bg-black",
+              "text-black",
+              "border-black"
+            ]
+          },
+          {
+            "name": "Black Overlay 5%",
+            "hex": "#000000",
+            "alpha": 0.05,
+            "aliases": [
+              "bg-black/5",
+              "hover:bg-black/5"
+            ]
+          },
+          {
+            "name": "Black Shadow 40%",
+            "hex": "#000000",
+            "alpha": 0.4,
+            "aliases": [
+              "rgb(0 0 0 / 0.4)",
+              "--img-shadow"
+            ]
+          },
+          {
+            "name": "Nav Flyout Surface",
+            "hex": "#0C0C0C",
+            "alpha": null,
+            "aliases": [
+              "bg-[#0C0C0C]"
+            ]
+          },
+          {
+            "name": "Terminal Tool Surface",
+            "hex": "#0B0B0B",
+            "alpha": null,
+            "aliases": [
+              "bg-[#0B0B0B]"
+            ]
+          },
+          {
+            "name": "Dark Agent Accent",
+            "hex": "#111111",
+            "alpha": null,
+            "aliases": [
+              "text-[#111111]"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Surface",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "Secondary background for raised elements, panels, and cards.",
+          "when_to_use": [
+            "--color-surface",
+            "--card-bg"
+          ]
+        },
+        "hex": "#1B1A18",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Panel",
+            "hex": "#2C2B29",
+            "alpha": null,
+            "aliases": [
+              "--color-panel",
+              "bg-[var(--color-panel)]"
+            ]
+          },
+          {
+            "name": "Terminal Tool Border",
+            "hex": "#1F1F1F",
+            "alpha": null,
+            "aliases": [
+              "border-[#1F1F1F]"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Border",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "Default border color separating major structural elements.",
+          "when_to_use": [
+            "--color-border",
+            "border-[var(--color-border)]",
+            "divide-[var(--color-border)]",
+            "ring-[var(--color-border)]"
+          ]
+        },
+        "hex": "#464541",
+        "alpha": null,
+        "shades": [],
+        "is_used": true
+      },
+      {
+        "name": "Text Primary",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "Primary high-contrast text color for strong legibility on dark modes.",
+          "when_to_use": [
+            "--color-text",
+            "text-[var(--color-text)]",
+            "bg-[var(--color-text)]"
+          ]
+        },
+        "hex": "#F8F5EE",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "White",
+            "hex": "#FFFFFF",
+            "alpha": null,
+            "aliases": [
+              "--color-white",
+              "text-white",
+              "bg-white",
+              "--tw-ring-offset-color"
+            ]
+          },
+          {
+            "name": "White Overlay 8%",
+            "hex": "#FFFFFF",
+            "alpha": 0.08,
+            "aliases": [
+              "rgba(255,255,255,0.08)",
+              "rgba(255,255,255,0.08)"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Text Body",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "Standard reading text, softer than absolute white to lower eye strain.",
+          "when_to_use": [
+            "--color-text-body",
+            "text-[var(--color-text-body)]"
+          ]
+        },
+        "hex": "#C0BDB8",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Text Secondary",
+            "hex": "#A5A39D",
+            "alpha": null,
+            "aliases": [
+              "--color-text-secondary",
+              "--color-primary",
+              "--color-accent",
+              "text-[var(--color-text-secondary)]"
+            ]
+          },
+          {
+            "name": "Text Muted",
+            "hex": "#5F5D59",
+            "alpha": null,
+            "aliases": [
+              "--color-muted",
+              "text-[var(--color-muted)]"
+            ]
+          },
+          {
+            "name": "Foreground Body Muted",
+            "hex": "#3C3A38",
+            "alpha": null,
+            "aliases": [
+              "--color-text-body"
+            ]
+          },
+          {
+            "name": "Surface Obsidian",
+            "hex": "#0A0907",
+            "alpha": null,
+            "aliases": [
+              "--color-text",
+              "--color-surface",
+              "--card-bg"
+            ]
+          }
+        ],
+        "is_used": true
+      }
+    ],
+    "secondary": [
+      {
+        "name": "Accent Purple",
+        "type": "Cool Colors",
+        "rules": {
+          "description": "Brand accent color specifically identifying the AI/Agent capabilities.",
+          "when_to_use": [
+            "--color-accent-purple",
+            "text-[var(--color-accent-purple)]",
+            "bg-[var(--color-accent-purple)]"
+          ]
+        },
+        "hex": "#CBB0F7",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Agent Violet",
+            "hex": "#C7AEFF",
+            "alpha": null,
+            "aliases": [
+              "text-[#C7AEFF]"
+            ]
+          },
+          {
+            "name": "Oz Purple",
+            "hex": "#BDA6F7",
+            "alpha": null,
+            "aliases": [
+              "bg-[#BDA6F7]"
+            ]
+          },
+          {
+            "name": "Agent Border Muted",
+            "hex": "#373245",
+            "alpha": null,
+            "aliases": [
+              "border-[#373245]"
+            ]
+          },
+          {
+            "name": "Dark Purple Surface",
+            "hex": "#1C1A26",
+            "alpha": null,
+            "aliases": [
+              "bg-[#1C1A26]"
+            ]
+          },
+          {
+            "name": "Purple Gradient Start",
+            "hex": "#140A1E",
+            "alpha": null,
+            "aliases": [
+              "from-[#140A1E]"
+            ]
+          },
+          {
+            "name": "Purple Gradient End",
+            "hex": "#1E142A",
+            "alpha": null,
+            "aliases": [
+              "to-[#1E142A]"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Tertiary Green",
+        "type": "Cool Colors",
+        "rules": {
+          "description": "Used to signal success statuses and generic product differentiation gradients.",
+          "when_to_use": [
+            "--color-tertiary",
+            "bg-[var(--color-tertiary)]"
+          ]
+        },
+        "hex": "#00884B",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Primary Green",
+            "hex": "#43C251",
+            "alpha": null,
+            "aliases": [
+              "--color-primary-green"
+            ]
+          },
+          {
+            "name": "Green Gradient Start",
+            "hex": "#0A1A12",
+            "alpha": null,
+            "aliases": [
+              "from-[#0A1A12]"
+            ]
+          },
+          {
+            "name": "Green Gradient End",
+            "hex": "#1A2A1A",
+            "alpha": null,
+            "aliases": [
+              "to-[#1A2A1A]"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Primary Red",
+        "type": "Warm Colors",
+        "rules": {
+          "description": "Warning and destructive action styling.",
+          "when_to_use": [
+            "--color-primary-red",
+            "--destructive"
+          ]
+        },
+        "hex": "#EE343B",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Destructive Light Foreground",
+            "hex": "#FCF3F2",
+            "alpha": null,
+            "aliases": [
+              "--destructive-foreground"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Primary Yellow",
+        "type": "Warm Colors",
+        "rules": {
+          "description": "Highlights and alternate tier brand differentiation.",
+          "when_to_use": [
+            "--color-primary-yellow"
+          ]
+        },
+        "hex": "#F6BA00",
+        "alpha": null,
+        "shades": [],
+        "is_used": true
+      },
+      {
+        "name": "Blue Gradient Accent",
+        "type": "Cool Colors",
+        "rules": {
+          "description": "Atmospheric gradient background for alternative hero zones.",
+          "when_to_use": [
+            "from-[#0A1220]"
+          ]
+        },
+        "hex": "#0A1220",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Blue Gradient End",
+            "hex": "#141E30",
+            "alpha": null,
+            "aliases": [
+              "to-[#141E30]"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Brown Gradient Accent",
+        "type": "Earth Tones",
+        "rules": {
+          "description": "Atmospheric gradient background variation.",
+          "when_to_use": [
+            "from-[#1A1410]"
+          ]
+        },
+        "hex": "#1A1410",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Brown Gradient End",
+            "hex": "#201A14",
+            "alpha": null,
+            "aliases": [
+              "to-[#201A14]"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Code Block Base",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "Colors governing syntactical representation and custom code block embeds.",
+          "when_to_use": [
+            ".code-block"
+          ]
+        },
+        "hex": "#24292F",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Code Tab Muted",
+            "hex": "#1F2328",
+            "alpha": null,
+            "aliases": [
+              ".code-block-tab",
+              ".code-block-copy"
+            ]
+          },
+          {
+            "name": "Code Header Dark",
+            "hex": "#1C2128",
+            "alpha": null,
+            "aliases": [
+              ".code-block-header"
+            ]
+          },
+          {
+            "name": "Code Content Muted",
+            "hex": "#6E7681",
+            "alpha": null,
+            "aliases": [
+              ".code-block-copy"
+            ]
+          },
+          {
+            "name": "Code Content Secondary",
+            "hex": "#656D76",
+            "alpha": null,
+            "aliases": [
+              ".code-block-copy"
+            ]
+          },
+          {
+            "name": "Code Gray",
+            "hex": "#8B949E",
+            "alpha": null,
+            "aliases": [
+              ".code-block-copy"
+            ]
+          },
+          {
+            "name": "Code Content Light",
+            "hex": "#AFB8C1",
+            "alpha": null,
+            "aliases": [
+              ".code-block-copy"
+            ]
+          },
+          {
+            "name": "Code Tab Light Muted",
+            "hex": "#E6EDF3",
+            "alpha": null,
+            "aliases": [
+              ".code-block-tab"
+            ]
+          },
+          {
+            "name": "Code Header Light",
+            "hex": "#F6F8FA",
+            "alpha": null,
+            "aliases": [
+              ".code-block-header"
+            ]
+          }
+        ],
+        "is_used": true
+      }
+    ],
+    "insights": [
+      "High-contrast dark theme driven by #121212 backgrounds with muted off-white text (#F8F5EE, #C0BDB8) to reduce eye strain, emphasizing a focus-oriented developer aesthetic.",
+      "Accents are functionally segmented utilizing vibrant tones like Electric Purple (#CBB0F7) and Emerald Green (#00884B) to differentiate feature offerings (e.g. Agentic logic vs generic tooling).",
+      "Extensive use of low-opacity blacks and whites over solid colors allows gradients and glows to bleed through the background UI, reinforcing depth seamlessly."
+    ]
+  },
+  "typography": {
+    "titles": {
+      "variants": [
+        {
+          "name": "Matter",
+          "role": "H1 Display",
+          "specs": {
+            "size": "clamp(2.5rem, 5vw, var(--heading-size))",
+            "line_height": "1.1",
+            "font_weight": "var(--heading-weight)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": true,
+            "source": ""
+          },
+          "technical": {
+            "font_family_css": "var(--font-heading)",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Matter",
+          "role": "H2 Section",
+          "specs": {
+            "size": "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
+            "line_height": "1.15",
+            "font_weight": "var(--heading-weight)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": true,
+            "source": ""
+          },
+          "technical": {
+            "font_family_css": "var(--font-heading)",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Matter",
+          "role": "H3 Sub-section",
+          "specs": {
+            "size": "clamp(1.25rem, 2.5vw, 1.5rem)",
+            "line_height": "1.2",
+            "font_weight": "var(--heading-weight)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": true,
+            "source": ""
+          },
+          "technical": {
+            "font_family_css": "var(--font-heading)",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "H3 Feature Title",
+          "specs": {
+            "size": "16px",
+            "line_height": "28px",
+            "font_weight": "600",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        }
+      ]
+    },
+    "paragraphs": {
+      "description": "Body typography variants optimized for interface legibility, features distinct tracking and spacing profiles suitable for dense product interfaces.",
+      "variants": [
+        {
+          "name": "Inter",
+          "role": "Body Large",
+          "specs": {
+            "size": "18px",
+            "line_height": "28px",
+            "font_weight": "500",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Body Base Relaxed",
+          "specs": {
+            "size": "16px",
+            "line_height": "28px",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Body Base Tight",
+          "specs": {
+            "size": "16px",
+            "line_height": "25.6px",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Body Small",
+          "specs": {
+            "size": "14px",
+            "line_height": "28px",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Body Small Tight",
+          "specs": {
+            "size": "14px",
+            "line_height": "24px",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        }
+      ]
+    },
+    "labels": {
+      "description": "Utilitarian typography used for badges, code execution strings, captions, and micro-labels.",
+      "variants": [
+        {
+          "name": "Inter",
+          "role": "UI Medium",
+          "specs": {
+            "size": "14px",
+            "line_height": "28px",
+            "font_weight": "500",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Badge Strong",
+          "specs": {
+            "size": "16px",
+            "line_height": "20px",
+            "font_weight": "700",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        },
+        {
+          "name": "DM Mono",
+          "role": "Code / Terminal Text",
+          "specs": {
+            "size": "14px",
+            "line_height": "28px",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace",
+            "file_url": null
+          }
+        },
+        {
+          "name": "DM Mono",
+          "role": "Caption / Eyebrow (Uppercase)",
+          "specs": {
+            "size": "12px",
+            "line_height": "28px",
+            "font_weight": "500",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Caption",
+          "specs": {
+            "size": "12px",
+            "line_height": "20px",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Caption Tight",
+          "specs": {
+            "size": "12px",
+            "line_height": "16px",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Micro",
+          "specs": {
+            "size": "10px",
+            "line_height": "1.15",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "Inter, \"Inter Fallback\", Inter, system-ui, sans-serif",
+            "file_url": null
+          }
+        }
+      ]
+    },
+    "others": {
+      "description": "Additional typography tokens available in the CSS infrastructure but not primarily classified into standard flows.",
+      "variants": [
+        {
+          "name": "Instrument Serif",
+          "role": "Typography Token",
+          "specs": {
+            "size": "",
+            "line_height": "",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "\"Instrument Serif\", \"Instrument Serif Fallback\"",
+            "file_url": null
+          }
+        },
+        {
+          "name": "Abel",
+          "role": "Typography Token",
+          "specs": {
+            "size": "",
+            "line_height": "",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "\"Abel\", \"Abel Fallback\"",
+            "file_url": null
+          }
+        }
+      ]
+    },
+    "highlights": "Interactive typography states feature a \"link-underline-reveal\", while secondary labels use a high-contrast badge treatment (\"bg-[var(--color-text)]/10 text-[var(--color-text)]\").",
+    "insights": [
+      "The system implements a fluid, responsive scale for headings using `clamp()` combined with viewport units and CSS variables (e.g., `clamp(2.5rem, 5vw, var(--heading-size))`), ensuring typography scales seamlessly across screen sizes.",
+      "There is a strict functional division of typefaces: 'Matter' is reserved entirely for display and primary headings (H1-H3), 'Inter' provides extreme legibility for body passages and UI/labels, while 'DM Mono' handles technical microcopy and code snippets.",
+      "Small categorical labels and eyebrows use 'DM Mono' (12px) paired with an uppercase transformation and wide tracking (0.05em) to establish clear hierarchy without competing with standard headings."
+    ]
+  },
+  "surfaces": {
+    "texture_classification": [
+      "glass_blur",
+      "gradient_linear"
+    ],
+    "solid_colors": [
+      {
+        "name": "Background",
+        "description": "Primary page background color",
+        "when_to_use": [
+          "Page backgrounds",
+          "Root container"
+        ],
+        "hex": "#121212"
+      },
+      {
+        "name": "Surface",
+        "description": "Secondary surface for cards and elevated elements (oklch 22.0% 0.004 84.6)",
+        "when_to_use": [
+          "Card backgrounds",
+          "Elevated panels",
+          "Modal backgrounds"
+        ],
+        "hex": "#1B1A18"
+      },
+      {
+        "name": "Panel",
+        "description": "Tertiary surface for nested panels (oklch 29.0% 0.005 84.6)",
+        "when_to_use": [
+          "Nested panels",
+          "Raised surfaces",
+          "Section backgrounds"
+        ],
+        "hex": "#2C2B29"
+      },
+      {
+        "name": "Glass Surface - Dark",
+        "description": "Glassmorphism surface with backdrop blur for navigation flyouts and dropdowns",
+        "when_to_use": [
+          "Navigation flyouts",
+          "Dropdown menus",
+          "Floating panels"
+        ],
+        "hex": "#0C0C0C"
+      },
+      {
+        "name": "White Inverted Surface",
+        "description": "White background for inverted theme sections",
+        "when_to_use": [
+          "Announcement banners",
+          "Call-to-action sections"
+        ],
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Olive 100 (Light accent surface)",
+        "description": "Light neutral surface for high-contrast sections",
+        "when_to_use": [
+          "Light theme variations",
+          "Contrast sections"
+        ],
+        "hex": "#F4F4F0"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Radial Spotlight Overlay",
+        "description": "Top-center radial gradient creating subtle spotlight effect",
+        "when_to_use": [
+          "Hero section overlays",
+          "Focus areas",
+          "Featured content backgrounds"
+        ],
+        "css_code": "radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 55%)"
+      },
+      {
+        "name": "Animated Border Gradient",
+        "description": "Multi-color diagonal gradient with animation (gold \u2192 magenta \u2192 geekblue \u2192 cyan)",
+        "when_to_use": [
+          "Animated borders",
+          "Loading states",
+          "Special accent elements"
+        ],
+        "css_code": "linear-gradient(-45deg, var(--ant-gold), var(--ant-magenta), var(--ant-geekblue), var(--ant-cyan))"
+      },
+      {
+        "name": "Green Gradient Dark",
+        "description": "Dark green gradient from deep green to muted green-grey",
+        "when_to_use": [
+          "Success state backgrounds",
+          "Environmental themed sections"
+        ],
+        "css_code": "linear-gradient(to bottom right in oklab, #0a1a12, #1a2a1a)"
+      },
+      {
+        "name": "Blue Gradient Dark",
+        "description": "Dark blue gradient from deep blue to slate",
+        "when_to_use": [
+          "Information backgrounds",
+          "Technical sections"
+        ],
+        "css_code": "linear-gradient(to bottom right in oklab, #0a1220, #141e30)"
+      },
+      {
+        "name": "Purple Gradient Dark",
+        "description": "Dark purple gradient from deep purple to muted violet",
+        "when_to_use": [
+          "Premium feature backgrounds",
+          "Agent platform sections"
+        ],
+        "css_code": "linear-gradient(to bottom right in oklab, #140a1e, #1e142a)"
+      },
+      {
+        "name": "Brown Gradient Dark",
+        "description": "Dark brown gradient creating warm, earthy tones",
+        "when_to_use": [
+          "Warm-toned sections",
+          "Terminal themed areas"
+        ],
+        "css_code": "linear-gradient(to bottom right in oklab, #1a1410, #201a14)"
+      },
+      {
+        "name": "Olive Gradient Fade",
+        "description": "Vertical olive gradient with transparency variations",
+        "when_to_use": [
+          "Overlay effects",
+          "Scrim backgrounds",
+          "Depth layering"
+        ],
+        "css_code": "linear-gradient(to bottom in oklab, from-olive-950/70 via-olive-950/55 to-olive-950/90)"
+      },
+      {
+        "name": "Black Fade Gradient",
+        "description": "Subtle black fade from top with transparency",
+        "when_to_use": [
+          "Top shadow overlays",
+          "Content fade effects"
+        ],
+        "css_code": "linear-gradient(to bottom in oklab, from-black/25 via-transparent to-transparent)"
+      },
+      {
+        "name": "Text Fade Gradient",
+        "description": "Subtle text color gradient with transparency for depth",
+        "when_to_use": [
+          "Section dividers",
+          "Content separation"
+        ],
+        "css_code": "linear-gradient(to bottom in oklab, from-[var(--color-text)]/5 via-[var(--color-background)]/60 to-[var(--color-text)]/10)"
+      }
+    ],
+    "highlights": [
+      "Backdrop blur effects on navigation (blur(10px) and blur(36px) with saturation(150%))",
+      "Glass panel surfaces in navigation flyouts with backdrop-blur-md",
+      "Radial spotlight gradient overlay on hero section",
+      "Animated 4-color border gradient (gold/magenta/geekblue/cyan) with 400% background-size animation",
+      "Linear gradient masks for horizontal scrolling logo carousel (transparent edges)",
+      "Soft black/5 overlay on hero background image",
+      "Ring inset borders with black/10 and white/10 opacity on images"
+    ]
+  },
+  "elevation": {
+    "description": "Elevation allows elements to be lifted from the background. It can be defined by applying drop shadows or other visual cues, such as color and borders",
+    "shadows": {
+      "description": "Elevation using shadows reflects a spatial relationship by indicating separation from the background or allowing content to be scrolled under another element.",
+      "levels": [
+        {
+          "name": "Tw Ring Shadow",
+          "type": "drop",
+          "description": "Tailwind default ring shadow placeholder - transparent shadow used as base for ring utilities",
+          "css_value": "0 0 #0000",
+          "when_to_use": [
+            "Ring utility base",
+            "Focus states"
+          ]
+        },
+        {
+          "name": "Img Shadow",
+          "type": "drop",
+          "description": "Large diffuse shadow with 40% black opacity and 8px vertical offset, 30px blur - used for prominent image elevation",
+          "css_value": "0 8px 30px rgb(0 0 0 / 0.4)",
+          "when_to_use": [
+            "Featured images",
+            "Hero images",
+            "Prominent media elements"
+          ]
+        },
+        {
+          "name": "Card Shadow",
+          "type": "drop",
+          "description": "Multi-layer shadow using CSS variables for border colors - 4 shadow layers creating subtle depth with decreasing opacity",
+          "css_value": "0 1px 0 -1px var(--ant-color-border),0 1px 2px -0.5px var(--ant-color-border),0 2px 2px -1px var(--ant-color-border-secondary),0 3px 6px -4px var(--ant-color-border-secondary)",
+          "when_to_use": [
+            "Cards",
+            "Elevated panels",
+            "Dropdown menus"
+          ]
+        },
+        {
+          "name": "Inset Highlight",
+          "type": "inset",
+          "description": "Inset shadow using error background color for hover state highlighting",
+          "css_value": "inset 0 0 0 1px var(--ant-color-error-bg)",
+          "when_to_use": [
+            "Error state hover",
+            "Destructive action buttons"
+          ]
+        }
+      ]
+    },
+    "borders": [
+      {
+        "hex": "#1F1F1F",
+        "width": "1px",
+        "style": "solid"
+      },
+      {
+        "hex": "#373245",
+        "width": "1px",
+        "style": "solid"
+      }
+    ]
+  },
+  "interactions": {
+    "global_patterns": [
+      "sticky_header",
+      "tab_switching",
+      "marquee",
+      "accordion",
+      "hover_transform",
+      "carousel"
+    ],
+    "animations": [
+      {
+        "name": "spin",
+        "css": ""
+      },
+      {
+        "name": "animation-1dxnnkn",
+        "css": ""
+      },
+      {
+        "name": "animation-3hqiph",
+        "css": ""
+      },
+      {
+        "name": "scroll-left",
+        "css": ""
+      },
+      {
+        "name": "scroll-right",
+        "css": ""
+      },
+      {
+        "name": "fill-progress",
+        "css": ""
+      },
+      {
+        "name": "global-transition",
+        "css": ""
+      },
+      {
+        "name": "opacity-transition",
+        "css": ""
+      },
+      {
+        "name": "transform-rotate-180",
+        "css": ""
+      },
+      {
+        "name": "backdrop-blur-transition",
+        "css": ""
+      }
+    ],
+    "insights": [
+      "The design system uses CSS custom properties extensively (--color-*, --radius-*, --btn-*) enabling theming flexibility and consistent token application across components.",
+      "Navigation employs glassmorphism with backdrop-blur-md (12px) and 60-70% opacity backgrounds for a modern layered depth effect while maintaining content legibility.",
+      "The tabbed carousel uses a unique progress-bar indicator pattern with auto-advance (6s timer) rather than traditional selected-state underlines, creating engagement through motion.",
+      "Button interactions rely primarily on opacity changes (hover:opacity-85) rather than background color shifts, maintaining visual consistency while providing clear feedback."
+    ]
+  },
+  "actions": {
+    "button_list": [
+      {
+        "name": "Download Warp (Primary CTA)",
+        "usage": "Primary call-to-action button used in the navigation header and hero section for downloading the application.",
+        "specs": {
+          "radius": "rounded-lg",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "0.25rem 1rem"
+            },
+            {
+              "name": "Large",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "0.5rem 1rem"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "var(--color-text)",
+            "text_color": "#121212",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "var(--color-text)",
+            "text_color": "#121212",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": "0.85",
+            "cursor": null
+          },
+          "disabled": {
+            "background": "var(--color-text)",
+            "text_color": "#121212",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Contact sales (Ghost)",
+        "usage": "Secondary action button for enterprise sales inquiries, appears in navigation alongside primary CTA.",
+        "specs": {
+          "radius": "rounded-xl",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "0.25rem 0.75rem"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "transparent",
+            "text_color": "#F8F5EE",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "var(--color-text)/10",
+            "text_color": "#F8F5EE",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "disabled": {
+            "background": "transparent",
+            "text_color": "#F8F5EE",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Products (Nav Dropdown)",
+        "usage": "Navigation dropdown trigger button for accessing product submenu items.",
+        "specs": {
+          "radius": "rounded-lg",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "4px 10px"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "transparent",
+            "text_color": "#F8F5EE",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "var(--color-text)/5",
+            "text_color": "#F8F5EE",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "disabled": {
+            "background": "transparent",
+            "text_color": "#F8F5EE",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Icon Button (Circular Close)",
+        "usage": "Icon-only circular button for close actions in modals, announcements, and mobile menu.",
+        "specs": {
+          "radius": "rounded-full",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "16px",
+              "padding": "6px"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "transparent",
+            "text_color": "#A5A39D",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "rgba(0,0,0,0.05)",
+            "text_color": "#F8F5EE",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "disabled": {
+            "background": "transparent",
+            "text_color": "#A5A39D",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "GitHub Stars (Badge Button)",
+        "usage": "External link button displaying GitHub star count, used for social proof in navigation.",
+        "specs": {
+          "radius": "rounded-lg",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "0 0.75rem"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "transparent",
+            "text_color": "#F8F5EE",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "var(--color-text)/10",
+            "text_color": "#F8F5EE",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "disabled": {
+            "background": "transparent",
+            "text_color": "#F8F5EE",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Learn More (Inline Link)",
+        "usage": "Inline text link used within announcement bars and body content for navigation to related content.",
+        "specs": {
+          "radius": "rounded-none",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "0"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "transparent",
+            "text_color": "#0A0907",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "transparent",
+            "text_color": "#0A0907",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": null,
+            "cursor": null
+          },
+          "disabled": {
+            "background": "transparent",
+            "text_color": "#0A0907",
+            "border_color": "transparent",
+            "border_width": "0",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      }
+    ],
+    "button_group": {
+      "description": "Buttons are arranged horizontally in navigation with consistent spacing for primary and secondary actions.",
+      "spacing": "16px"
+    },
+    "links": {
+      "text_decoration": "none"
+    }
+  },
+  "navigation": {
+    "top_nav": {
+      "height": "84px",
+      "position": "sticky",
+      "background": {
+        "hex": "#121212",
+        "color_reference": "--color-background",
+        "opacity": "0.6",
+        "blur": "backdrop-filter: blur(12px)"
+      },
+      "border_bottom": null
+    },
+    "announcement_bar": {
+      "background": "#FFFFFF",
+      "text_color": "#F8F5EE",
+      "border_bottom": "1px solid oklch(0.39 0.006 84.6)",
+      "height": null
+    },
+    "tabs": {
+      "style_name": "Underline Progress Tab",
+      "description": "Tabs organize content into multiple sections with a progress bar indicator that fills horizontally to show the active state and auto-advancement timer.",
+      "when_to_use": [
+        "Navigation between related product views",
+        "Switching content categories in hero carousels",
+        "Auto-rotating showcase sections"
+      ],
+      "states": [
+        {
+          "name": "selected",
+          "visual_change": "Progress bar fills with --color-tertiary, text becomes primary color",
+          "background": "var(--color-text)/5",
+          "text": "var(--color-text)",
+          "icon": null
+        },
+        {
+          "name": "default",
+          "visual_change": "Progress bar width is 0, text is muted",
+          "background": "transparent",
+          "text": "var(--color-muted)",
+          "icon": null
+        },
+        {
+          "name": "hover",
+          "visual_change": "Text brightens on hover",
+          "background": "var(--color-text)/[0.02]",
+          "text": "var(--color-text-secondary)",
+          "icon": null
+        }
+      ]
+    }
+  },
+  "data_display": {
+    "charts": [],
+    "tables": [],
+    "tiles": [
+      {
+        "name": "Feature Card",
+        "description": "Dark surface card with image mockup showcasing terminal features like Vertical Tabs, Interactive Code Review, and Notifications.",
+        "when_to_use": [
+          "Feature grid sections",
+          "Product capability showcases",
+          "Visual feature explanations"
+        ]
+      },
+      {
+        "name": "Integration Card",
+        "description": "Card displaying third-party agent integrations (Claude Code, Codex, OpenCode, Gemini) with icon, title and description.",
+        "when_to_use": [
+          "Integration/partner showcases",
+          "Agent compatibility displays",
+          "Third-party tool listings"
+        ]
+      },
+      {
+        "name": "OS Download Card",
+        "description": "Platform-specific download card for Mac, Linux, and Windows with OS icon, version selector, and download button.",
+        "when_to_use": [
+          "Multi-platform download sections",
+          "Installation guides",
+          "Platform selection interfaces"
+        ]
+      }
+    ]
+  },
+  "structure": {
+    "accordion": {
+      "interaction": "Single open by default, mobile navigation uses details/summary with rotate-180 chevron animation on expand"
+    },
+    "dividers": [
+      {
+        "name": "Tab Divider",
+        "description": "Vertical divider separating tab items in the tabbed interface",
+        "when_to_use": [
+          "Between tab items",
+          "Segmenting navigation options"
+        ],
+        "color": "var(--color-border)/40",
+        "height": "100%",
+        "style": "solid"
+      },
+      {
+        "name": "Section Border",
+        "description": "Bottom border on announcement bar and header sections",
+        "when_to_use": [
+          "Separating header from content",
+          "Announcement bar bottom edge"
+        ],
+        "color": "#464541",
+        "height": "1px",
+        "style": "solid"
+      }
+    ]
+  },
+  "icons": [
+    {
+      "name": "UI Icons",
+      "description": "Functional UI icons used across the site for navigation, menus, and interaction markers.",
+      "when_to_use": [
+        "Navigation dropdowns",
+        "Button icons",
+        "Mobile menu markers"
+      ],
+      "format": "SVG",
+      "style": "Solid and Outlined / currentColor based",
+      "sizes": {
+        "small": "16px",
+        "medium": "24px"
+      },
+      "examples": [
+        {
+          "name": "arrow-right",
+          "svg_code": "<svg viewBox=\"0 0 256 256\" width=\"1em\" height=\"1em\" class=\"size-4\" data-elements=\"1\" data-types=\"path:1\" data-fill=\"currentColor\"></svg>"
+        },
+        {
+          "name": "chevron-down",
+          "svg_code": "<svg viewBox=\"0 0 16 16\" class=\"mt-0.5 size-4 opacity-50 transition-transform duration-200\" data-elements=\"1\" data-types=\"path:1\" data-fill=\"currentColor\"></svg>"
+        },
+        {
+          "name": "menu-icon",
+          "svg_code": "<svg viewBox=\"0 0 24 24\" class=\"size-6\" data-elements=\"1\" data-types=\"path:1\" data-fill=\"currentColor\"></svg>"
+        },
+        {
+          "name": "external-link",
+          "svg_code": "<svg viewBox=\"0 0 256 256\" width=\"1em\" height=\"1em\" class=\"size-3.5 shrink-0\" data-elements=\"1\" data-types=\"path:1\" data-fill=\"currentColor\"></svg>"
+        }
+      ]
+    }
+  ],
+  "assets": {
+    "logos": [
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/favicon-16x16.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Favicon 16x16",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/favicon-32x32.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Favicon 32x32",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/favicon-96x96.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Favicon 96x96",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/favicon-128x128.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Favicon 128x128",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/favicon-196x196.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Favicon 196x196",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/apple-touch-icon-57x57.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Apple Touch Icon 57x57",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/apple-touch-icon-60x60.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Apple Touch Icon 60x60",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/apple-touch-icon-72x72.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Apple Touch Icon 72x72",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/apple-touch-icon-76x76.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Apple Touch Icon 76x76",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/apple-touch-icon-114x114.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Apple Touch Icon 114x114",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/apple-touch-icon-120x120.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Apple Touch Icon 120x120",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/apple-touch-icon-144x144.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Apple Touch Icon 144x144",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/apple-touch-icon-152x152.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Apple Touch Icon 152x152",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/apple-touch-icon-167x167.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Apple Touch Icon 167x167",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/apple-touch-icon-180x180.png",
+        "path": null,
+        "origin_url": null,
+        "description": "Apple Touch Icon 180x180",
+        "svg_code": null
+      },
+      {
+        "role": "Favicon",
+        "format": "PNG",
+        "url": "/mstile-144x144.png",
+        "path": null,
+        "origin_url": null,
+        "description": "MS Tile 144x144",
+        "svg_code": null
+      },
+      {
+        "role": "Primary",
+        "format": "SVG",
+        "url": "",
+        "path": null,
+        "origin_url": null,
+        "description": "Main Brand Header Logo Desktop",
+        "svg_code": null
+      },
+      {
+        "role": "Primary",
+        "format": "SVG",
+        "url": "",
+        "path": null,
+        "origin_url": null,
+        "description": "Main Brand Header Logo Mobile",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-2.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-2.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-2.svg",
+        "description": "GitHub dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-5.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-5.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary.svg",
+        "description": "GitHub light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-11.svg",
+        "description": "Amazon dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-8.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-8.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-8.svg",
+        "description": "Amazon light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-7.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-7.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-4.svg",
+        "description": "Asana dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-6.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-6.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-3.svg",
+        "description": "Asana light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-4.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-4.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-7.svg",
+        "description": "Nvidia dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-3.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-3.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-12.svg",
+        "description": "Nvidia light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-11.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-11.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-5.svg",
+        "description": "Retool dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-13.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-13.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-6.svg",
+        "description": "Retool light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-12.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-12.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-14.svg",
+        "description": "Docker dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-9.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-9.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-13.svg",
+        "description": "Docker light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-10.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-10.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-9.svg",
+        "description": "VMware dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-14.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-14.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-10.svg",
+        "description": "VMware light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-15.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-15.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-15.svg",
+        "description": "Ramp dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-19.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-19.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-19.svg",
+        "description": "Ramp light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-20.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-20.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-16.svg",
+        "description": "DoorDash dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-17.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-17.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-18.svg",
+        "description": "DoorDash light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-16.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-16.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-17.svg",
+        "description": "Amplitude dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-21.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-21.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-20.svg",
+        "description": "Amplitude light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-18.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-18.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-21.svg",
+        "description": "Peloton dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-22.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-22.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-23.svg",
+        "description": "Peloton light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-23.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-23.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-28.svg",
+        "description": "Teamworks dark logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-24.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-24.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-27.svg",
+        "description": "Teamworks light logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-26.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-26.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-22.svg",
+        "description": "OpenAI Black Logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-28.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-28.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-24.svg",
+        "description": "OpenCode Logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-25.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-25.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-25.svg",
+        "description": "Gemini CLI Logo",
+        "svg_code": null
+      },
+      {
+        "role": "Secondary",
+        "format": "SVG",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-27.svg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-27.svg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/logos/secondary-26.svg",
+        "description": "Linux Dark Logo",
+        "svg_code": null
+      }
+    ],
+    "media": [
+      {
+        "name": "Open Graph Image",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/open-graph-image.png",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/open-graph-image.png",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/open-graph-image.png",
+        "usage_context": "Meta og:image \u2014 social share preview."
+      },
+      {
+        "name": "Textural background",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/textural-background.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/textural-background.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/textural-background.jpg",
+        "usage_context": "Hero section background image"
+      },
+      {
+        "name": "Warp Agent UI",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/warp-agent-ui.png",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/warp-agent-ui.png",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/warp-agent-ui.png",
+        "usage_context": "Product screenshot in hero tab selection"
+      },
+      {
+        "name": "Claude Code in Warp",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/claude-code-in-warp.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/claude-code-in-warp.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/claude-code-in-warp.jpg",
+        "usage_context": "Product screenshot in hero tab selection"
+      },
+      {
+        "name": "Codex in Warp",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/codex-in-warp.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/codex-in-warp.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/codex-in-warp.jpg",
+        "usage_context": "Product screenshot in hero tab selection"
+      },
+      {
+        "name": "OpenCode in Warp",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/opencode-in-warp.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/opencode-in-warp.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/opencode-in-warp.jpg",
+        "usage_context": "Product screenshot in hero tab selection"
+      },
+      {
+        "name": "Gemini CLI in Warp",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/gemini-cli-in-warp.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/gemini-cli-in-warp.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/gemini-cli-in-warp.jpg",
+        "usage_context": "Product screenshot in hero tab selection"
+      },
+      {
+        "name": "Vertical Tabs",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/vertical-tabs.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/vertical-tabs.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/vertical-tabs.jpg",
+        "usage_context": "Feature highlight screenshot for Vertical Tabs"
+      },
+      {
+        "name": "Review output",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/review-output.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/review-output.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/review-output.jpg",
+        "usage_context": "Feature highlight screenshot for Interactive Code Review"
+      },
+      {
+        "name": "Themes",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/themes.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/themes.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/themes.jpg",
+        "usage_context": "Feature highlight screenshot for Customizable Appearance"
+      },
+      {
+        "name": "Warp Drive",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/warp-drive.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/warp-drive.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/warp-drive.jpg",
+        "usage_context": "Feature highlight screenshot for Warp Drive"
+      },
+      {
+        "name": "Notifications",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/notifications.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/notifications.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/notifications.jpg",
+        "usage_context": "Feature highlight screenshot for Notifications"
+      },
+      {
+        "name": "Vertical tabs in Warp",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/vertical-tabs-in-warp.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/vertical-tabs-in-warp.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/vertical-tabs-in-warp.jpg",
+        "usage_context": "Feature workflow screenshot for Vertical Tabs"
+      },
+      {
+        "name": "Agent notifications",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/agent-notifications.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/agent-notifications.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/agent-notifications.jpg",
+        "usage_context": "Feature workflow screenshot for Agent Notifications"
+      },
+      {
+        "name": "Interactive code review",
+        "type": "image",
+        "url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/interactive-code-review.jpg",
+        "path": "35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/interactive-code-review.jpg",
+        "origin_url": "https://usmhqbihwwhapfowkbrf.supabase.co/storage/v1/object/public/artifacts/35a64062-4788-4271-ae84-7894464c6c16/site-assets/media/image/interactive-code-review.jpg",
+        "usage_context": "Feature workflow screenshot for Code Review"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "Navigation",
+      "layout_pattern": "Horizontal bar, left-aligned logo, right-aligned CTAs",
+      "headline": null,
+      "subheadline": null,
+      "components": [
+        {
+          "type": "logo",
+          "description": "\"warp\" wordmark in lowercase, white text"
+        },
+        {
+          "type": "navigation",
+          "description": "Horizontal menu with dropdowns: Products, Solutions, Resources, Enterprise, Pricing"
+        },
+        {
+          "type": "button",
+          "description": "\"Contact sales\" button with transparent background, white text"
+        },
+        {
+          "type": "button",
+          "description": "\"Download Warp\" primary CTA with gradient purple/teal background, white text, keyboard shortcut badge (D)"
+        },
+        {
+          "type": "button",
+          "description": "GitHub star count badge (60k) with icon"
+        },
+        {
+          "type": "button",
+          "description": "Mobile hamburger menu icon"
+        }
+      ]
+    },
+    {
+      "type": "Hero",
+      "layout_pattern": "Centered, vertical stack with hero image below",
+      "headline": "The best place to build with agents",
+      "subheadline": "Get better access to development environment",
+      "components": [
+        {
+          "type": "image",
+          "description": "Large terminal/code window mockup with vibrant aurora gradient background (pink #FF1CF7, cyan #00FFD1, purple #8B5CF6) and particle/bokeh effects"
+        },
+        {
+          "type": "button",
+          "description": "\"Download Warp\" primary CTA button, full-width on mobile"
+        }
+      ]
+    },
+    {
+      "type": "Features - Tabbed Carousel",
+      "layout_pattern": "Centered, horizontal tab bar above image carousel",
+      "headline": null,
+      "subheadline": null,
+      "components": [
+        {
+          "type": "carousel",
+          "description": "5-tab horizontal carousel showing different agent integrations (Warp Agent, Claude Code, Codex, OpenCode, Gemini) with auto-rotating content"
+        },
+        {
+          "type": "image",
+          "description": "Terminal/code mockups on dark/gradient backgrounds for each tab, 16:10 aspect ratio, rounded corners, floating with shadows"
+        }
+      ]
+    },
+    {
+      "type": "Logo Bar",
+      "layout_pattern": "Centered, horizontal infinite scroll marquee",
+      "headline": null,
+      "subheadline": "Trusted by leading companies",
+      "components": [
+        {
+          "type": "logo_strip",
+          "description": "Grayscale monochrome logos scrolling left: GitHub, Amazon, Asana, Nvidia, Retool, Docker, VMware, Ramp, DoorDash, Amplitude, Peloton, Teamworks. Logos are 40% opacity, grayscale filter, hover to 70% opacity"
+        }
+      ]
+    },
+    {
+      "type": "Features - Product Showcase",
+      "layout_pattern": "Centered headline, 3-column grid of feature cards below",
+      "headline": "Build, review, and ship in one surface.",
+      "subheadline": "Workflows designed for modern development",
+      "components": [
+        {
+          "type": "card",
+          "description": "Dark charcoal (#1C1C1C) cards with screenshot mockups on light purple/lavender backgrounds, subtle borders, rounded corners"
+        },
+        {
+          "type": "image",
+          "description": "VS Code-style UI mockup with file tree and code editor"
+        },
+        {
+          "type": "image",
+          "description": "Searchable code review interface mockup"
+        },
+        {
+          "type": "image",
+          "description": "Notification panel mockup"
+        }
+      ]
+    },
+    {
+      "type": "Features - Grid (3x2)",
+      "layout_pattern": "6-item grid, 2 rows \u00d7 3 columns",
+      "headline": null,
+      "subheadline": null,
+      "components": [
+        {
+          "type": "card",
+          "description": "Dark cards with mockup screenshots, glass-morphism effect, subtle shadows"
+        },
+        {
+          "type": "image",
+          "description": "Copilot appearance mockup with teal/purple accents"
+        },
+        {
+          "type": "image",
+          "description": "Drive interface mockup"
+        },
+        {
+          "type": "image",
+          "description": "Notification mockup"
+        }
+      ]
+    },
+    {
+      "type": "Features - Agent Workflows",
+      "layout_pattern": "Centered, vertical stack with gradient background",
+      "headline": "Agent workflows that feel native.",
+      "subheadline": null,
+      "components": [
+        {
+          "type": "image",
+          "description": "Terminal windows floating on vibrant gradient (teal #14B8A6 to blue to purple) with syntax-highlighted code (green, orange, white text), layered depth with shadows"
+        },
+        {
+          "type": "icon",
+          "description": "Bullet-point feature list with icons: Natural tasks, Step-by-step, Right-in-place, Interactive code review"
+        }
+      ]
+    },
+    {
+      "type": "Features - Security & Enterprise",
+      "layout_pattern": "Centered headline, 6-column grid (2 rows \u00d7 3 columns)",
+      "headline": "Designed for security. Built for organizations.",
+      "subheadline": null,
+      "components": [
+        {
+          "type": "icon",
+          "description": "Minimal line icons in white/gray with feature labels: On-premise & self-hosted, SOC 2 compliance, Access controls, Session recording, Audit logs, Advanced integration"
+        }
+      ]
+    },
+    {
+      "type": "Features - Integrations",
+      "layout_pattern": "Centered headline, 6-column grid (2 rows \u00d7 3 columns)",
+      "headline": "Built with any agent",
+      "subheadline": null,
+      "components": [
+        {
+          "type": "card",
+          "description": "Icon + label cards with subtle borders, branded logos in full color: Claude (Anthropic), GitHub Copilot, Custom AI, OpenAI, Gemini (Google), Amazon Q"
+        }
+      ]
+    },
+    {
+      "type": "CTA - Download",
+      "layout_pattern": "Centered headline, 3-column grid (Mac, Linux, Windows)",
+      "headline": "Get Warp today",
+      "subheadline": "Get better access to development environment",
+      "components": [
+        {
+          "type": "card",
+          "description": "Dark surface (#1C1C1C) cards with OS icons (macOS, Linux, Windows)"
+        },
+        {
+          "type": "form",
+          "description": "Email input fields with light borders"
+        },
+        {
+          "type": "button",
+          "description": "\"Download\" primary buttons (likely purple/blue gradient per OS)"
+        },
+        {
+          "type": "image",
+          "description": "Terminal command examples in gray monospace text below each OS card"
+        }
+      ]
+    },
+    {
+      "type": "Footer",
+      "layout_pattern": "4-column grid with link sections",
+      "headline": null,
+      "subheadline": null,
+      "components": [
+        {
+          "type": "navigation",
+          "description": "4-column footer nav: Product (Terminal, AI, Teams), Features (IDE Support, Security, Integrations), About (Careers, Press, Contact), Blog (Community, Docs, Status)"
+        },
+        {
+          "type": "icon",
+          "description": "Social media icons (Twitter/X, GitHub, Discord) in monochrome"
+        },
+        {
+          "type": "image",
+          "description": "Copyright notice, Terms, Privacy links in small gray text (#6B7280)"
+        }
+      ]
+    }
+  ]
+}

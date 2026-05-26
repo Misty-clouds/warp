@@ -6,6 +6,7 @@ import CopyIcon from "./icons/CopyIcon";
 import CheckmarkIcon from "./icons/CheckmarkIcon";
 import AppleIcon from "./icons/AppleIcon";
 import WindowsIcon from "./icons/WindowsIcon";
+import LinuxIcon from "./icons/LinuxIcon";
 
 function CopyCommand({ command, id }: { command: string; id: string }) {
   const [copied, setCopied] = useState(false);
@@ -112,12 +113,7 @@ export default function Downloads() {
           <div className="flex flex-col gap-6 py-(--space-lg) first:pt-0 last:pb-0 lg:px-(--space-lg) lg:py-0 lg:first:pl-0 lg:last:pr-0">
             <div className="flex flex-col gap-3">
               <div className="text-(--color-text)">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/icons/linux-dark.svg"
-                  alt=""
-                  className="inline-block size-10 rounded-none border-0 bg-transparent align-middle shadow-none"
-                />
+                <LinuxIcon className="size-10" />
               </div>
               <h3 className={headingClassName}>Linux</h3>
             </div>

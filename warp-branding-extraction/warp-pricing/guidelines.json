@@ -1,0 +1,2166 @@
+{
+  "metadata": {
+    "version": "0.1.0",
+    "last_updated": "",
+    "extracted_at": "2026-05-25 18:35:46.942271+00:00",
+    "project_name": "Warp Style Guide",
+    "status": "Production Ready"
+  },
+  "profile": {
+    "brand_name": "Warp",
+    "source_url": "https://www.warp.dev/pricing",
+    "page_type_category": "Core Marketing",
+    "page_type": "Pricing",
+    "industry": "Developer Tools / AI",
+    "primary_purpose": "Convert visitors to paid subscribers by presenting transparent, tiered pricing options for individuals and teams",
+    "main_cta": "Download Warp",
+    "copy_tone": [
+      "Direct",
+      "Technical",
+      "Transparent"
+    ],
+    "brand_signature": "Dark, developer-focused interface with a near-black background (#121212) and warm off-white text. Clean, utilitarian aesthetic featuring card-based pricing tiers with subtle surface elevation and minimal decorative elements, anchored by a purple accent for the recommended tier.",
+    "visual_language": {
+      "keywords": [
+        "dark-mode",
+        "developer-centric",
+        "utilitarian",
+        "card-based",
+        "minimal",
+        "technical"
+      ],
+      "accent_strategy": "Purple/violet accent (#71.5% oklch) used sparingly to highlight the recommended 'Build' tier and tertiary elements, creating visual hierarchy against the neutral dark palette.",
+      "highlights": "Animated gradient border on the recommended pricing card draws attention; subtle surface elevation differentiates pricing tiers"
+    },
+    "strategy": {
+      "target_audience": [
+        "Individual developers seeking a modern terminal with AI capabilities",
+        "Development teams evaluating productivity tools with collaboration features",
+        "Enterprise engineering leaders requiring security, compliance, and admin controls"
+      ],
+      "executive_synthesis": "Warp's pricing page leverages a dark, developer-native visual identity that immediately signals technical credibility. The clean card-based tier system with transparent pricing ($0 to Custom) creates a clear upgrade path. The purple-highlighted 'Build' tier with animated border strategically draws attention to the recommended entry point, while extensive feature tooltips and FAQ sections address technical buyer concerns. Enterprise positioning with SAML SSO, admin controls, and 'bring your own LLM' options targets larger organizations. Social proof via logo bar reinforces adoption by recognized tech companies."
+    },
+    "style_classification": {
+      "primary_style": "Flat Design",
+      "confidence": "High",
+      "category_style": "Digital/UI Design",
+      "reasoning": "The visual impression from the screenshot reveals a dark-mode SaaS pricing page with clean, structured layouts and restrained decoration. The design exhibits hallmarks of Flat Design: geometric shapes (rectangular pricing cards), bold saturated accent colors (purple #CBB0F7 against monochromatic black/gray surfaces), sans-serif modern typography (Inter for body, Matter for display), and a strict 12-column grid system with generous whitespace. The texture profile confirms \"shadows_soft\" and \"glass_blur\" effects, but these are subtle enhancements rather than defining characteristics\u2014the overall aesthetic remains fundamentally flat with minimal depth. The color palette is primarily monochromatic (deep blacks #121212, charcoal grays #1B1A18, whites #F8F5EE) punctuated by a vibrant purple accent, aligning with Flat Design's use of bold, saturated colors against clean backgrounds. The card-based layout with clear separation, systematic comparison tables, and feature checkmarks all reinforce the digital-native, 2D clarity central to Flat Design. The layout is balanced (not dense, not sparse), dimensionality is decidedly flat (2D), decoration is minimal, and structure is rigid/grid-based.",
+      "secondary_style": "Corporate",
+      "reasoning_secondary": "The Corporate modifier applies strongly here due to the design's professional, trust-building intent. This is a B2B/developer tool pricing page featuring: enterprise tier offerings, partner logo social proof strip (VMware, Vercel, DoorDash, GitHub), detailed feature comparison matrices, FAQ accordion for transparency, and multi-platform download options. The typography hierarchy (Matter for headings, Inter for body, DM Mono for technical labels) creates a systematic, professional voice. The restrained color usage (single purple accent against neutral darks), conventional pricing card layouts, and emphasis on feature comprehensiveness over visual flair all signal corporate reliability over creative experimentation. The design prioritizes clarity, information hierarchy, and conversion optimization\u2014hallmarks of Corporate styling within a Flat Design foundation."
+    }
+  },
+  "layout": {
+    "classification": [
+      "card_based",
+      "generous_whitespace"
+    ],
+    "grid": {
+      "columns": 12,
+      "gutter": "1.5rem",
+      "max_width": "80rem"
+    },
+    "breakpoints": {
+      "mobile": "0px - 639px (1 Column, 1.5rem gutter)",
+      "tablet": "640px - 1023px (2 Columns, 1.5rem gutter)",
+      "desktop": "1024px - 1535px (12 Columns, 1.5rem gutter)",
+      "large": "1536px+ (12 Columns, 1.5rem gutter)"
+    },
+    "section_separation": "Sections are separated by generous vertical padding (var(--space-section) which equals calc(4rem * var(--density))). Background alternates between solid black and subtle dark gray surface colors. Some sections use visual breaks like the logo strip marquee and decorative gradient image. The comparison table has subtle grid lines and borders. No structural divider lines are used; separation is achieved through whitespace and background color contrast.",
+    "ascii_template": "```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 [LOGO Warp]     [Nav Links]           [Log in] [Sign up] \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                        HERO                              \u2502\n\u2502                      Pricing                             \u2502\n\u2502         Start free and scale as your team grows          \u2502\n\u2502              [Monthly]  toggle  [Yearly]                 \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502   PRICING TIERS - 3 Column Layout                        \u2502\n\u2502 \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510          \u2502\n\u2502 \u2502  Free   \u2502  \u2502  Draft        \u2502  \u2502    Max      \u2502          \u2502\n\u2502 \u2502   $0    \u2502  \u2502  $18  POPULAR \u2502  \u2502   $180      \u2502          \u2502\n\u2502 \u2502[Sign up]\u2502  \u2502[Start trial \u2192]\u2502  \u2502[Contact us] \u2502          \u2502\n\u2502 \u2502         \u2502  \u2502               \u2502  \u2502             \u2502          \u2502\n\u2502 \u2502[Feature]\u2502  \u2502[Feature list] \u2502  \u2502[Feature]    \u2502          \u2502\n\u2502 \u2502[list]   \u2502  \u2502               \u2502  \u2502[list]       \u2502          \u2502\n\u2502 \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518          \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502   ADDITIONAL TIERS - 2 Column Layout                     \u2502\n\u2502 \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510       \u2502\n\u2502 \u2502    Business         \u2502  \u2502      Enterprise      \u2502       \u2502\n\u2502 \u2502      $45            \u2502  \u2502       Custom         \u2502       \u2502\n\u2502 \u2502 [Contact us]        \u2502  \u2502  [Contact sales]     \u2502       \u2502\n\u2502 \u2502 [Feature list...]   \u2502  \u2502  [Feature list...]   \u2502       \u2502\n\u2502 \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518       \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502              PARTNER LOGOS SECTION                       \u2502\n\u2502  [Linear] [Vercel] [Supabase] [GitHub] [Figma] [etc]    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502            DETAILED COMPARISON TABLE                     \u2502\n\u2502  Feature              Free  Draft  Max  Business  Ent    \u2502\n\u2502 \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u2502\n\u2502 \u2502 Category rows with checkmarks and specs             \u2502  \u2502\n\u2502 \u2502 [\u2713] [\u2713] [\u2713] [\u2713] [\u2713] pattern across columns        \u2502  \u2502\n\u2502 \u2502 Multiple feature categories with expandable rows    \u2502  \u2502\n\u2502 \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502           TRANSPARENCY SECTION                           \u2502\n\u2502      Transparency and control at every touchpoint        \u2502\n\u2502              [Learn more] [FAQ]                          \u2502\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510              \u2502\n\u2502  \u2502[Feature] \u2502  \u2502[Feature] \u2502  \u2502[Feature] \u2502              \u2502\n\u2502  \u2502   card   \u2502  \u2502   card   \u2502  \u2502   card   \u2502              \u2502\n\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518              \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                   PRICING FAQ                            \u2502\n\u2502  [Expandable accordion items with + icons]               \u2502\n\u2502  \u2022 Question item                                  [+]    \u2502\n\u2502  \u2022 Question item                                  [+]    \u2502\n\u2502  \u2022 Question item                                  [+]    \u2502\n\u2502  [Multiple FAQ entries...]                               \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502              GRADIENT IMAGE SECTION                      \u2502\n\u2502        [Large decorative gradient background]            \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                 GET WARP TODAY                           \u2502\n\u2502   Platform download options with buttons                 \u2502\n\u2502  [macOS] [Linux] [Windows] download buttons              \u2502\n\u2502  [Intel] [Apple Silicon] [.deb] [.exe] options          \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                     FOOTER                               \u2502\n\u2502  Product    Company    Resources    Social    Legal      \u2502\n\u2502  [Links]    [Links]    [Links]      [Links]   [Links]   \u2502\n\u2502                                                          \u2502\n\u2502  \u00a9 2025 Device Labs Inc.         [Language: English \u25bc]  \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n---VISUAL ANNOTATIONS---\n\n**NAV:**\n- Background: Solid black\n- Logo: \"Warp\" wordmark in white\n- Nav links: White text, minimal spacing\n- Buttons/CTAs: \"Log in\" (text link, white) | \"Sign up\" (solid white button, rounded)\n- Colors: Black background, white text/elements\n\n**HERO:**\n- Background: Black\n- Typography: Large \"Pricing\" headline in white\n- Subtext: Gray text about scaling\n- Toggle switch: \"Monthly\"/\"Yearly\" with purple accent\n- Colors: Black, white, gray, purple accent\n\n**PRICING TIERS (3-column):**\n- Background: Dark gray/black cards with subtle borders\n- Cards: Three equal-width pricing cards with rounded corners\n- Middle card: Purple \"POPULAR\" badge\n- Buttons/CTAs: \n  - \"Sign up\" (outline, white border on Free tier)\n  - \"Start trial \u2192\" (solid purple gradient, Draft tier)\n  - \"Contact us\" (outline, white border on Max tier)\n- Typography: Large white price numbers, gray descriptive text\n- Feature lists: Checkmarks in subtle gray\n- Colors: Black cards, white text, purple accent on middle card\n\n**ADDITIONAL TIERS (2-column):**\n- Background: Same dark card treatment\n- Buttons/CTAs:\n  - \"Contact us\" (outline button on Business)\n  - \"Contact sales\" (outline button on Enterprise)\n- Layout: Two equal-width cards, more spacious\n- Colors: Consistent black/white/gray scheme\n\n**PARTNER LOGOS:**\n- Background: Black\n- Logos: Grayscale/white company logos in horizontal row\n- Style: Muted, desaturated treatment\n\n**COMPARISON TABLE:**\n- Background: Dark with subtle grid lines\n- Headers: Column headers for each pricing tier\n- Rows: Feature categories with checkmarks (\u2713) in purple/white\n- Typography: Small, readable sans-serif\n- Interactive: Expandable category sections\n- Colors: Dark gray background, purple checkmarks\n\n**TRANSPARENCY SECTION:**\n- Background: Black\n- Headline: Large white text, centered\n- Buttons/CTAs: \"Learn more\" and \"FAQ\" (both text links or subtle buttons)\n- Cards: Three feature cards with icons, dark background, subtle borders\n- Colors: Black background, white text, blue/purple accent colors\n\n**PRICING FAQ:**\n- Background: Black\n- Accordion items: Each question row with [+] expand icon on right\n- Typography: White question text, subtle divider lines\n- Interactive: Expandable/collapsible items\n- Colors: Black, white text, gray dividers\n\n**GRADIENT IMAGE:**\n- Background: Large abstract gradient (teal/blue/purple flowing colors)\n- Style: Soft, blurred, atmospheric\n- Purpose: Visual break, adds color to dark page\n\n**GET WARP TODAY:**\n- Background: Black\n- Headline: White text\n- Platform icons: macOS, Linux, Windows with respective icons\n- Buttons/CTAs:\n  - \"macOS\" \u2192 \"Intel\" | \"Apple Silicon\" (white outline buttons)\n  - \"Linux\" \u2192 \".deb\" | other options (white outline buttons)\n  - \"Windows\" \u2192 \".exe\" (white outline button)\n- Layout: Grid of download options\n- Colors: Black background, white buttons and text\n\n**FOOTER:**\n- Background: Solid black\n- Layout: 5-column link grid\n- Typography: Small gray text for links, white for headings\n- Social icons: White/gray\n- Bottom bar: Copyright text and language selector\n- Colors: Black background, gray/white text",
+    "insights": []
+  },
+  "colors": {
+    "baseline": [
+      {
+        "name": "Black & Background",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "Deep background defaults used heavily for app canvas and structural wrapping elements.",
+          "when_to_use": [
+            "App Background",
+            "Canvas Base"
+          ]
+        },
+        "hex": "#121212",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Black",
+            "hex": "#000000",
+            "alpha": null,
+            "aliases": [
+              "--color-black",
+              "bg-black",
+              "text-black"
+            ]
+          },
+          {
+            "name": "Near Black",
+            "hex": "#0A0907",
+            "alpha": null,
+            "aliases": [
+              "--color-text",
+              "--color-surface",
+              "--card-bg"
+            ]
+          },
+          {
+            "name": "Off Black",
+            "hex": "#0C0C0C",
+            "alpha": null,
+            "aliases": [
+              "bg-[#0C0C0C]"
+            ]
+          },
+          {
+            "name": "Deep Gray",
+            "hex": "#0B0B0B",
+            "alpha": null,
+            "aliases": []
+          },
+          {
+            "name": "Onyx",
+            "hex": "#111111",
+            "alpha": null,
+            "aliases": []
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Surface & Panel",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "Elevated dark values used above the global background for cards, popovers, and segmented containers.",
+          "when_to_use": [
+            "Cards",
+            "Popovers",
+            "Modals",
+            "Code Blocks"
+          ]
+        },
+        "hex": "#1B1A18",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Panel",
+            "hex": "#2C2B29",
+            "alpha": null,
+            "aliases": [
+              "--color-panel",
+              "bg-[var(--color-panel)]"
+            ]
+          },
+          {
+            "name": "Dark Header",
+            "hex": "#1C2128",
+            "alpha": null,
+            "aliases": [
+              ".code-block-header"
+            ]
+          },
+          {
+            "name": "Code Block Tab",
+            "hex": "#1F2328",
+            "alpha": null,
+            "aliases": [
+              ".code-block-tab",
+              ".code-block-copy"
+            ]
+          },
+          {
+            "name": "Code Block Body",
+            "hex": "#24292F",
+            "alpha": null,
+            "aliases": [
+              ".code-block"
+            ]
+          },
+          {
+            "name": "Violet Surface",
+            "hex": "#1C1A26",
+            "alpha": null,
+            "aliases": []
+          },
+          {
+            "name": "Card Border Inset",
+            "hex": "#1F1F1F",
+            "alpha": null,
+            "aliases": []
+          },
+          {
+            "name": "Violet Border Inset",
+            "hex": "#373245",
+            "alpha": null,
+            "aliases": []
+          },
+          {
+            "name": "Muted Dark",
+            "hex": "#3C3A38",
+            "alpha": null,
+            "aliases": [
+              "--color-text-body"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Muted Borders",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "Mid-level grays for dividers, silent icon details, and non-distracting borders.",
+          "when_to_use": [
+            "Dividers",
+            "Component outlines",
+            "Disabled elements"
+          ]
+        },
+        "hex": "#464541",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Muted",
+            "hex": "#5F5D59",
+            "alpha": null,
+            "aliases": [
+              "--color-muted",
+              "text-[var(--color-muted)]",
+              "placeholder:text-[var(--color-muted)]"
+            ]
+          },
+          {
+            "name": "Lighten 50",
+            "hex": "#8F8F8F",
+            "alpha": null,
+            "aliases": [
+              "--color-lighten-50"
+            ]
+          },
+          {
+            "name": "Muted Gray",
+            "hex": "#656D76",
+            "alpha": null,
+            "aliases": [
+              ".code-block-copy"
+            ]
+          },
+          {
+            "name": "Muted Blue Gray",
+            "hex": "#6E7681",
+            "alpha": null,
+            "aliases": [
+              ".code-block-copy"
+            ]
+          },
+          {
+            "name": "Muted Slate",
+            "hex": "#8B949E",
+            "alpha": null,
+            "aliases": [
+              ".code-block-copy"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "White & Light Beiges",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "High-contrast bright values primarily for primary text, active states, buttons, and prominent typography.",
+          "when_to_use": [
+            "Primary Text",
+            "Primary Buttons",
+            "White Backgrounds"
+          ]
+        },
+        "hex": "#FFFFFF",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Text Beige",
+            "hex": "#F8F5EE",
+            "alpha": null,
+            "aliases": [
+              "--color-text",
+              "bg-[var(--color-text)]",
+              "text-[var(--color-text)]",
+              "--btn-bg"
+            ]
+          },
+          {
+            "name": "Hint Gray",
+            "hex": "#F6F8FA",
+            "alpha": null,
+            "aliases": [
+              ".code-block-header"
+            ]
+          },
+          {
+            "name": "Soft Blue Gray",
+            "hex": "#E6EDF3",
+            "alpha": null,
+            "aliases": [
+              ".code-block-tab",
+              ".code-block-copy"
+            ]
+          },
+          {
+            "name": "White 8%",
+            "hex": "#FFFFFF",
+            "alpha": 0.08,
+            "aliases": [
+              "rgba(255,255,255,0.08)"
+            ]
+          },
+          {
+            "name": "White 6%",
+            "hex": "#FFFFFF",
+            "alpha": 0.06,
+            "aliases": [
+              "rgba(255,255,255,0.06)"
+            ]
+          },
+          {
+            "name": "White 4%",
+            "hex": "#FFFFFF",
+            "alpha": 0.04,
+            "aliases": [
+              "rgba(255,255,255,0.04)"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Text Secondary",
+        "type": "Neutral Colors",
+        "rules": {
+          "description": "Secondary text rendering for descriptions, hints, and slightly lowered typographic hierarchy.",
+          "when_to_use": [
+            "Secondary Text",
+            "Subtitles",
+            "Placeholder text"
+          ]
+        },
+        "hex": "#A5A39D",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Text Body",
+            "hex": "#C0BDB8",
+            "alpha": null,
+            "aliases": [
+              "--color-text-body"
+            ]
+          },
+          {
+            "name": "Muted Slate Light",
+            "hex": "#AFB8C1",
+            "alpha": null,
+            "aliases": [
+              ".code-block-copy"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Olive Base",
+        "type": "Earth Tones",
+        "rules": {
+          "description": "Neutral warming base for slightly desaturated greenish gray instances. Used mostly as contextual token values.",
+          "when_to_use": [
+            "Token definitions",
+            "Hover overlays"
+          ]
+        },
+        "hex": "#F4F4F0",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Olive 400",
+            "hex": "#ABAB9C",
+            "alpha": null,
+            "aliases": [
+              "--color-olive-400",
+              "text-olive-400"
+            ]
+          },
+          {
+            "name": "Olive 600",
+            "hex": "#5B5B4B",
+            "alpha": null,
+            "aliases": [
+              "--color-olive-600"
+            ]
+          },
+          {
+            "name": "Olive 700",
+            "hex": "#474739",
+            "alpha": null,
+            "aliases": [
+              "--color-olive-700",
+              "text-olive-700"
+            ]
+          },
+          {
+            "name": "Olive 900",
+            "hex": "#1D1D16",
+            "alpha": null,
+            "aliases": [
+              "--color-olive-900"
+            ]
+          },
+          {
+            "name": "Olive 950",
+            "hex": "#0C0C09",
+            "alpha": null,
+            "aliases": [
+              "--color-olive-950",
+              "text-olive-950",
+              "from-olive-950"
+            ]
+          }
+        ],
+        "is_used": false
+      }
+    ],
+    "secondary": [
+      {
+        "name": "Accent Purple",
+        "type": "Cool Colors",
+        "rules": {
+          "description": "Primary brand hue and agentic AI accent color, signifying orchestration, magic, and dynamic actions.",
+          "when_to_use": [
+            "Icons",
+            "Accent backgrounds",
+            "Focus rings"
+          ]
+        },
+        "hex": "#CBB0F7",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Soft Purple",
+            "hex": "#C7AEFF",
+            "alpha": null,
+            "aliases": []
+          },
+          {
+            "name": "Mid Purple",
+            "hex": "#BDA6F7",
+            "alpha": null,
+            "aliases": []
+          },
+          {
+            "name": "Violet 50",
+            "hex": "#F5F3FF",
+            "alpha": null,
+            "aliases": [
+              "--color-violet-50",
+              "bg-violet-50"
+            ]
+          },
+          {
+            "name": "Violet 400",
+            "hex": "#A685FF",
+            "alpha": null,
+            "aliases": [
+              "--color-violet-400",
+              "text-violet-400"
+            ]
+          },
+          {
+            "name": "Violet 500",
+            "hex": "#8D54FF",
+            "alpha": null,
+            "aliases": [
+              "--color-violet-500",
+              "text-violet-500",
+              "bg-violet-500"
+            ]
+          },
+          {
+            "name": "Violet 600",
+            "hex": "#7F22FE",
+            "alpha": null,
+            "aliases": [
+              "--color-violet-600",
+              "text-violet-600"
+            ]
+          },
+          {
+            "name": "Violet 700",
+            "hex": "#7008E7",
+            "alpha": null,
+            "aliases": [
+              "--color-violet-700",
+              "text-violet-700"
+            ]
+          },
+          {
+            "name": "Purple 500",
+            "hex": "#AC4BFF",
+            "alpha": null,
+            "aliases": [
+              "--color-purple-500",
+              "bg-purple-500",
+              "border-purple-500"
+            ]
+          },
+          {
+            "name": "Purple 700",
+            "hex": "#8200DA",
+            "alpha": null,
+            "aliases": [
+              "--color-purple-700",
+              "text-purple-700"
+            ]
+          },
+          {
+            "name": "Terminus Purple BG",
+            "hex": "#9D5BF4",
+            "alpha": null,
+            "aliases": [
+              "--terminus-theme-purple-bg"
+            ]
+          },
+          {
+            "name": "Terminus Purple FG",
+            "hex": "#17072B",
+            "alpha": null,
+            "aliases": [
+              "--terminus-theme-purple-fg"
+            ]
+          },
+          {
+            "name": "Fuchsia 400",
+            "hex": "#EC6CFF",
+            "alpha": null,
+            "aliases": [
+              "--color-fuchsia-400",
+              "text-fuchsia-400"
+            ]
+          },
+          {
+            "name": "Terminus Fuchsia BG",
+            "hex": "#F336D8",
+            "alpha": null,
+            "aliases": [
+              "--terminus-theme-fuchsia-bg"
+            ]
+          },
+          {
+            "name": "Terminus Fuchsia FG",
+            "hex": "#2A0324",
+            "alpha": null,
+            "aliases": [
+              "--terminus-theme-fuchsia-fg"
+            ]
+          },
+          {
+            "name": "Accent Purple 8%",
+            "hex": "#CBB0F7",
+            "alpha": 0.08,
+            "aliases": [
+              "rgba(203,176,247,0.08)"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Accent Green",
+        "type": "Cool Colors",
+        "rules": {
+          "description": "Success, verification, and green-themed component branding.",
+          "when_to_use": [
+            "Success states",
+            "Badges",
+            "Terminal theme UI"
+          ]
+        },
+        "hex": "#00884B",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Primary Green",
+            "hex": "#43C251",
+            "alpha": null,
+            "aliases": [
+              "--color-primary-green"
+            ]
+          },
+          {
+            "name": "Terminus Green BG",
+            "hex": "#3CDA52",
+            "alpha": null,
+            "aliases": [
+              "--terminus-theme-green-bg"
+            ]
+          },
+          {
+            "name": "Terminus Green FG",
+            "hex": "#001D01",
+            "alpha": null,
+            "aliases": [
+              "--terminus-theme-green-fg"
+            ]
+          },
+          {
+            "name": "Green 500",
+            "hex": "#00C758",
+            "alpha": null,
+            "aliases": [
+              "--color-green-500",
+              "bg-green-500",
+              "border-green-500"
+            ]
+          },
+          {
+            "name": "Green 700",
+            "hex": "#008138",
+            "alpha": null,
+            "aliases": [
+              "--color-green-700",
+              "text-green-700"
+            ]
+          },
+          {
+            "name": "Emerald 50",
+            "hex": "#ECFDF5",
+            "alpha": null,
+            "aliases": [
+              "--color-emerald-50",
+              "bg-emerald-50"
+            ]
+          },
+          {
+            "name": "Emerald 400",
+            "hex": "#00D294",
+            "alpha": null,
+            "aliases": [
+              "--color-emerald-400",
+              "bg-emerald-400",
+              "text-emerald-400"
+            ]
+          },
+          {
+            "name": "Emerald 500",
+            "hex": "#00BB7F",
+            "alpha": null,
+            "aliases": [
+              "--color-emerald-500",
+              "bg-emerald-500",
+              "text-emerald-500"
+            ]
+          },
+          {
+            "name": "Emerald 600",
+            "hex": "#009767",
+            "alpha": null,
+            "aliases": [
+              "--color-emerald-600",
+              "text-emerald-600"
+            ]
+          },
+          {
+            "name": "Emerald 700",
+            "hex": "#007956",
+            "alpha": null,
+            "aliases": [
+              "--color-emerald-700",
+              "text-emerald-700"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Accent Blue & Cyan",
+        "type": "Cool Colors",
+        "rules": {
+          "description": "Information, subtle actions, and cool terminal thematic aesthetics.",
+          "when_to_use": [
+            "Infos",
+            "Links",
+            "Terminal Themes"
+          ]
+        },
+        "hex": "#3080FF",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Blue 200",
+            "hex": "#BEDBFF",
+            "alpha": null,
+            "aliases": [
+              "--color-blue-200",
+              "text-blue-200"
+            ]
+          },
+          {
+            "name": "Blue 300",
+            "hex": "#90C5FF",
+            "alpha": null,
+            "aliases": [
+              "--color-blue-300",
+              "text-blue-300"
+            ]
+          },
+          {
+            "name": "Blue 400",
+            "hex": "#54A2FF",
+            "alpha": null,
+            "aliases": [
+              "--color-blue-400",
+              "text-blue-400"
+            ]
+          },
+          {
+            "name": "Blue 700",
+            "hex": "#1447E6",
+            "alpha": null,
+            "aliases": [
+              "--color-blue-700",
+              "text-blue-700"
+            ]
+          },
+          {
+            "name": "Cyan 500",
+            "hex": "#00B7D7",
+            "alpha": null,
+            "aliases": [
+              "--color-cyan-500",
+              "border-cyan-500"
+            ]
+          },
+          {
+            "name": "Cyan 700",
+            "hex": "#007492",
+            "alpha": null,
+            "aliases": [
+              "--color-cyan-700",
+              "text-cyan-700"
+            ]
+          },
+          {
+            "name": "Sky 400",
+            "hex": "#00BCFE",
+            "alpha": null,
+            "aliases": [
+              "--color-sky-400",
+              "text-sky-400"
+            ]
+          },
+          {
+            "name": "Teal 500",
+            "hex": "#00BAA7",
+            "alpha": null,
+            "aliases": [
+              "--color-teal-500"
+            ]
+          },
+          {
+            "name": "Teal 700",
+            "hex": "#00776E",
+            "alpha": null,
+            "aliases": [
+              "--color-teal-700",
+              "text-teal-700"
+            ]
+          },
+          {
+            "name": "Indigo 400",
+            "hex": "#7D87FF",
+            "alpha": null,
+            "aliases": [
+              "--color-indigo-400",
+              "text-indigo-400"
+            ]
+          },
+          {
+            "name": "Terminus Blue BG",
+            "hex": "#238DFF",
+            "alpha": null,
+            "aliases": [
+              "--terminus-theme-blue-bg"
+            ]
+          },
+          {
+            "name": "Terminus Blue FG",
+            "hex": "#00112C",
+            "alpha": null,
+            "aliases": [
+              "--terminus-theme-blue-fg"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Accent Red",
+        "type": "Warm Colors",
+        "rules": {
+          "description": "Destructive actions, error states, and high heat alerts.",
+          "when_to_use": [
+            "Errors",
+            "Destructive buttons",
+            "Terminal theme error"
+          ]
+        },
+        "hex": "#EE343B",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Destructive Text",
+            "hex": "#FCF3F2",
+            "alpha": null,
+            "aliases": [
+              "--destructive-foreground"
+            ]
+          },
+          {
+            "name": "Red 50",
+            "hex": "#FEF2F2",
+            "alpha": null,
+            "aliases": [
+              "--color-red-50",
+              "bg-red-50"
+            ]
+          },
+          {
+            "name": "Red 400",
+            "hex": "#FF6568",
+            "alpha": null,
+            "aliases": [
+              "--color-red-400",
+              "bg-red-400",
+              "text-red-400"
+            ]
+          },
+          {
+            "name": "Red 500",
+            "hex": "#FB2C36",
+            "alpha": null,
+            "aliases": [
+              "--color-red-500",
+              "bg-red-500",
+              "text-red-500",
+              "border-red-500"
+            ]
+          },
+          {
+            "name": "Red 600",
+            "hex": "#E40014",
+            "alpha": null,
+            "aliases": [
+              "--color-red-600",
+              "bg-red-600",
+              "text-red-600"
+            ]
+          },
+          {
+            "name": "Red 700",
+            "hex": "#BF000F",
+            "alpha": null,
+            "aliases": [
+              "--color-red-700",
+              "text-red-700"
+            ]
+          },
+          {
+            "name": "Red 950",
+            "hex": "#460809",
+            "alpha": null,
+            "aliases": [
+              "--color-red-950"
+            ]
+          },
+          {
+            "name": "Terminus Red BG",
+            "hex": "#FF762A",
+            "alpha": null,
+            "aliases": [
+              "--terminus-theme-red-bg"
+            ]
+          },
+          {
+            "name": "Terminus Red FG",
+            "hex": "#2B0A00",
+            "alpha": null,
+            "aliases": [
+              "--terminus-theme-red-fg"
+            ]
+          }
+        ],
+        "is_used": true
+      },
+      {
+        "name": "Accent Yellow & Amber",
+        "type": "Warm Colors",
+        "rules": {
+          "description": "Warning indicators and vibrant energetic branding moments.",
+          "when_to_use": [
+            "Warnings",
+            "Recommendation badges",
+            "Alert details"
+          ]
+        },
+        "hex": "#F6BA00",
+        "alpha": null,
+        "shades": [
+          {
+            "name": "Yellow 500",
+            "hex": "#EDB200",
+            "alpha": null,
+            "aliases": [
+              "--color-yellow-500"
+            ]
+          },
+          {
+            "name": "Yellow 700",
+            "hex": "#A36100",
+            "alpha": null,
+            "aliases": [
+              "--color-yellow-700",
+              "text-yellow-700"
+            ]
+          },
+          {
+            "name": "Amber 50",
+            "hex": "#FFFBEB",
+            "alpha": null,
+            "aliases": [
+              "--color-amber-50",
+              "bg-amber-50"
+            ]
+          },
+          {
+            "name": "Amber 300",
+            "hex": "#FFD236",
+            "alpha": null,
+            "aliases": [
+              "--color-amber-300",
+              "text-amber-300"
+            ]
+          },
+          {
+            "name": "Amber 400",
+            "hex": "#FCBB00",
+            "alpha": null,
+            "aliases": [
+              "--color-amber-400",
+              "bg-amber-400",
+              "text-amber-400"
+            ]
+          },
+          {
+            "name": "Amber 500",
+            "hex": "#F99C00",
+            "alpha": null,
+            "aliases": [
+              "--color-amber-500",
+              "text-amber-500",
+              "border-amber-500"
+            ]
+          },
+          {
+            "name": "Amber 600",
+            "hex": "#DD7400",
+            "alpha": null,
+            "aliases": [
+              "--color-amber-600",
+              "text-amber-600"
+            ]
+          },
+          {
+            "name": "Amber 700",
+            "hex": "#B75000",
+            "alpha": null,
+            "aliases": [
+              "--color-amber-700",
+              "text-amber-700"
+            ]
+          },
+          {
+            "name": "Amber 950",
+            "hex": "#461901",
+            "alpha": null,
+            "aliases": [
+              "--color-amber-950"
+            ]
+          }
+        ],
+        "is_used": true
+      }
+    ],
+    "insights": [
+      "A dark-mode-first color palette relying on deep blacks and charcoal grays for backgrounds, panels, and borders to create spatial hierarchy.",
+      "Subtle muted grays are used for secondary typography and structural borders while high-contrast whites and light beiges draw focus to primary content.",
+      "Accent colors span a vibrant rainbow (purple, green, blue, red, yellow), acting as status cues, semantic highlights, and brand emphasis throughout the UI."
+    ]
+  },
+  "typography": {
+    "titles": {
+      "variants": [
+        {
+          "name": "Matter",
+          "role": "H1 Display",
+          "specs": {
+            "size": "clamp(2.5rem, 5vw, var(--heading-size))",
+            "line_height": "1.1",
+            "font_weight": "var(--heading-weight)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": true,
+            "source": "Displaay Type Foundry"
+          },
+          "technical": {
+            "font_family_css": "var(--font-heading)",
+            "file_url": ""
+          }
+        },
+        {
+          "name": "Matter",
+          "role": "H2 Heading",
+          "specs": {
+            "size": "clamp(1.75rem, 3.5vw, calc(var(--heading-size) * 0.7))",
+            "line_height": "1.15",
+            "font_weight": "var(--heading-weight)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": true,
+            "source": "Displaay Type Foundry"
+          },
+          "technical": {
+            "font_family_css": "var(--font-heading)",
+            "file_url": ""
+          }
+        },
+        {
+          "name": "Matter",
+          "role": "H3 Heading",
+          "specs": {
+            "size": "clamp(1.25rem, 2.5vw, 1.5rem)",
+            "line_height": "1.2",
+            "font_weight": "var(--heading-weight)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": true,
+            "source": "Displaay Type Foundry"
+          },
+          "technical": {
+            "font_family_css": "var(--font-heading)",
+            "file_url": ""
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Card Title (H3 Fallback)",
+          "specs": {
+            "size": "var(--text-2xl)",
+            "line_height": "calc(var(--spacing)*8)",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "var(--font-inter), system-ui, sans-serif",
+            "file_url": ""
+          }
+        }
+      ]
+    },
+    "paragraphs": {
+      "description": "Body text sizes for descriptions and functional lists.",
+      "variants": [
+        {
+          "name": "Inter",
+          "role": "Body Large (Intro)",
+          "specs": {
+            "size": "calc(var(--body-size) * 1.125)",
+            "line_height": "var(--body-line-height)",
+            "font_weight": "var(--body-weight)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "var(--font-body)",
+            "file_url": ""
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Body Base",
+          "specs": {
+            "size": "var(--text-base)",
+            "line_height": "var(--text-base--line-height)",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "var(--font-inter), system-ui, sans-serif",
+            "file_url": ""
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Body Small (Features)",
+          "specs": {
+            "size": "var(--text-sm)",
+            "line_height": "calc(var(--spacing)*6)",
+            "font_weight": "400",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "var(--font-inter), system-ui, sans-serif",
+            "file_url": ""
+          }
+        }
+      ]
+    },
+    "labels": {
+      "description": "Badges, categories, UI tabs, and strict microcopy.",
+      "variants": [
+        {
+          "name": "Inter",
+          "role": "Navigation & Tabs",
+          "specs": {
+            "size": "var(--text-sm)",
+            "line_height": "calc(var(--spacing)*7)",
+            "font_weight": "var(--font-weight-medium)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "var(--font-inter), system-ui, sans-serif",
+            "file_url": ""
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "UI Badge (Recommended)",
+          "specs": {
+            "size": "var(--text-xs)",
+            "line_height": "calc(var(--spacing)*5)",
+            "font_weight": "var(--font-weight-medium)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "var(--font-inter), system-ui, sans-serif",
+            "file_url": ""
+          }
+        },
+        {
+          "name": "DM Mono",
+          "role": "Category Header / Overline",
+          "specs": {
+            "size": "var(--text-xs)",
+            "line_height": "var(--text-xs--line-height)",
+            "font_weight": "var(--font-weight-medium)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "var(--font-mono), ui-monospace, monospace",
+            "file_url": ""
+          }
+        },
+        {
+          "name": "Inter",
+          "role": "Keyboard Shortcut (KBD)",
+          "specs": {
+            "size": "11px",
+            "line_height": "1",
+            "font_weight": "var(--font-weight-semibold)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "var(--font-inter), system-ui, sans-serif",
+            "file_url": ""
+          }
+        }
+      ]
+    },
+    "others": {
+      "description": "Various display pricing metrics and large scale labels.",
+      "variants": [
+        {
+          "name": "Inter",
+          "role": "Price Metric Display",
+          "specs": {
+            "size": "var(--text-5xl)",
+            "line_height": "var(--text-5xl--line-height)",
+            "font_weight": "var(--font-weight-semibold)",
+            "font_variation_settings": ""
+          },
+          "licensing": {
+            "is_proprietary": false,
+            "source": "Google Fonts"
+          },
+          "technical": {
+            "font_family_css": "var(--font-inter), system-ui, sans-serif",
+            "file_url": ""
+          }
+        }
+      ]
+    },
+    "highlights": "Dotted underlines (decoration-dotted underline-offset-4) reveal additional functionality softly, while UI focus elements are marked natively with ring offsets.",
+    "insights": [
+      "Strategic Fluidity: Headings scale seamlessly via `clamp()` functions tied to CSS variables (`clamp(2.5rem, 5vw, var(--heading-size))`), ensuring dynamic responsiveness without sudden breakpoint scaling.",
+      "Developer Persona: Heavy integration of 'DM Mono' for categorization and explicit keyboard shortcut styling (`<kbd>`) reinforces the technical, terminal-focused tooling identity of the brand.",
+      "Hierarchical Contrast: The custom geometric sans 'Matter' is exclusively assigned to Display headings, creating strong visual hierarchy when juxtaposed against the structured, highly-tracked 'Inter' utility blocks."
+    ]
+  },
+  "surfaces": {
+    "texture_classification": [
+      "shadows_soft",
+      "glass_blur"
+    ],
+    "solid_colors": [
+      {
+        "name": "Background",
+        "description": "Main page background color",
+        "when_to_use": [
+          "Page backgrounds",
+          "Root level containers"
+        ],
+        "hex": "#121212"
+      },
+      {
+        "name": "Surface",
+        "description": "Primary surface color for cards and panels (oklch 22.0% 0.004 84.6)",
+        "when_to_use": [
+          "Card backgrounds",
+          "Pricing tier containers",
+          "Main content panels"
+        ],
+        "hex": "#1B1A18"
+      },
+      {
+        "name": "Panel",
+        "description": "Elevated panel surface (oklch 29.0% 0.005 84.6)",
+        "when_to_use": [
+          "Elevated surfaces",
+          "Secondary containers",
+          "Flyout menus"
+        ],
+        "hex": "#2C2B29"
+      },
+      {
+        "name": "Border",
+        "description": "Default border color (oklch 39.0% 0.006 84.6)",
+        "when_to_use": [
+          "Card borders",
+          "Dividers",
+          "Ring outlines"
+        ],
+        "hex": "#464541"
+      },
+      {
+        "name": "Text Primary",
+        "description": "Primary text color (oklch 97.0% 0.010 84.6)",
+        "when_to_use": [
+          "Headings",
+          "Primary body text",
+          "High emphasis content"
+        ],
+        "hex": "#F8F5EE"
+      },
+      {
+        "name": "Text Secondary",
+        "description": "Secondary text and muted content (oklch 71.5% 0.008 84.6)",
+        "when_to_use": [
+          "Secondary text",
+          "Captions",
+          "Muted labels"
+        ],
+        "hex": "#A5A39D"
+      },
+      {
+        "name": "Accent Purple",
+        "description": "Accent color for highlights and special elements",
+        "when_to_use": [
+          "Accent highlights",
+          "Special callouts",
+          "Featured elements"
+        ],
+        "hex": "#CBB0F7"
+      },
+      {
+        "name": "Tertiary Green",
+        "description": "Tertiary color for badges and labels (oklch 71.5% 0.216 303.9)",
+        "when_to_use": [
+          "Recommended badges",
+          "Success states",
+          "Promotional labels"
+        ],
+        "hex": "#00884B"
+      },
+      {
+        "name": "Glass Panel",
+        "description": "Glassmorphism surface with backdrop blur for navigation flyouts",
+        "when_to_use": [
+          "Navbar flyouts",
+          "Dropdown menus",
+          "Modal overlays"
+        ],
+        "hex": "#0C0C0C"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "Background Fade Top",
+        "description": "Gradient from background color to transparent, top to bottom",
+        "when_to_use": [
+          "Section transitions",
+          "Background fade effects"
+        ],
+        "css_code": "linear-gradient(to bottom in oklab, var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+      },
+      {
+        "name": "Background Fade Bottom Right",
+        "description": "Diagonal gradient from background color to transparent",
+        "when_to_use": [
+          "Diagonal section transitions",
+          "Hero backgrounds"
+        ],
+        "css_code": "linear-gradient(to bottom right in oklab, var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+      },
+      {
+        "name": "Background with Via Transparent",
+        "description": "Background color fading through transparent to another color",
+        "when_to_use": [
+          "Complex section transitions",
+          "Multi-layer backgrounds"
+        ],
+        "css_code": "linear-gradient(to bottom in oklab, var(--color-background) var(--tw-gradient-from-position), transparent var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+      },
+      {
+        "name": "Olive Gradient Overlay",
+        "description": "Dark olive gradient with varying opacity from 70% to 55% to 90%",
+        "when_to_use": [
+          "Image overlays",
+          "Dark section backgrounds",
+          "Content scrim"
+        ],
+        "css_code": "linear-gradient(to bottom in oklab, rgba(12, 12, 9, 0.7) 0%, rgba(12, 12, 9, 0.55) 50%, rgba(12, 12, 9, 0.9) 100%)"
+      },
+      {
+        "name": "Black Fade Overlay",
+        "description": "Black gradient fading from 25% opacity to transparent",
+        "when_to_use": [
+          "Image overlays",
+          "Section fade effects"
+        ],
+        "css_code": "linear-gradient(to bottom in oklab, rgba(0, 0, 0, 0.25) 0%, transparent 100%)"
+      },
+      {
+        "name": "Text Subtle Fade",
+        "description": "Very subtle text color gradient from 5% to 10% opacity",
+        "when_to_use": [
+          "Subtle section backgrounds",
+          "Text-based decorative elements"
+        ],
+        "css_code": "linear-gradient(to bottom in oklab, color-mix(in oklab, var(--color-text) 5%, transparent) 0%, color-mix(in oklab, var(--color-text) 10%, transparent) 100%)"
+      },
+      {
+        "name": "Animated Border Gradient",
+        "description": "Rotating conic gradient for animated borders on featured pricing cards",
+        "when_to_use": [
+          "Animated borders",
+          "Featured card highlights",
+          "Rotating accent effects"
+        ],
+        "css_code": "conic-gradient(from 0deg, var(--color-accent-purple), var(--color-tertiary), var(--color-accent-purple))"
+      }
+    ],
+    "highlights": [
+      "Backdrop blur effects on navigation header: backdrop-blur-md (12px blur)",
+      "Glass panel navigation flyouts with bg-[#0C0C0C] and shadow-lg",
+      "Soft shadow system using shadow-sm, shadow-md, shadow-lg, and shadow-xl with subtle color-mixed black shadows",
+      "Animated spinning border gradient on featured 'Build' pricing card using conic gradient",
+      "Grayscale filter on logo carousel with opacity transitions on hover",
+      "Horizontal scrolling mask gradient effect on logo carousel: linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+      "Ring-based borders using inset-ring-1 with color-mixed border colors at various opacities",
+      "Subtle surface texture treatment with --surface-texture variable (currently set to none)",
+      "Color-mixed background overlays at multiple opacity levels (5%, 10%, 15%, 20%, etc.)",
+      "Shadow treatment on cards with transition-[box-shadow] duration-[var(--duration-normal)]"
+    ]
+  },
+  "elevation": {
+    "description": "Elevation allows elements to be lifted from the background. It can be defined by applying drop shadows or other visual cues, such as color and borders",
+    "shadows": {
+      "description": "Elevation using shadows reflects a spatial relationship by indicating separation from the background or allowing content to be scrolled under another element.",
+      "levels": [
+        {
+          "name": "Tw Ring Shadow",
+          "type": "drop",
+          "description": "Tailwind ring shadow reset - transparent placeholder shadow used for ring offset calculations",
+          "css_value": "0 0 #0000",
+          "when_to_use": [
+            "Ring offset calculations",
+            "Shadow reset states"
+          ]
+        },
+        {
+          "name": "Img Shadow",
+          "type": "drop",
+          "description": "Image shadow with 8px vertical offset, 30px blur, and 40% black opacity for prominent elevation",
+          "css_value": "0 8px 30px rgb(0 0 0 / 0.4)",
+          "when_to_use": [
+            "Images",
+            "Hero images",
+            "Featured media elements"
+          ]
+        }
+      ]
+    },
+    "borders": [
+      {
+        "hex": "#1F1F1F",
+        "width": "1px",
+        "style": "solid"
+      },
+      {
+        "hex": "#373245",
+        "width": "1px",
+        "style": "solid"
+      }
+    ]
+  },
+  "interactions": {
+    "global_patterns": [
+      "sticky_header",
+      "tab_switching",
+      "accordion",
+      "marquee",
+      "hover_lift"
+    ],
+    "animations": [
+      {
+        "name": "scroll-left (marquee)",
+        "css": ""
+      },
+      {
+        "name": "scroll-right (marquee)",
+        "css": ""
+      },
+      {
+        "name": "spin-slow (animated border)",
+        "css": ""
+      },
+      {
+        "name": "global-transition",
+        "css": ""
+      },
+      {
+        "name": "duration-normal",
+        "css": ""
+      },
+      {
+        "name": "box-shadow-transition",
+        "css": ""
+      },
+      {
+        "name": "opacity-hover",
+        "css": ""
+      },
+      {
+        "name": "transform-rotate-180",
+        "css": ""
+      }
+    ],
+    "insights": [
+      "The design system uses CSS custom properties extensively (--color-*, --radius-*, --btn-*) allowing for easy theming and consistent token usage across components.",
+      "Navigation employs a glassmorphism effect with backdrop-blur-md and semi-transparent background (60-70% opacity) creating depth while maintaining content readability.",
+      "The pricing page features an animated gradient border on the recommended tier card using a slow-spinning pseudo-element, drawing attention without being distracting.",
+      "Button states follow a consistent pattern: solid fill for primary CTAs, ghost/transparent for secondary navigation, and outline with hover border-color changes for tertiary actions."
+    ]
+  },
+  "actions": {
+    "button_list": [
+      {
+        "name": "Download Warp (Primary CTA)",
+        "usage": "Primary call-to-action in navigation header for app download. High visibility, solid fill.",
+        "specs": {
+          "radius": "rounded-xl",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "0.25rem 1rem"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.85",
+            "cursor": null
+          },
+          "disabled": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Download Now (Pricing Card CTA)",
+        "usage": "Primary action button on pricing cards for free tier download.",
+        "specs": {
+          "radius": "rounded-lg",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "0.5rem 1rem"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.85",
+            "cursor": null
+          },
+          "disabled": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Start Today (Pricing Card CTA)",
+        "usage": "Primary action button on paid pricing tiers (Build, Max, Business).",
+        "specs": {
+          "radius": "rounded-lg",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "0.5rem 1rem"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.85",
+            "cursor": null
+          },
+          "disabled": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Contact Sales (Pricing Card CTA)",
+        "usage": "Primary action button on Enterprise pricing tier.",
+        "specs": {
+          "radius": "rounded-lg",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "0.5rem 1rem"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.85",
+            "cursor": null
+          },
+          "disabled": {
+            "background": "var(--btn-bg, #F8F5EE)",
+            "text_color": "#121212",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Contact sales (Ghost/Text Nav)",
+        "usage": "Secondary navigation button for sales contact in header.",
+        "specs": {
+          "radius": "rounded-xl",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "0.25rem 0.75rem"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "transparent",
+            "text_color": "oklch(0.97 0.01 84.6)",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "oklch(0.97 0.01 84.6) / 10%",
+            "text_color": "oklch(0.97 0.01 84.6)",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": null,
+            "cursor": null
+          },
+          "disabled": {
+            "background": "transparent",
+            "text_color": "oklch(0.97 0.01 84.6)",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Reload credit discounts (Secondary Outline)",
+        "usage": "Secondary action button in pricing cards for viewing credit discount options.",
+        "specs": {
+          "radius": "rounded-lg",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "12px 16px"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "transparent",
+            "text_color": "oklch(0.715 0.008 84.6)",
+            "border_color": "oklch(0.39 0.006 84.6) / 30%",
+            "border_width": "1px",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "transparent",
+            "text_color": "oklch(0.97 0.01 84.6)",
+            "border_color": "oklch(0.39 0.006 84.6) / 50%",
+            "border_width": "1px",
+            "opacity": null,
+            "cursor": null
+          },
+          "disabled": {
+            "background": "transparent",
+            "text_color": "oklch(0.715 0.008 84.6)",
+            "border_color": "oklch(0.39 0.006 84.6) / 30%",
+            "border_width": "1px",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Icon Button (Close/Menu)",
+        "usage": "Icon-only circular buttons for dismissing modals, opening mobile menu, or closing panels.",
+        "specs": {
+          "radius": "rounded-full",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "16px",
+              "padding": "6px"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "transparent",
+            "text_color": "oklch(0.97 0.01 84.6)",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "oklch(0.97 0.01 84.6) / 10%",
+            "text_color": "oklch(0.97 0.01 84.6)",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": null,
+            "cursor": null
+          },
+          "disabled": {
+            "background": "transparent",
+            "text_color": "oklch(0.97 0.01 84.6)",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      },
+      {
+        "name": "Nav Dropdown Trigger (Products/Solutions/Resources/Enterprise)",
+        "usage": "Navigation dropdown buttons that trigger flyout menus on hover/click.",
+        "specs": {
+          "radius": "rounded-lg",
+          "sizes": [
+            {
+              "name": "Default",
+              "font": "Inter, system-ui, sans-serif",
+              "size": "14px",
+              "padding": "4px 10px"
+            }
+          ]
+        },
+        "visuals": {
+          "default": {
+            "background": "transparent",
+            "text_color": "oklch(0.97 0.01 84.6)",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": null,
+            "cursor": null
+          },
+          "hover": {
+            "background": "oklch(0.97 0.01 84.6) / 5%",
+            "text_color": "oklch(0.97 0.01 84.6)",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": null,
+            "cursor": null
+          },
+          "disabled": {
+            "background": "transparent",
+            "text_color": "oklch(0.97 0.01 84.6)",
+            "border_color": "",
+            "border_width": "0px",
+            "opacity": "0.5",
+            "cursor": "not-allowed"
+          }
+        }
+      }
+    ],
+    "button_group": {
+      "description": "Buttons are typically placed inline with gap-4 (16px) spacing in pricing cards.",
+      "spacing": "16px"
+    },
+    "links": {
+      "text_decoration": "none"
+    }
+  },
+  "navigation": {
+    "top_nav": {
+      "height": "84px",
+      "position": "sticky",
+      "background": {
+        "hex": "#121212",
+        "color_reference": "var(--color-background)",
+        "opacity": "0.6",
+        "blur": "backdrop-filter: blur(12px)"
+      },
+      "border_bottom": null
+    },
+    "announcement_bar": {
+      "background": "#FFFFFF",
+      "text_color": "#121212",
+      "border_bottom": "1px solid oklch(0.39 0.006 84.6)",
+      "height": null
+    },
+    "tabs": {
+      "style_name": "Pill Toggle Tab",
+      "description": "Tabs organize content into multiple sections and allow users to navigate between them. Uses pill-shaped buttons inside a rounded container.",
+      "when_to_use": [
+        "Billing toggle (Monthly/Annually)",
+        "Switching between pricing views",
+        "Segmented control for binary choices"
+      ],
+      "states": [
+        {
+          "name": "default",
+          "visual_change": "Muted text color, no background",
+          "background": null,
+          "text": "oklch(0.715 0.008 84.6)",
+          "icon": null
+        },
+        {
+          "name": "hover",
+          "visual_change": "Subtle background tint, brighter text",
+          "background": "oklch(0.97 0.01 84.6) / 5%",
+          "text": "oklch(0.97 0.01 84.6)",
+          "icon": null
+        },
+        {
+          "name": "selected",
+          "visual_change": "Visible background, full brightness text",
+          "background": "oklch(0.97 0.01 84.6) / 10%",
+          "text": "oklch(0.97 0.01 84.6)",
+          "icon": null
+        }
+      ]
+    }
+  },
+  "data_display": {
+    "charts": [],
+    "tables": [
+      {
+        "name": "Pricing Comparison Table",
+        "description": "Feature comparison matrix showing capabilities across Free, Build, Max, Business, and Enterprise tiers with checkmarks and feature details.",
+        "when_to_use": [
+          "Comparing pricing plans",
+          "Showing feature availability across tiers",
+          "Detailed plan differentiation"
+        ]
+      }
+    ],
+    "tiles": [
+      {
+        "name": "Pricing Card",
+        "description": "Dark surface card displaying pricing tier information including name, price, description, CTA button, and feature list with circle bullet points.",
+        "when_to_use": [
+          "Displaying pricing plan options",
+          "SaaS pricing pages",
+          "Subscription tier comparison"
+        ]
+      }
+    ]
+  },
+  "structure": {
+    "accordion": {
+      "interaction": "Single open by default - FAQ items expand/collapse individually with + icon trigger"
+    },
+    "dividers": [
+      {
+        "name": "Card Section Divider",
+        "description": "Horizontal divider separating pricing card content from secondary actions (credit discounts)",
+        "when_to_use": [
+          "Separating primary content from secondary actions in cards",
+          "Visual grouping within pricing cards"
+        ],
+        "color": "oklch(0.39 0.006 84.6)",
+        "height": "1px",
+        "style": "solid"
+      },
+      {
+        "name": "Table Row Divider",
+        "description": "Subtle horizontal line separating rows in the comparison table",
+        "when_to_use": [
+          "Between feature rows in comparison tables",
+          "Separating content sections"
+        ],
+        "color": "oklch(0.39 0.006 84.6) / 20%",
+        "height": "1px",
+        "style": "solid"
+      }
+    ]
+  },
+  "icons": null,
+  "assets": {
+    "logos": [],
+    "media": []
+  },
+  "sections": [
+    {
+      "type": "Navigation",
+      "layout_pattern": "Horizontal sticky navbar",
+      "headline": null,
+      "subheadline": null,
+      "components": [
+        {
+          "type": "logo",
+          "description": "Warp wordmark in white"
+        },
+        {
+          "type": "navigation",
+          "description": "Dropdown menus for Products, Solutions, Resources, Enterprise, and Pricing link"
+        },
+        {
+          "type": "button",
+          "description": "Contact sales button - outline style with white text"
+        },
+        {
+          "type": "button",
+          "description": "Download Warp button - solid white background, dark text with keyboard shortcut 'D'"
+        },
+        {
+          "type": "button",
+          "description": "Mobile menu hamburger icon"
+        }
+      ]
+    },
+    {
+      "type": "Hero",
+      "layout_pattern": "Centered",
+      "headline": "Pricing",
+      "subheadline": "Start free and scale as your team grows",
+      "components": [
+        {
+          "type": "button",
+          "description": "Monthly/Yearly toggle switch with purple accent, shows '10% off' label for yearly"
+        }
+      ]
+    },
+    {
+      "type": "Pricing",
+      "layout_pattern": "Grid 3-column (responsive to 1-column on mobile)",
+      "headline": null,
+      "subheadline": null,
+      "components": [
+        {
+          "type": "card",
+          "description": "Free tier card - dark gray/black background, white text, $0/month, 'Download Now' outline button"
+        },
+        {
+          "type": "card",
+          "description": "Build tier card (Recommended) - purple gradient border with animated spinning effect, 'Recommended' green badge, $18-20/month, purple gradient CTA button 'Start Today', includes reload credit discounts button at bottom"
+        },
+        {
+          "type": "card",
+          "description": "Max tier card - dark card, $180-200/month, white CTA button, includes reload credit discounts button at bottom"
+        }
+      ]
+    },
+    {
+      "type": "Pricing",
+      "layout_pattern": "Grid 2-column (responsive)",
+      "headline": null,
+      "subheadline": null,
+      "components": [
+        {
+          "type": "card",
+          "description": "Business tier card - $45-50/month, white CTA button 'Start Today', includes reload credit discounts button"
+        },
+        {
+          "type": "card",
+          "description": "Enterprise tier card - 'Custom' pricing, white CTA button 'Contact Sales'"
+        }
+      ]
+    },
+    {
+      "type": "Logo Strip",
+      "layout_pattern": "Horizontal scrolling marquee",
+      "headline": null,
+      "subheadline": "Trusted by over 700,000 developers",
+      "components": [
+        {
+          "type": "logo_strip",
+          "description": "Grayscale company logos (GitHub, Amazon, Asana, Nvidia, Retool, Docker, VMware, Ramp, DoorDash, Amplitude, Peloton, Teamworks) in continuous horizontal scroll animation with mask fade on edges"
+        }
+      ]
+    },
+    {
+      "type": "Comparison Table",
+      "layout_pattern": "Multi-column table with expandable rows",
+      "headline": null,
+      "subheadline": null,
+      "components": [
+        {
+          "type": "table",
+          "description": "Feature comparison table with columns for Free, Build, Max, Business, Enterprise tiers. Rows show checkmarks (purple/white), feature specs, and expandable categories. Dark gray background with subtle grid lines"
+        }
+      ]
+    },
+    {
+      "type": "Features",
+      "layout_pattern": "Centered with 3-column card grid",
+      "headline": "Transparency and control at every touchpoint",
+      "subheadline": null,
+      "components": [
+        {
+          "type": "button",
+          "description": "'Learn more' text link or subtle button"
+        },
+        {
+          "type": "button",
+          "description": "'FAQ' text link or subtle button"
+        },
+        {
+          "type": "card",
+          "description": "Feature card with icon - dark background, subtle border, blue/purple accent colors"
+        },
+        {
+          "type": "card",
+          "description": "Feature card with icon - dark background, subtle border"
+        },
+        {
+          "type": "card",
+          "description": "Feature card with icon - dark background, subtle border"
+        }
+      ]
+    },
+    {
+      "type": "FAQ",
+      "layout_pattern": "Single column accordion list",
+      "headline": "Pricing FAQ",
+      "subheadline": null,
+      "components": [
+        {
+          "type": "accordion",
+          "description": "Multiple expandable FAQ items with [+] expand icons on right, white question text, gray divider lines between items, black background"
+        }
+      ]
+    },
+    {
+      "type": "Decorative",
+      "layout_pattern": "Full-width background image",
+      "headline": null,
+      "subheadline": null,
+      "components": [
+        {
+          "type": "image",
+          "description": "Large abstract gradient (teal/blue/purple flowing colors), soft blurred atmospheric style"
+        }
+      ]
+    },
+    {
+      "type": "CTA",
+      "layout_pattern": "Centered with grid of download options",
+      "headline": "Get Warp Today",
+      "subheadline": null,
+      "components": [
+        {
+          "type": "icon",
+          "description": "Platform icons for macOS, Linux, Windows"
+        },
+        {
+          "type": "button",
+          "description": "macOS download buttons - 'Intel' and 'Apple Silicon' white outline buttons"
+        },
+        {
+          "type": "button",
+          "description": "Linux download button - '.deb' white outline button"
+        },
+        {
+          "type": "button",
+          "description": "Windows download button - '.exe' white outline button"
+        }
+      ]
+    },
+    {
+      "type": "Footer",
+      "layout_pattern": "5-column link grid with bottom bar",
+      "headline": null,
+      "subheadline": null,
+      "components": [
+        {
+          "type": "navigation",
+          "description": "Five columns of links labeled Product, Company, Resources, Social, Legal with white headings and gray link text"
+        },
+        {
+          "type": "icon",
+          "description": "Social media icons in white/gray"
+        },
+        {
+          "type": "button",
+          "description": "Language selector dropdown showing 'English' with arrow"
+        },
+        {
+          "type": "divider",
+          "description": "Copyright text '\u00a9 2025 Device Labs Inc.' in small gray text"
+        }
+      ]
+    }
+  ]
+}

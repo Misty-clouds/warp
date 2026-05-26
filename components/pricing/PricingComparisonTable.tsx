@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Link from "next/link";
 import DottedTooltip from "@/components/shared/DottedTooltip";
 import CheckCircleIcon from "@/components/icons/CheckCircleIcon";
@@ -270,8 +270,8 @@ export default function PricingComparisonTable() {
             </colgroup>
             <tbody>
               {tableData.map((group) => (
-                <>
-                  <tr key={group.title}>
+                <Fragment key={group.title}>
+                  <tr>
                     <th
                       colSpan={2}
                       scope="colgroup"
@@ -290,7 +290,7 @@ export default function PricingComparisonTable() {
                       </td>
                     </tr>
                   ))}
-                </>
+                </Fragment>
               ))}
             </tbody>
           </table>

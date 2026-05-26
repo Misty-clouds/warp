@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: Matter;
+  src: url(/fonts/Matter-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Matter;
+  src: url(/fonts/Matter-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 @keyframes scroll-left {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }

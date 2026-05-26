@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes hero-left-photo-carousel {
+  0%, 50% { opacity: 1; }
+  55%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fill-progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animated-border {
+  background: conic-gradient(from 0deg, transparent 30%, var(--color-accent-purple) 60%, transparent 70%);
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+.link-underline-reveal {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline-reveal::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 200ms ease;
+}
+.link-underline-reveal:hover::after {
+  width: 100%;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-mono: var(--font-dm-mono), "DM Mono", ui-monospace, monospace;
+  --font-display: "Matter", var(--font-inter), "Inter", system-ui, sans-serif;
+
+  --color-background: #121212;
+  --color-surface: oklch(22% 0.004 84.6);
+  --color-panel: oklch(29% 0.005 84.6);
+  --color-border: oklch(39% 0.006 84.6);
+  --color-text: oklch(97% 0.01 84.6);
+  --color-text-secondary: oklch(71.5% 0.008 84.6);
+  --color-muted: oklch(48% 0.007 84.6);
+  --color-accent-purple: #cbb0f7;
+  --color-tertiary: var(--color-text);
+  --color-accent: oklch(72% 0.12 145);
+
+  --space-lg: 1.5rem;
+  --shadow: 0 1px 3px rgb(0 0 0 / 0.3), 0 1px 2px rgb(0 0 0 / 0.2);
+  --duration-normal: 200ms;
+
+  --radius: 0.125rem;
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) * 1.5);
+  --radius-xl: calc(var(--radius) * 2);
+
+  --content-max-width: 80rem;
+  --scroll-padding-top: 5.25rem;
+  --space-section: clamp(4rem, 8vw, 6rem);
+
+  --btn-bg: var(--color-text);
+  --btn-border: none;
+  --btn-text-color: var(--color-background);
+  --btn-padding: 0.25rem 1rem;
+  --btn-radius: calc(var(--radius) * 1.5);
+  --btn-transform: none;
+  --btn-icon-display: none;
+
+  --heading-weight: 400;
+  --heading-size: 64px;
+  --heading-letter-spacing: -0.025em;
+  --body-size: 16px;
+  --body-weight: 400;
+  --body-line-height: 1.6;
+
+  --img-shadow: 0 8px 30px rgb(0 0 0 / 0.4);
+  --img-radius: calc(var(--radius) * 3);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-padding-top: var(--scroll-padding-top);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.animate-scroll-left {
+  animation: scroll-left var(--scroll-duration, 40s) linear infinite;
+}
+
+.animate-hero-carousel {
+  animation: hero-left-photo-carousel 8s infinite;
 }

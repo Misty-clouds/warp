@@ -24,14 +24,15 @@ import BookOpenIcon from "./icons/BookOpenIcon";
 import BriefcaseIcon from "./icons/BriefcaseIcon";
 import NewspaperIcon from "./icons/NewspaperIcon";
 import LightningIcon from "./icons/LightningIcon";
-import TagIcon from "./icons/TagIcon";
 import GlobeIcon from "./icons/GlobeIcon";
+import ExternalLinkIcon from "./icons/ExternalLinkIcon";
 
 type FlyoutItem = {
   label: string;
   description: string;
   href: string;
   icon: React.ReactNode;
+  external?: boolean;
 };
 
 const productsItems: FlyoutItem[] = [
@@ -92,9 +93,9 @@ const resourceDevItems: FlyoutItem[] = [
   { label: "Docs", description: "API docs and guides", href: "https://docs.warp.dev/", icon: <FileTextIcon className="size-4" /> },
   { label: "Blog", description: "News and product updates", href: "/blog", icon: <PencilIcon className="size-4" /> },
   { label: "Community", description: "Get help and connect", href: "https://docs.warp.dev/support-and-community", icon: <UsersIcon className="size-4" /> },
-  { label: "Events", description: "Webinars and sessions", href: "https://luma.com/warpdotdev", icon: <CalendarIcon className="size-4" /> },
+  { label: "Events", description: "Webinars and sessions", href: "https://luma.com/warpdotdev", icon: <CalendarIcon className="size-4" />, external: true },
   { label: "Changelog", description: "What's new in Warp", href: "https://docs.warp.dev/changelog", icon: <ListDotsIcon className="size-4" /> },
-  { label: "Roadmap", description: "See what we're building next", href: "https://github.com/warpdotdev/warp/issues", icon: <MapIcon className="size-4" /> },
+  { label: "Roadmap", description: "See what we're building next", href: "https://github.com/warpdotdev/warp/issues?q=state:open%20label:%22roadmap%22", icon: <MapIcon className="size-4" />, external: true },
   { label: "Support", description: "Help and issue tracking", href: "https://docs.warp.dev/support-and-community", icon: <ShieldCheckIcon className="size-4" /> },
 ];
 
@@ -107,35 +108,46 @@ const resourceCompanyItems: FlyoutItem[] = [
 ];
 
 const enterpriseItems: FlyoutItem[] = [
-  { label: "Enterprise", description: "Warp for large engineering teams", href: "/enterprise", icon: <TagIcon className="size-4" /> },
-  { label: "Security", description: "Enterprise-grade security and compliance", href: "/security", icon: <ShieldCheckIcon className="size-4" /> },
+  { label: "Overview", description: "Secure, compliant agentic development for your org", href: "/enterprise", icon: <ShieldCheckIcon className="size-4" /> },
   { label: "Customers", description: "Teams shipping faster with Warp", href: "/customers", icon: <UsersIcon className="size-4" /> },
 ];
 
-function FlyoutItemRow({ item, external }: { item: FlyoutItem; external?: boolean }) {
-  return (
+function FlyoutItemRow({ item, hoverOnWrapper }: { item: FlyoutItem; hoverOnWrapper?: boolean }) {
+  const external = !!item.external;
+  const anchor = (
     <a
       href={item.href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className="group flex items-start gap-3 rounded-lg p-3 hover:bg-text/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-text)"
+      className={
+        hoverOnWrapper
+          ? "flex items-start gap-3 rounded-lg p-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-text)"
+          : "group flex items-start gap-3 rounded-lg p-3 hover:bg-(--color-text)/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-text)"
+      }
     >
-      <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-text/5 text-(--color-text-secondary) ring-1 ring-inset ring-(--color-border)">
+      <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-(--color-text)/5 text-(--color-text-secondary) ring-1 ring-inset ring-(--color-border)">
         {item.icon}
       </span>
       <span>
-        <span className="inline-flex items-center gap-1 text-sm font-semibold text-(--color-text)">{item.label}</span>
+        <span className="inline-flex items-center gap-1 text-sm font-semibold text-(--color-text)">
+          {item.label}
+          {external && <ExternalLinkIcon className="size-3.5 shrink-0" />}
+        </span>
         <span className="block text-sm text-(--color-muted)">{item.description}</span>
       </span>
     </a>
   );
+  if (hoverOnWrapper) {
+    return <div className="group rounded-lg hover:bg-(--color-text)/5">{anchor}</div>;
+  }
+  return anchor;
 }
 
 function FlyoutItemProduct({ item }: { item: FlyoutItem }) {
   return (
     <a
       href={item.href}
-      className="group flex items-start gap-3 rounded-lg p-3 hover:bg-text/5"
+      className="group flex items-start gap-3 rounded-lg p-3 hover:bg-(--color-text)/5"
     >
       <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center">
         {item.icon}
@@ -148,7 +160,9 @@ function FlyoutItemProduct({ item }: { item: FlyoutItem }) {
   );
 }
 
-const flyoutPanelBase = "absolute top-full left-0 z-[9999] mt-1 rounded-(--img-radius) bg-(--color-background) p-2 shadow-xl ring-1 ring-(--color-border)";
+const flyoutPanelBase = "absolute top-full left-0 z-[9999] mt-0 rounded-(--img-radius) bg-[#0C0C0C] p-2 shadow-lg ring-1 ring-(--color-border)";
+const flyoutSmallWidth = "w-max max-w-[calc(100vw-3rem)] lg:max-w-2xl";
+const flyoutWideWidth = "w-[calc(100vw-3rem)] max-w-3xl";
 
 type ActiveFlyout = "products" | "solutions" | "resources" | "enterprise" | null;
 
@@ -220,7 +234,7 @@ export default function Navbar() {
                 </button>
                 {activeFlyout === "products" && (
                   <div
-                    className={`${flyoutPanelBase} w-72`}
+                    className={`${flyoutPanelBase} ${flyoutSmallWidth}`}
                     onMouseEnter={cancelLeave}
                     onMouseLeave={scheduleLeave}
                   >
@@ -246,7 +260,7 @@ export default function Navbar() {
                 </button>
                 {activeFlyout === "solutions" && (
                   <div
-                    className={`${flyoutPanelBase} w-72`}
+                    className={`${flyoutPanelBase} ${flyoutSmallWidth}`}
                     onMouseEnter={cancelLeave}
                     onMouseLeave={scheduleLeave}
                   >
@@ -270,26 +284,30 @@ export default function Navbar() {
                 </button>
                 {activeFlyout === "resources" && (
                   <div
-                    className={`${flyoutPanelBase} w-176`}
+                    className={`${flyoutPanelBase} ${flyoutWideWidth}`}
                     onMouseEnter={cancelLeave}
                     onMouseLeave={scheduleLeave}
                   >
-                    <div className="flex divide-x divide-(--color-border) p-2">
-                      <div className="flex min-w-52 flex-1 flex-col pr-4">
-                        <div className="mb-1 px-3 py-1">
+                    <div className="flex divide-x divide-(--color-border) p-2 *:flex-1 [&>*:first-child]:pr-4 [&>*:not(:first-child)]:pl-4">
+                      <div className="min-w-44">
+                        <div className="mb-1 flex items-center justify-between gap-2 px-3 py-1">
                           <span className="font-mono text-xs font-medium uppercase tracking-wider text-(--color-muted)">Developers</span>
                         </div>
-                        {resourceDevItems.map(item => (
-                          <FlyoutItemRow key={item.label} item={item} external={item.href.startsWith("http")} />
-                        ))}
+                        <div className="flex flex-col">
+                          {resourceDevItems.map(item => (
+                            <FlyoutItemRow key={item.label} item={item} hoverOnWrapper />
+                          ))}
+                        </div>
                       </div>
-                      <div className="flex min-w-52 flex-1 flex-col pl-4">
-                        <div className="mb-1 px-3 py-1">
+                      <div className="min-w-44">
+                        <div className="mb-1 flex items-center justify-between gap-2 px-3 py-1">
                           <span className="font-mono text-xs font-medium uppercase tracking-wider text-(--color-muted)">Company</span>
                         </div>
-                        {resourceCompanyItems.map(item => (
-                          <FlyoutItemRow key={item.label} item={item} external={item.href.startsWith("http")} />
-                        ))}
+                        <div className="flex flex-col">
+                          {resourceCompanyItems.map(item => (
+                            <FlyoutItemRow key={item.label} item={item} hoverOnWrapper />
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -311,7 +329,7 @@ export default function Navbar() {
                 </button>
                 {activeFlyout === "enterprise" && (
                   <div
-                    className={`${flyoutPanelBase} w-72`}
+                    className={`${flyoutPanelBase} ${flyoutSmallWidth}`}
                     onMouseEnter={cancelLeave}
                     onMouseLeave={scheduleLeave}
                   >
@@ -338,15 +356,15 @@ export default function Navbar() {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center font-medium h-8.75 gap-2 rounded-lg px-3 text-sm/6 text-(--color-text) hover:bg-text/10 focus-visible:bg-text/10 max-lg:hidden"
-                aria-label="Star Warp on GitHub (60k stars)"
+                className="inline-flex items-center font-medium h-8.75 gap-2 rounded-lg px-3 text-sm/6 text-(--color-text) transition-colors duration-(--duration-normal) hover:bg-text/10 focus-visible:bg-text/10 max-lg:hidden"
+                aria-label="Star Warp on GitHub (60,013 stars)"
                 href="https://github.com/warpdotdev/warp"
               >
-                <GitHubIcon />
+                <GitHubIcon className="inline-block size-4" />
                 <span className="tabular-nums">60k</span>
               </a>
               <a
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl text-sm/7 font-medium text-(--color-text) hover:bg-text/10 h-9 px-3 py-1 max-lg:hidden"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-xl) text-sm/7 font-medium text-(--color-text) transition-colors duration-(--duration-normal) hover:bg-text/10 h-9 px-3 py-1 max-lg:hidden"
                 href="/contact-sales"
               >
                 Contact sales
@@ -358,7 +376,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
               >
                 Download
-                <AppleIcon />
+                <AppleIcon className="inline-block size-4 opacity-90" />
                 <kbd className="ml-1 inline-flex size-5 items-center justify-center rounded bg-current/10 text-[11px] font-semibold uppercase opacity-60">D</kbd>
               </a>
             </div>
@@ -409,7 +427,7 @@ export default function Navbar() {
                 </summary>
                 <div className="mt-4 flex flex-col gap-1 pl-1">
                   {[...resourceDevItems, ...resourceCompanyItems].map(item => (
-                    <FlyoutItemRow key={item.label} item={item} external={item.href.startsWith("http")} />
+                    <FlyoutItemRow key={item.label} item={item} />
                   ))}
                 </div>
               </details>
@@ -437,11 +455,11 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="inline-flex h-11 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-5 py-2 text-sm/7 font-medium text-(--btn-text-color) transition-opacity hover:opacity-85"
               >
-                Download <AppleIcon />
+                Download <AppleIcon className="inline-block size-4 opacity-90" />
               </a>
-              <a href="/contact-sales" className="text-center text-sm/7 font-medium text-(--color-text-secondary) hover:text-(--color-text)">
+              <Link href="/contact-sales" className="text-center text-sm/7 font-medium text-(--color-text-secondary) hover:text-(--color-text)">
                 Contact sales
-              </a>
+              </Link>
             </div>
           </div>
         )}

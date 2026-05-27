@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 const logos = [
   { name: "GitHub", dark: "/logos/terminal/github-dark.svg", width: 88, height: 25 },
@@ -14,8 +15,6 @@ const logos = [
   { name: "Teamworks", dark: "/logos/terminal/teamworks-dark.svg", width: 148, height: 37 },
 ];
 
-const marqueeLogoHeight = 24;
-
 function LogoSet({ suffix }: { suffix: string }) {
   return (
     <div className="flex shrink-0 items-center gap-12 pr-12">
@@ -25,8 +24,13 @@ function LogoSet({ suffix }: { suffix: string }) {
           className="group/logo relative flex w-auto shrink-0 flex-col items-center opacity-40 grayscale transition-opacity hover:opacity-70"
         >
           <div className="flex h-7 items-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={logo.dark} alt={logo.name} className="h-6 w-auto" />
+            <Image
+              src={logo.dark}
+              alt={logo.name}
+              width={logo.width}
+              height={logo.height}
+              className="h-6 w-auto"
+            />
           </div>
         </div>
       ))}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 const logos = [
   {
@@ -21,14 +22,17 @@ const logos = [
   { name: "Teamworks", dark: "/logos/terminal/teamworks-dark.svg", width: 148, height: 37 },
 ];
 
-const marqueeLogoHeight = 24;
-
 function LogoItem({ logo }: { logo: (typeof logos)[0] }) {
   return (
     <div className="group/logo relative flex w-auto shrink-0 flex-col items-center opacity-40 grayscale transition-opacity hover:opacity-70">
       <div className="flex h-7 items-center">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logo.dark} alt={logo.name} className="h-6 w-auto" />
+        <Image
+          src={logo.dark}
+          alt={logo.name}
+          width={logo.width}
+          height={logo.height}
+          className="h-6 w-auto"
+        />
       </div>
       {logo.since && logo.href && (
         <span className="pointer-events-none absolute top-full mt-2 whitespace-nowrap rounded-full px-2.5 py-1 text-[10px]/[1.15] tracking-wide bg-text/10 text-(--color-text) translate-y-1 opacity-0 transition-all duration-200 group-hover/logo:pointer-events-auto group-hover/logo:translate-y-0 group-hover/logo:opacity-100">

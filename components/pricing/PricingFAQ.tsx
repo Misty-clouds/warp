@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import PlusIcon from "@/components/icons/PlusIcon";
 import MinusIcon from "@/components/icons/MinusIcon";
 
@@ -63,9 +64,9 @@ const faqs: FAQItem[] = [
           For larger organizations that need unlimited seats, advanced governance, custom credits and
           usage terms, Enterprise Analytics API, BYOLLM, per-user spend controls, or self-hosted
           cloud agents,{" "}
-          <a href="/contact-sales" className="underline underline-offset-2 hover:opacity-70">
+          <Link href="/contact-sales" className="underline underline-offset-2 hover:opacity-70">
             contact us
-          </a>{" "}
+          </Link>{" "}
           about Enterprise.
         </p>
       </>
@@ -90,9 +91,9 @@ const faqs: FAQItem[] = [
             sales@warp.dev
           </a>{" "}
           or{" "}
-          <a href="/contact-sales" className="underline underline-offset-2 hover:opacity-70">
+          <Link href="/contact-sales" className="underline underline-offset-2 hover:opacity-70">
             submit a request
-          </a>
+          </Link>
           .
         </p>
       </>
@@ -141,9 +142,9 @@ const faqs: FAQItem[] = [
             sales@warp.dev
           </a>{" "}
           or submit a request via our{" "}
-          <a href="/contact-sales" className="underline underline-offset-2 hover:opacity-70">
+          <Link href="/contact-sales" className="underline underline-offset-2 hover:opacity-70">
             Contact Sales form
-          </a>
+          </Link>
           .
         </p>
         <p>

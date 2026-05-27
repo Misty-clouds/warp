@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/clouds/.claude/skills/reconstruct-site)",
+      "Read(//Users/clouds/.claude/**)",
+      "Edit(~/.claude/skills/reconstruct-site/**)",
+      "Bash(mkdir -p /Users/clouds/.claude/skills/audit-reconstruction && ls -la /Users/clouds/.claude/skills/)",
+      "Bash(npm view *)",
+      "Bash(curl -o *)",
+      "Bash(curl -L -o *)",
+      "Bash(pnpm dev)",
+      "Bash(pnpm build)",
+      "Bash(pnpm lint)",
+      "Bash(pnpm typecheck)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(mkdir -p public/*)",
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__get_screenshot"
+    ],
+    "additionalDirectories": [
+      "/Users/clouds/.claude/skills"
+    ]
+  }
+}

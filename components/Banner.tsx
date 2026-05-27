@@ -30,7 +30,7 @@ export default function Banner() {
         Now available: Orchestrate Claude Code, Codex, and Warp Agent in Oz{" "}
         <Link
           href="/blog/multi-harness-cloud-agent-orchestration"
-          className="inline-flex items-center gap-0.5 underline decoration-gray-300 underline-offset-2 transition-colors hover:decoration-gray-900"
+          className="link-underline-reveal inline-flex items-center gap-0.5"
         >
           Learn More
         </Link>

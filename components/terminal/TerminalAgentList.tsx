@@ -53,8 +53,14 @@ const agents: Agent[] = [
     href: "/agents/opencode",
     icon: (
       <div className="inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-black ring-1 ring-white/10">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logos/open-code.svg" alt="" aria-hidden className="size-[13px] object-contain" />
+        <Image
+          src="/logos/open-code.svg"
+          alt=""
+          aria-hidden
+          width={13}
+          height={13}
+          className="size-[13px] object-contain"
+        />
       </div>
     ),
   },

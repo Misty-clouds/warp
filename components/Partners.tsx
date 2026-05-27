@@ -96,9 +96,9 @@ function LogoMarquee() {
   );
 }
 
-function PartnerCard({ partner }: { partner: typeof partners[0] }) {
+function PartnerCard({ partner, className = "" }: { partner: typeof partners[0]; className?: string }) {
   return (
-    <div className="relative flex h-full min-h-35 flex-col items-center justify-center gap-4 overflow-hidden rounded-2xl p-6">
+    <div className={`relative flex h-full min-h-[140px] flex-col items-center justify-center gap-4 overflow-hidden rounded-2xl p-6 ${className}`}>
       <Image
         src={partner.bg}
         alt=""
@@ -136,9 +136,9 @@ export default function Partners() {
             <h2 className={headingClassName}>
               Proud partner of industry leaders
             </h2>
-            <p className={bodyClassName}>
-              Trusted by over 800,000 developers and thousands of engineering teams at leading companies
-            </p>
+            <div className={bodyClassName}>
+              <p>Trusted by over 800,000 developers and thousands of engineering teams at leading companies</p>
+            </div>
             <div className="pt-4">
               <LogoMarquee />
             </div>
@@ -154,15 +154,23 @@ export default function Partners() {
             <h2 className={headingClassName}>
               Proud partner of industry leaders
             </h2>
-            <p className={bodyClassName}>
-              Trusted by over 800,000 developers and thousands of engineering teams at leading companies
-            </p>
+            <div className={bodyClassName}>
+              <p>Trusted by over 800,000 developers and thousands of engineering teams at leading companies</p>
+            </div>
             <div className="pt-4">
               <LogoMarquee />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-            {partners.map(p => <PartnerCard key={p.name} partner={p} />)}
+          <div className="flex flex-col gap-2">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-6">
+              {partners.map((p, i) => (
+                <PartnerCard
+                  key={p.name}
+                  partner={p}
+                  className={i < 3 ? "sm:col-span-2" : "sm:col-span-3"}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

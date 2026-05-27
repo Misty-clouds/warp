@@ -21,7 +21,7 @@ const slides = [
     width: 1800,
     height: 1250,
     animationClassName: "animate-[hero-left-photo-carousel_8s_infinite] [animation-delay:4s]",
-    caption: "A modern, open-source agentic development environment. Run coding agents locally and in the cloud.",
+    caption: "Build in an open-source agentic development environment born out of the terminal",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Hero() {
                   href="https://app.warp.dev/get_warp?package=dmg"
                 >
                   Download
-                  <AppleIcon />
+                  <AppleIcon className="inline-block size-4 opacity-90" />
                 </a>
                 <div className="flex items-center justify-between gap-6 flex-1 self-stretch pl-2 border-0 bg-transparent text-(--color-text-secondary)">
                   <div className="flex items-center gap-2 pl-3">
@@ -73,7 +73,7 @@ export default function Hero() {
                   <button
                     type="button"
                     onClick={handleCopy}
-                    className="group relative flex size-9 items-center justify-center rounded-full hover:bg-(--color-border)"
+                    className="group relative flex size-9 items-center justify-center rounded-full after:absolute after:-inset-1 hover:bg-(--color-border) after:pointer-fine:hidden"
                     aria-label="Copy brew install command"
                   >
                     {copied ? <CheckmarkIcon /> : <CopyIcon />}
@@ -81,7 +81,7 @@ export default function Hero() {
                 </div>
               </div>
               <a
-                className="inline-flex shrink-0 items-center justify-center gap-1 rounded-xl bg-text/10 text-sm/7 font-medium text-(--color-text) hover:bg-text/15 transition-colors h-11 px-4 py-2 w-full sm:w-auto"
+                className="inline-flex shrink-0 items-center justify-center gap-1 rounded-xl bg-text/10 text-sm/7 font-medium text-(--color-text) hover:bg-text/15 transition-colors duration-(--duration-normal) h-11 px-4 py-2 w-full sm:w-auto"
                 href="/contact-sales"
               >
                 Contact Sales
@@ -106,6 +106,7 @@ export default function Hero() {
                       quality={90}
                       sizes="100vw"
                       priority={i === 0}
+                      className="not-dark:bg-white/75 dark:bg-black/75"
                     />
                   </div>
                   <div className="pointer-events-none bg-black px-4 py-3 sm:absolute sm:right-auto sm:bottom-5 sm:left-5 sm:max-w-[min(32rem,calc(100%-2.5rem))] sm:rounded-lg sm:px-3 sm:py-2">

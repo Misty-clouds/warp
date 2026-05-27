@@ -5,6 +5,7 @@ import Image from "next/image";
 import WarpMark from "./icons/WarpMark";
 import OzMark from "./icons/OzMark";
 import LineChartIcon from "./icons/LineChartIcon";
+import ArrowRightIcon from "./icons/ArrowRightIcon";
 
 const sections = [
   {
@@ -25,7 +26,7 @@ const sections = [
       </span>
     ),
     navIcon: (active: boolean) => (
-      <span className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#0b0b0b] text-white shadow-[inset_0_0_0_1px_#1f1f1f] transition-opacity ${active ? "opacity-100" : ""}`}>
+      <span className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#0b0b0b] text-white shadow-[inset_0_0_0_1px_#1f1f1f] transition-opacity ${active ? "opacity-100" : "opacity-45 group-hover:opacity-100"}`}>
         <WarpMark className="size-3.5" />
       </span>
     ),
@@ -39,7 +40,7 @@ const sections = [
     ctaLabel: "Explore Oz",
     ctaHref: "/oz",
     screenshot: "/images/oz-agent-screenshot.jpg",
-    screenshotAlt: "Oz agent platform dashboard",
+    screenshotAlt: "Oz cloud agent orchestration diagram",
     screenshotWidth: 1608,
     screenshotHeight: 1005,
     icon: (
@@ -58,11 +59,11 @@ const sections = [
     eyebrow: "Warp Agent",
     headline: "Build with Warp Agent",
     description:
-      "An orchestration-native coding agent that thinks in terms of tasks, tools, and context — not just conversations. Run it locally, in CI, or in the cloud.",
+      "Delegate to a state of the art agent harness with multi-agent orchestration, access to all the best models, codebase indexing, and granular permission controls.",
     ctaLabel: "Meet Warp Agent",
     ctaHref: "/agents/warp-agent",
     screenshot: "/images/warp-agent-screenshot.jpg",
-    screenshotAlt: "Warp agent coding session",
+    screenshotAlt: "Warp Agent running in Warp",
     screenshotWidth: 1608,
     screenshotHeight: 1005,
     icon: (
@@ -81,23 +82,21 @@ const sections = [
     eyebrow: "Scale Across Your Team",
     headline: "Scale across your team",
     description:
-      "Centralize context, share workflows, and give every engineer in your org access to the same powerful agentic tooling. Built for teams that ship together.",
-    ctaLabel: "See Team Features",
+      "Agent infrastructure to automate complex workflows and ship better software. Stay in control with centralized governance, usage visibility, and credit caps.",
+    ctaLabel: "Explore Enterprise",
     ctaHref: "/enterprise",
     screenshot: "/images/scale-team-screenshot.jpg",
-    screenshotAlt: "Team collaboration in Warp",
+    screenshotAlt: "Oz dashboard for team-scale agent management",
     screenshotWidth: 1608,
     screenshotHeight: 1005,
     icon: (
-      <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-(--color-surface) text-(--color-text-secondary)">
-        <LineChartIcon className="size-4" />
+      <span className="flex size-6 items-center justify-center rounded-md bg-(--color-accent-purple) text-(--color-background) [&>svg]:size-4">
+        <LineChartIcon />
       </span>
     ),
-    navIcon: (active: boolean) => (
-      <span
-        className={`flex size-6 shrink-0 items-center justify-center rounded-md transition-colors ${active ? "bg-(--color-panel) text-(--color-text)" : "bg-(--color-surface) text-(--color-text-secondary)"}`}
-      >
-        <LineChartIcon className="size-4" />
+    navIcon: (_active: boolean) => (
+      <span className="flex size-6 shrink-0 items-center justify-center rounded-md transition-colors [&>svg]:size-4 bg-(--color-surface) text-(--color-text-secondary) group-hover:bg-(--color-panel) group-hover:text-(--color-text)">
+        <LineChartIcon />
       </span>
     ),
   },
@@ -220,17 +219,20 @@ export default function WhyWarp() {
                       <h3 className="max-w-2xl text-balance text-3xl/10 text-(--color-text) font-display [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)] sm:text-4xl/11">
                         {section.headline}
                       </h3>
-                      <p className="max-w-3xl text-(length:--body-size) leading-(--body-line-height) text-(--color-text-secondary) font-sans">
-                        {section.description}
-                      </p>
+                      <div className="max-w-3xl text-(length:--body-size) leading-(--body-line-height) text-(--color-text-secondary) font-sans">
+                        <p>{section.description}</p>
+                      </div>
                     </div>
                     <div className="shrink-0">
-                      <a
-                        href={section.ctaHref}
-                        className="inline-flex h-9 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-3 py-1 text-sm/7 font-medium text-(--btn-text-color) hover:opacity-85 sm:w-auto"
-                      >
-                        {section.ctaLabel}
-                      </a>
+                      <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
+                        <a
+                          href={section.ctaHref}
+                          className="inline-flex h-9 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-3 py-1 text-sm/7 font-medium text-(--btn-text-color) hover:opacity-85 sm:w-auto"
+                        >
+                          {section.ctaLabel}
+                          <ArrowRightIcon className="size-3.5" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <div className="overflow-hidden rounded-xl bg-(--color-surface) shadow-sm">

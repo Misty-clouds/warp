@@ -59,7 +59,7 @@ const footerNav = [
 export default function Footer() {
   return (
     <footer className="pt-0" id="footer">
-      <div className="bg-(--color-surface) py-(--space-section) text-(--color-text)">
+      <div className="bg-(--color-surface) pt-(--space-xl) pb-(--space-section) text-(--color-text)">
         <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-16 px-6 lg:px-10">
           <div className="text-sm/7">
             <nav className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5">
@@ -73,7 +73,7 @@ export default function Footer() {
                           href={link.href}
                           target={link.external ? "_blank" : undefined}
                           rel={link.external ? "noopener noreferrer" : undefined}
-                          className="link-underline-reveal inline-flex items-center gap-1"
+                          className="link-underline-reveal inline-flex items-center gap-1 hover:opacity-80"
                         >
                           {link.label}
                           {link.external && <ExternalLinkIcon className="size-3.5 shrink-0" />}
@@ -100,7 +100,7 @@ export default function Footer() {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-(--color-text)/5 px-3 py-1 text-xs/5 text-(--color-text-secondary) transition-colors hover:bg-(--color-text)/10"
+                className="inline-flex items-center gap-2 rounded-full bg-(--color-text)/5 px-3 py-1 text-xs/5 text-(--color-text-secondary) transition-colors duration-(--duration-normal) hover:bg-(--color-text)/10"
                 href="https://status.warp.dev"
               >
                 <span className="size-2 shrink-0 rounded-full bg-[oklch(0.72_0.19_145)]" />

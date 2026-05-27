@@ -132,3 +132,9 @@ body {
 .animate-hero-carousel {
   animation: hero-left-photo-carousel 8s infinite;
 }
+
+#testimonials {
+  --testimonial-bg: var(--color-accent-purple);
+  --testimonial-fg: var(--color-background);
+  --testimonial-muted: color-mix(in oklch, var(--color-background) 65%, transparent);
+}

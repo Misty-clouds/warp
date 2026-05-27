@@ -28,7 +28,7 @@ function CopyCommand({ command, id }: { command: string; id: string }) {
       <button
         type="button"
         onClick={handleCopy}
-        className="group relative flex size-9 items-center justify-center rounded-full hover:bg-(--color-border)"
+        className="group relative flex size-9 items-center justify-center rounded-full after:absolute after:-inset-1 after:pointer-fine:hidden hover:bg-(--color-border)"
         aria-label={`Copy: ${command}`}
       >
         {copied ? <CheckmarkIcon /> : <CopyIcon />}
@@ -67,6 +67,8 @@ function PackageRow({ name, sub, pkgs }: { name: string; sub?: string; pkgs: { l
   );
 }
 
+const h2HeadingClassName = "text-(--color-text) text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)_*_0.7))] leading-[1.15] [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]";
+
 const headingClassName = "text-(--color-text) text-[clamp(1.25rem,2.5vw,1.5rem)] leading-[1.2] [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]";
 
 export default function Downloads() {
@@ -78,7 +80,7 @@ export default function Downloads() {
             <div className="font-mono text-xs/7 font-medium uppercase tracking-widest text-(--color-text-secondary)">
               All Downloads
             </div>
-            <h2 className={`text-pretty ${headingClassName}`}>
+            <h2 className={`text-pretty ${h2HeadingClassName}`}>
               Get Warp today
             </h2>
           </div>

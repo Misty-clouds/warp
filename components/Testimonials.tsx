@@ -41,10 +41,10 @@ export default function Testimonials() {
 
   return (
     <section
-      className="relative overflow-hidden py-20 text-(--color-background) sm:py-28"
+      className="relative overflow-hidden py-20 text-(--testimonial-fg) sm:py-28"
       id="testimonials"
     >
-      <div aria-hidden="true" className="absolute inset-0 bg-(--color-accent-purple)" />
+      <div aria-hidden="true" className="absolute inset-0 bg-(--testimonial-bg)" />
       <div className="relative mx-auto w-full max-w-(--content-max-width) px-6 lg:px-10">
         {/* Logo tabs */}
         <div
@@ -61,7 +61,7 @@ export default function Testimonials() {
               aria-controls="testimonials-panel"
               aria-label={`Show ${t.company} testimonial`}
               onClick={() => setActive(i)}
-              className="group flex min-h-12 cursor-pointer items-center justify-center rounded-full px-1 outline-none transition focus-visible:ring-2 focus-visible:ring-(--color-background) focus-visible:ring-offset-4 focus-visible:ring-offset-(--color-accent-purple)"
+              className="group flex min-h-12 cursor-pointer items-center justify-center rounded-full px-1 outline-none transition focus-visible:ring-2 focus-visible:ring-(--testimonial-fg) focus-visible:ring-offset-4 focus-visible:ring-offset-(--testimonial-bg)"
             >
               <span
                 className={`flex h-10 w-36 items-center justify-center transition duration-200 sm:w-40 [&_img]:max-h-8 [&_img]:max-w-full [&_img]:object-contain ${active === i ? "opacity-100" : "opacity-40 group-hover:opacity-70"}`}
@@ -92,12 +92,12 @@ export default function Testimonials() {
               className={`absolute inset-0 flex flex-col items-center justify-start transition-opacity duration-500 ease-out motion-reduce:transition-none ${active === i ? "opacity-100" : "pointer-events-none opacity-0"}`}
             >
               <blockquote
-                className="font-display mx-auto max-w-5xl text-balance text-4xl/[1.12] font-normal tracking-tight text-(--color-background) sm:text-5xl/[1.08] lg:text-[4.5rem]/[1.05] [&>p]:before:content-['“'] [&>p]:after:content-['”']"
+                className="font-display mx-auto max-w-5xl text-balance text-4xl/[1.12] font-normal tracking-tight text-(--testimonial-fg) sm:text-5xl/[1.08] lg:text-[4.5rem]/[1.05] *:first:before:content-['“'] *:last:after:content-['”']"
               >
                 <p>{t.quote}</p>
               </blockquote>
-              <figcaption className="mt-16 text-base/7 text-[color-mix(in_oklch,var(--color-background)_65%,transparent)] sm:text-lg/8">
-                <span className="font-semibold text-(--color-background)">{t.author}</span>
+              <figcaption className="mt-16 text-base/7 text-(--testimonial-muted) sm:text-lg/8">
+                <span className="font-semibold text-(--testimonial-fg)">{t.author}</span>
                 <span>, {t.role}</span>
               </figcaption>
             </div>

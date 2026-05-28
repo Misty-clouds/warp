@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	ignorecase = true
+	precomposeunicode = true
+	worktree = /Users/clouds/taste/warp
+[user]
+	name = dscomp
+	email = dscomp@local
+[commit]
+	gpgsign = false
+[tag]
+	gpgsign = false

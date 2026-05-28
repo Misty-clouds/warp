@@ -1,0 +1,43 @@
+# Managed by dscomp. Edits to this file are clobbered on every save/init.
+# Override any rule here with an explicit `!pattern` in workspace/.gitignore.
+
+# dscomp internals (never ship)
+.dscomp/
+
+# Build outputs
+dist/
+build/
+out/
+coverage/
+
+# Package managers
+node_modules/
+
+# Framework caches
+.next/
+.nuxt/
+.svelte-kit/
+.turbo/
+.parcel-cache/
+.cache/
+.vercel/
+
+# TypeScript incremental
+*.tsbuildinfo
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Local env (the .example variants stay tracked)
+.env
+.env.local
+.env.*.local

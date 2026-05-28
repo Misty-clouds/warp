@@ -93,7 +93,7 @@ export default function TerminalAgentList() {
     <section
       data-component="Section"
       data-motion-reveal="visible"
-      className="py-(--space-section)"
+      className="py-16"
     >
       <div
         data-component="Container"

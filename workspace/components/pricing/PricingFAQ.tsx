@@ -52,7 +52,7 @@ const faqs: FAQItem[] = [
         </p>
         <p>
           Max is best for heavy AI users who consistently need more capacity. It includes 18,000
-          monthly credits, 10× the included credits of Build, and a 17% lower effective credit
+          monthly credits, 12× the included credits of Build, and a 17% lower effective credit
           rate than the best Reload credit tier.
         </p>
         <p>
@@ -394,7 +394,7 @@ export default function PricingFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-[var(--space-section)]" id="faqs">
+    <section className="py-16" id="faqs">
       <div className="mx-auto flex max-w-3xl flex-col gap-6 px-6 lg:max-w-5xl lg:px-10">
         <div className="flex flex-col gap-6">
           <h2 className="text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-[var(--color-text)] [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">

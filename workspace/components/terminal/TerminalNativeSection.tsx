@@ -41,7 +41,7 @@ const tabs = [
 
 export default function TerminalNativeSection() {
   return (
-    <section className="py-(--space-section)">
+    <section className="py-16">
       <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10">
         {/* Hidden text for SEO / accessibility — mirrors descriptions across all tabs */}
         <div

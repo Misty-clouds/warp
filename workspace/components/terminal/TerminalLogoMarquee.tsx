@@ -57,7 +57,7 @@ function LogoSet({ suffix }: { suffix: string }) {
 
 export default function TerminalLogoMarquee() {
   return (
-    <section className="py-(--space-section)">
+    <section className="py-16">
       <div className="mx-auto mb-8 w-full max-w-(--content-max-width) px-6 lg:px-10">
         <p className="text-center text-sm/7 font-semibold text-(--color-text-secondary)">
           Trusted by over 800,000 developers and thousands of engineering teams

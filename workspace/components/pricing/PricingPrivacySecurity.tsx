@@ -26,7 +26,7 @@ const features = [
 
 export default function PricingPrivacySecurity() {
   return (
-    <section className="py-(--space-section)" id="privacy-security">
+    <section className="py-16" id="privacy-security">
       <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10">
         <div className="flex max-w-2xl flex-col gap-6">
           <div className="flex flex-col gap-2">

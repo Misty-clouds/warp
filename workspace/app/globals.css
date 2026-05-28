@@ -95,6 +95,7 @@
   --font-sans: var(--font-inter, "Inter"), system-ui, sans-serif;
   --font-mono: var(--font-dm-mono, "DM Mono"), ui-monospace, monospace;
   --font-display: var(--font-matter), var(--font-inter, "Inter"), system-ui, sans-serif;
+  --font-heading: var(--font-matter), "Matter", system-ui, sans-serif;
 
   --color-background: #121212;
   --color-surface: oklch(22% 0.004 84.6);
@@ -132,7 +133,7 @@
   --btn-icon-display: none;
 
   --heading-weight: 400;
-  --heading-size: 64px;
+  --heading-size: 60px;
   --heading-letter-spacing: -0.025em;
   --body-size: 16px;
   --body-weight: 400;
@@ -140,6 +141,11 @@
 
   --img-shadow: 0 8px 30px rgb(0 0 0 / 0.4);
   --img-radius: calc(var(--radius) * 3);
+}
+
+:root {
+  --font-heading: var(--font-matter), "Matter", system-ui, sans-serif;
+  --font-display: var(--font-matter), var(--font-inter, "Inter"), system-ui, sans-serif;
 }
 
 html {

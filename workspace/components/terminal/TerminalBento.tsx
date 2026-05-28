@@ -64,9 +64,9 @@ function BentoCard({
             </div>
           </div>
           <div className="p-8 pt-4 sm:p-10">
-            <p className="mt-2 text-lg font-medium tracking-tight text-(--color-text)">
+            <h3 className="mt-2 text-lg font-medium tracking-tight text-(--color-text)">
               {title}
-            </p>
+            </h3>
             <p className="mt-2 max-w-lg text-sm/6 text-(--color-text-secondary)">
               {description}
             </p>
@@ -86,7 +86,7 @@ export default function TerminalBento() {
       data-component="Section"
       data-motion-reveal="visible"
       id="terminal-bento"
-      className="py-(--space-section)"
+      className="py-16"
     >
       <div
         data-component="Container"

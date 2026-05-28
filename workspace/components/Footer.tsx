@@ -51,7 +51,7 @@ const footerNav = [
       { label: "YouTube", href: "https://www.youtube.com/@warpdotdev", external: true },
       { label: "Slack", href: "https://go.warp.dev/join-preview" },
       { label: "LinkedIn", href: "https://www.linkedin.com/company/warpdotdev", external: true },
-      { label: "Product Hunt 4.8★ (73)", href: "https://www.producthunt.com/products/warp/reviews", external: true },
+      { label: "Product Hunt 4.8★ (75)", href: "https://www.producthunt.com/products/warp/reviews", external: true },
     ],
   },
 ];
@@ -59,7 +59,7 @@ const footerNav = [
 export default function Footer() {
   return (
     <footer className="pt-0" id="footer">
-      <div className="bg-(--color-surface) pt-(--space-xl) pb-(--space-section) text-(--color-text)">
+      <div className="bg-(--color-surface) pt-8 pb-16 text-(--color-text)">
         <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-16 px-6 lg:px-10">
           <div className="text-sm/7">
             <nav className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5">
@@ -76,7 +76,7 @@ export default function Footer() {
                           className="link-underline inline-flex items-center gap-1 hover:opacity-80"
                         >
                           {link.label}
-                          {link.external && <ExternalLinkIcon className="size-3.5 shrink-0" />}
+                          {link.external && (col.heading === "Connect" || link.label === "Open Source") && <ExternalLinkIcon className="size-3.5 shrink-0" />}
                         </a>
                       </li>
                     ))}

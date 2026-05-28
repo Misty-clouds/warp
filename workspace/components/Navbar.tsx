@@ -238,9 +238,7 @@ export default function Navbar() {
                     onMouseEnter={cancelLeave}
                     onMouseLeave={scheduleLeave}
                   >
-                    <FlyoutItemProduct item={productsItems[0]} />
-                    <FlyoutItemProduct item={productsItems[1]} />
-                    <FlyoutItemProduct item={productsItems[2]} />
+                    {productsItems.map(item => <FlyoutItemProduct key={item.label} item={item} />)}
                   </div>
                 )}
               </div>

@@ -5,7 +5,6 @@ import Image from "next/image";
 import WarpMark from "./icons/WarpMark";
 import OzMark from "./icons/OzMark";
 import LineChartIcon from "./icons/LineChartIcon";
-import ArrowRightIcon from "./icons/ArrowRightIcon";
 
 const sections = [
   {
@@ -21,12 +20,18 @@ const sections = [
     screenshotWidth: 1608,
     screenshotHeight: 1005,
     icon: (
-      <span className="no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#0b0b0b] text-white shadow-[inset_0_0_0_1px_#1f1f1f]">
+      <span
+        aria-label="Warp Terminal"
+        className="no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#0b0b0b] text-white shadow-[inset_0_0_0_1px_#1f1f1f]"
+      >
         <WarpMark className="size-3.5" />
       </span>
     ),
     navIcon: (active: boolean) => (
-      <span className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#0b0b0b] text-white shadow-[inset_0_0_0_1px_#1f1f1f] transition-opacity ${active ? "opacity-100" : "opacity-45 group-hover:opacity-100"}`}>
+      <span
+        aria-label="Warp Terminal"
+        className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#0b0b0b] text-white shadow-[inset_0_0_0_1px_#1f1f1f] transition-opacity ${active ? "opacity-100" : "opacity-45 group-hover:opacity-100"}`}
+      >
         <WarpMark className="size-3.5" />
       </span>
     ),
@@ -44,12 +49,18 @@ const sections = [
     screenshotWidth: 1608,
     screenshotHeight: 1005,
     icon: (
-      <span className="no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#bda6f7] text-[#111111]">
+      <span
+        aria-label="Oz Agent Platform"
+        className="no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#bda6f7] text-[#111111]"
+      >
         <OzMark className="size-4" />
       </span>
     ),
     navIcon: (active: boolean) => (
-      <span className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#bda6f7] text-[#111111] transition-opacity ${active ? "opacity-100" : "opacity-45"}`}>
+      <span
+        aria-label="Oz Agent Platform"
+        className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#bda6f7] text-[#111111] transition-opacity ${active ? "opacity-100" : "opacity-45"}`}
+      >
         <OzMark className="size-4" />
       </span>
     ),
@@ -67,12 +78,18 @@ const sections = [
     screenshotWidth: 1608,
     screenshotHeight: 1005,
     icon: (
-      <span className="no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#1c1a26] text-[#c7aeff] shadow-[inset_0_0_0_1px_#373245]">
+      <span
+        aria-label="Warp Agent"
+        className="no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#1c1a26] text-[#c7aeff] shadow-[inset_0_0_0_1px_#373245]"
+      >
         <WarpMark className="size-3.5" />
       </span>
     ),
     navIcon: (active: boolean) => (
-      <span className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#1c1a26] text-[#c7aeff] shadow-[inset_0_0_0_1px_#373245] transition-opacity ${active ? "opacity-100" : "opacity-45"}`}>
+      <span
+        aria-label="Warp Agent"
+        className={`no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-[#1c1a26] text-[#c7aeff] shadow-[inset_0_0_0_1px_#373245] transition-opacity ${active ? "opacity-100" : "opacity-45"}`}
+      >
         <WarpMark className="size-3.5" />
       </span>
     ),
@@ -90,12 +107,18 @@ const sections = [
     screenshotWidth: 1608,
     screenshotHeight: 1005,
     icon: (
-      <span className="flex size-6 items-center justify-center rounded-md bg-(--color-accent-purple) text-(--color-background) [&>svg]:size-4">
+      <span
+        aria-label="Scale Across Your Team"
+        className="no-frame inline-flex size-6 shrink-0 items-center justify-center rounded-md bg-(--color-accent-purple) text-(--color-background) [&>svg]:size-4"
+      >
         <LineChartIcon />
       </span>
     ),
     navIcon: (_active: boolean) => (
-      <span className="flex size-6 shrink-0 items-center justify-center rounded-md transition-colors [&>svg]:size-4 bg-(--color-surface) text-(--color-text-secondary) group-hover:bg-(--color-panel) group-hover:text-(--color-text)">
+      <span
+        aria-label="Scale Across Your Team"
+        className="inline-flex size-6 shrink-0 items-center justify-center rounded-md transition-colors [&>svg]:size-4 bg-(--color-surface) text-(--color-text-secondary) group-hover:bg-(--color-panel) group-hover:text-(--color-text)"
+      >
         <LineChartIcon />
       </span>
     ),
@@ -159,7 +182,7 @@ export default function WhyWarp() {
   return (
     <section
       id="home-agent-control"
-      className="bg-(--color-background) py-(--space-section) text-(--color-text)"
+      className="bg-(--color-background) py-16 text-(--color-text)"
     >
       <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-14 px-6 lg:px-10">
         <RevealItem>
@@ -216,10 +239,13 @@ export default function WhyWarp() {
                           {section.eyebrow}
                         </span>
                       </div>
-                      <h3 className="max-w-2xl text-balance text-3xl/10 text-(--color-text) font-display [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)] sm:text-4xl/11">
+                      <h3 className="max-w-2xl text-balance text-3xl/10 text-(--color-text) [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)] sm:text-4xl/11">
                         {section.headline}
                       </h3>
-                      <div className="max-w-3xl text-(length:--body-size) leading-(--body-line-height) text-(--color-text-secondary) font-sans">
+                      <div
+                        data-component="Text"
+                        className="max-w-3xl text-(length:--body-size) leading-(--body-line-height) text-(--color-text-secondary) [font-family:var(--font-body)] [font-weight:var(--body-weight)]"
+                      >
                         <p>{section.description}</p>
                       </div>
                     </div>
@@ -227,10 +253,9 @@ export default function WhyWarp() {
                       <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
                         <a
                           href={section.ctaHref}
-                          className="inline-flex h-9 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-3 py-1 text-sm/7 font-medium text-(--btn-text-color) hover:opacity-85 sm:w-auto"
+                          className="inline-flex h-9 w-full shrink-0 items-center justify-center rounded-(--btn-radius) bg-(--btn-bg) px-4 py-1 text-sm/7 font-medium text-(--btn-text-color) hover:opacity-85 sm:w-auto"
                         >
                           {section.ctaLabel}
-                          <ArrowRightIcon className="size-3.5" />
                         </a>
                       </div>
                     </div>

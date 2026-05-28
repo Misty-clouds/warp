@@ -69,7 +69,7 @@ function LogoSet({ suffix, ariaHidden }: { suffix: string; ariaHidden: boolean }
 
 export default function PricingLogoMarquee() {
   return (
-    <section className="py-(--space-section)" id="trusted-by">
+    <section className="py-16" id="trusted-by">
       <div className="mx-auto mb-8 w-full max-w-(--content-max-width) px-6 lg:px-10">
         <p className="text-center text-sm/7 font-semibold text-(--color-text-secondary)">
           Trusted by over 700,000 developers

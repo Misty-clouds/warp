@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import DottedTooltip from "@/components/shared/DottedTooltip";
-import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
 import InfoCircleIcon from "@/components/icons/InfoCircleIcon";
+import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
 
 interface Feature {
   text: string;
@@ -361,7 +361,7 @@ export default function PricingCards() {
   const row2 = isAnnual ? ANNUAL_PLANS_ROW2 : MONTHLY_PLANS_ROW2;
 
   return (
-    <section className="py-(--space-section)" id="pricing">
+    <section className="py-16" id="pricing">
       <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-16 px-6 lg:px-10">
         <div className="flex flex-col items-center gap-6">
           <h1 className="text-balance text-[clamp(2.5rem,5vw,var(--heading-size))] leading-[1.1] text-(--color-text) [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">

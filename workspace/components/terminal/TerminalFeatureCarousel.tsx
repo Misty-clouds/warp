@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, type CSSProperties } from "react";
 import Image from "next/image";
 
 interface Tab {
@@ -60,10 +60,8 @@ function CarouselBody({
                     {isActive ? (
                       <div
                         key={progressKey}
-                        className="h-full bg-(--color-tertiary)"
-                        style={{
-                          animation: `fill-progress ${autoAdvanceMs}ms linear forwards`,
-                        }}
+                        className="h-full bg-(--color-tertiary) animate-[fill-progress_var(--fp-duration)_linear_forwards]"
+                        style={{ "--fp-duration": `${autoAdvanceMs}ms` } as CSSProperties}
                       />
                     ) : (
                       <div className="h-full w-0 bg-(--color-tertiary) transition-[width] duration-300" />
@@ -154,11 +152,11 @@ export default function TerminalFeatureCarousel({
     <section
       data-component="FeatureCarousel"
       data-motion-reveal="visible"
-      className="py-(--space-section)"
+      className="py-16"
     >
       <div
         data-component="Container"
-        className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10"
+        className="mx-auto m-4.75 flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10"
       >
         <div
           aria-hidden="true"

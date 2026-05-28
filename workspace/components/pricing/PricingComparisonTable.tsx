@@ -345,7 +345,7 @@ function MobileTabs() {
 
 export default function PricingComparisonTable() {
   return (
-    <section className="py-(--space-section)" id="comparison">
+    <section className="py-16" id="comparison">
       <div className="mx-auto w-full max-w-(--content-max-width) px-6 lg:px-10">
         <DesktopTable />
         <MobileTabs />

@@ -73,7 +73,7 @@ const headingClassName = "text-(--color-text) text-[clamp(1.25rem,2.5vw,1.5rem)]
 
 export default function Downloads() {
   return (
-    <section id="global-downloads-footer" className="bg-transparent py-(--space-section)">
+    <section id="global-downloads-footer" className="bg-transparent py-16">
       <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10">
         <div className="flex max-w-2xl flex-col gap-6">
           <div className="flex flex-col gap-2">

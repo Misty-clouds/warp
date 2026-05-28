@@ -5,6 +5,7 @@ const tabs = [
     label: "Vertical tabs",
     description:
       "Display terminal sessions as vertical tabs and configure metadata like git branch, worktrees, and pull requests.",
+    color: "neutral" as const,
     image: {
       src: "/images/terminal/carousel2-vertical-tabs.jpg",
       alt: "Vertical tabs in Warp",
@@ -16,6 +17,7 @@ const tabs = [
     label: "Notifications",
     description:
       "Agents notify you when they need attention — approving a command, reviewing a plan, or confirming they've finished a task.",
+    color: "dark" as const,
     image: {
       src: "/images/terminal/carousel2-notifications.jpg",
       alt: "Agent notifications",
@@ -27,6 +29,7 @@ const tabs = [
     label: "Interactive code review",
     description:
       "Take agent work from 80% to 100%. Review changes, leave comments, and send them back to agents with one click.",
+    color: "dark" as const,
     image: {
       src: "/images/terminal/carousel2-review.jpg",
       alt: "Interactive code review",
@@ -40,6 +43,20 @@ export default function TerminalNativeSection() {
   return (
     <section className="py-(--space-section)">
       <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10">
+        {/* Hidden text for SEO / accessibility — mirrors descriptions across all tabs */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none invisible absolute -left-[9999px]"
+        >
+          {tabs.map((tab) => (
+            <div key={tab.label}>
+              <p className="text-sm/7 text-(--color-text-secondary)">
+                {tab.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
         <div className="flex max-w-2xl flex-col gap-6">
           <div className="flex flex-col gap-2">
             <div className="font-mono text-xs/7 font-medium uppercase tracking-widest text-(--color-text-secondary)">

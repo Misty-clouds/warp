@@ -21,7 +21,6 @@ interface Plan {
   cta: string;
   ctaHref: string;
   accentLabel: string;
-  accentGreen?: boolean;
   features: Feature[];
   recommended?: boolean;
   animated?: boolean;
@@ -37,7 +36,6 @@ const MONTHLY_PLANS: Plan[] = [
     cta: "Download Now",
     ctaHref: "https://app.warp.dev/get_warp",
     accentLabel: "Includes free AI credits",
-    accentGreen: true,
     features: [
       { text: "State-of-the-art modern terminal" },
       {
@@ -91,7 +89,6 @@ const MONTHLY_PLANS: Plan[] = [
     cta: "Start Today",
     ctaHref: "https://app.warp.dev/login?redirect_to=/upgrade",
     accentLabel: "Everything in Free, plus:",
-    accentGreen: true,
     recommended: true,
     animated: true,
     hasReloadSection: true,
@@ -123,7 +120,6 @@ const MONTHLY_PLANS: Plan[] = [
     cta: "Start Today",
     ctaHref: "https://app.warp.dev/login?redirect_to=/upgrade",
     accentLabel: "Everything in Build, plus:",
-    accentGreen: true,
     hasReloadSection: true,
     features: [
       {
@@ -150,7 +146,6 @@ const MONTHLY_PLANS_ROW2: Plan[] = [
     cta: "Start Today",
     ctaHref: "https://app.warp.dev/login?redirect_to=/upgrade",
     accentLabel: "Everything in Build, plus:",
-    accentGreen: false,
     hasReloadSection: true,
     features: [
       { text: "1,500 credits per month for cloud and local agents" },
@@ -174,7 +169,6 @@ const MONTHLY_PLANS_ROW2: Plan[] = [
     cta: "Contact Sales",
     ctaHref: "/contact-sales",
     accentLabel: "Everything in Business, plus:",
-    accentGreen: false,
     features: [
       { text: "Unlimited seats" },
       {
@@ -248,7 +242,7 @@ function FeatureItem({ feature }: { feature: Feature }) {
         {feature.dotted && feature.tooltip ? (
           <DottedTooltip tooltip={feature.tooltip}>{feature.text}</DottedTooltip>
         ) : feature.dotted ? (
-          <span className="decoration-text-secondary/50 decoration-dotted underline underline-offset-4">
+          <span className="decoration-(--color-text-secondary)/50 decoration-dotted underline underline-offset-4">
             {feature.text}
           </span>
         ) : (
@@ -265,7 +259,7 @@ function CardInner({ plan, reloadOpen, onToggleReload }: {
   onToggleReload: () => void;
 }) {
   return (
-    <div className="flex h-full flex-col gap-6 rounded-xl bg-(--color-surface) p-(--space-lg) shadow-(--shadow) transition-shadow duration-(--duration-normal)">
+    <div className="relative flex h-full flex-col gap-6 rounded-xl bg-(--color-surface) p-(--space-lg) shadow-(--shadow) transition-shadow duration-(--duration-normal)">
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-3">
           <h3 className="text-2xl/8 tracking-tight text-(--color-text)">{plan.name}</h3>
@@ -286,17 +280,19 @@ function CardInner({ plan, reloadOpen, onToggleReload }: {
           <p>{plan.description}</p>
         </div>
       </div>
-      <div className="self-stretch">
-        <Link
-          href={plan.ctaHref}
-          className="btn-hover inline-flex h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-4 py-2 text-sm/7 font-medium text-(--btn-text-color) [border:var(--btn-border)] hover:opacity-85"
-        >
-          {plan.cta}
-          <ArrowRightIcon className="size-3.5" />
-        </Link>
+      <div className="self-stretch *:h-12! *:w-full! [&>*>*]:w-full!">
+        <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
+          <Link
+            href={plan.ctaHref}
+            className="btn-hover inline-flex h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) p-(--btn-padding) text-sm/7 font-medium text-(--btn-text-color) [border:var(--btn-border)] [text-transform:var(--btn-transform)] hover:opacity-85 sm:w-auto"
+          >
+            {plan.cta}
+            <ArrowRightIcon className="size-3.5 [display:var(--btn-icon-display)]" />
+          </Link>
+        </div>
       </div>
       <div>
-        <p className={`mb-4 text-sm/6 font-medium ${plan.accentGreen ? "text-(--color-accent)" : "text-(--color-text-secondary)"}`}>
+        <p className="mb-4 text-sm/6 font-medium text-(--color-accent)">
           {plan.accentLabel}
         </p>
         <ul className="space-y-4 text-sm/6 text-(--color-text-secondary)">
@@ -306,31 +302,33 @@ function CardInner({ plan, reloadOpen, onToggleReload }: {
         </ul>
       </div>
       {plan.hasReloadSection && (
-        <div className="relative mt-auto pt-6 border-t border-border/20">
-          {reloadOpen && (
-            <div className="absolute bottom-full left-0 right-0 mb-2 rounded-xl bg-(--color-panel) p-4 text-xs/5 text-(--color-text-secondary) shadow-lg ring-1 ring-inset ring-border/20 z-10">
-              <p className="mb-3 text-(--color-text-secondary)">Purchase additional credits when included monthly credits run out.</p>
-              <ul className="mb-3 space-y-1.5">
-                <li>• $10 for 400 credits</li>
-                <li>• $20 for 1,000 credits <span className="text-(--color-muted)">(20% discount)</span></li>
-                <li>• $50 for 3,000 credits <span className="text-(--color-muted)">(35% discount)</span></li>
-                <li>• $100 for 6,500 credits <span className="text-(--color-muted)">(40% discount)</span></li>
-              </ul>
-              <p className="text-(--color-muted)">Note: Reload Credits are tied to individual users, roll over to future billing cycles, and are valid for 12 months.</p>
-            </div>
-          )}
-          <button
-            type="button"
-            onClick={onToggleReload}
-            className={`flex w-full items-center justify-center gap-2 rounded-lg border px-4 py-3 text-sm/6 transition-colors duration-(--duration-normal) ${
-              reloadOpen
-                ? "border-border/50 text-(--color-text)"
-                : "border-border/30 text-(--color-text-secondary) hover:border-border/50 hover:text-(--color-text)"
-            }`}
-          >
-            <InfoCircleIcon className="size-5 shrink-0" />
-            Reload credit discounts
-          </button>
+        <div className="contents">
+          <div className="relative mt-auto pt-6 border-t border-(--color-border)/20">
+            {reloadOpen && (
+              <div className="absolute bottom-full left-0 right-0 mb-2 rounded-xl bg-(--color-panel) p-4 text-xs/5 text-(--color-text-secondary) shadow-lg ring-1 ring-inset ring-(--color-border)/20 z-10">
+                <p className="mb-3 text-(--color-text-secondary)">Purchase additional credits when included monthly credits run out.</p>
+                <ul className="mb-3 space-y-1.5">
+                  <li>• $10 for 400 credits</li>
+                  <li>• $20 for 1,000 credits <span className="text-(--color-muted)">(20% discount)</span></li>
+                  <li>• $50 for 3,000 credits <span className="text-(--color-muted)">(35% discount)</span></li>
+                  <li>• $100 for 6,500 credits <span className="text-(--color-muted)">(40% discount)</span></li>
+                </ul>
+                <p className="text-(--color-muted)">Note: Reload Credits are tied to individual users, roll over to future billing cycles, and are valid for 12 months.</p>
+              </div>
+            )}
+            <button
+              type="button"
+              onClick={onToggleReload}
+              className={`flex w-full items-center justify-center gap-2 rounded-lg border px-4 py-3 text-sm/6 transition-colors duration-(--duration-normal) ${
+                reloadOpen
+                  ? "border-(--color-border)/50 text-(--color-text)"
+                  : "border-(--color-border)/30 text-(--color-text-secondary) hover:border-(--color-border)/50 hover:text-(--color-text)"
+              }`}
+            >
+              <InfoCircleIcon className="size-5 shrink-0" />
+              Reload credit discounts
+            </button>
+          </div>
         </div>
       )}
     </div>
@@ -342,13 +340,9 @@ function PlanCard({ plan }: { plan: Plan }) {
 
   if (plan.animated) {
     return (
-      <div className="relative h-full">
-        {/* Spinning border layer — overflow hidden only on this layer */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[calc(0.25rem+2px)]">
-          <div className="animated-border absolute inset-[-50%] animate-spin-slow" />
-        </div>
-        {/* Card content — separate from overflow-hidden border layer */}
-        <div className="relative z-10 m-0.5 overflow-visible rounded-xl">
+      <div className="relative h-full overflow-hidden rounded-[calc(var(--radius-xl)+2px)] p-0.5">
+        <div className="animated-border absolute inset-[-50%] animate-spin-slow" />
+        <div className="relative h-full">
           <CardInner plan={plan} reloadOpen={reloadOpen} onToggleReload={() => setReloadOpen(!reloadOpen)} />
         </div>
       </div>
@@ -373,11 +367,11 @@ export default function PricingCards() {
           <h1 className="text-balance text-[clamp(2.5rem,5vw,var(--heading-size))] leading-[1.1] text-(--color-text) [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
             Pricing
           </h1>
-          <p className="max-w-xl text-center text-[calc(var(--body-size)*1.125)] leading-(--body-line-height) text-(--color-text-secondary)">
-            Start free and scale as your team grows. Simple, transparent pricing with no surprises.
-          </p>
+          <div className="flex max-w-xl flex-col gap-4 text-center text-(--color-text-secondary) text-[calc(var(--body-size)*1.125)] leading-(--body-line-height)">
+            <p>Start free and scale as your team grows. Simple, transparent pricing with no surprises.</p>
+          </div>
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1 rounded-full bg-text/5 p-1" role="tablist">
+            <div className="flex items-center gap-1 rounded-full bg-(--color-text)/5 p-1" role="tablist">
               <button
                 type="button"
                 role="tab"
@@ -385,8 +379,8 @@ export default function PricingCards() {
                 onClick={() => setIsAnnual(false)}
                 className={`rounded-full px-4 py-1 text-sm/7 font-medium transition-colors duration-(--duration-normal) ${
                   !isAnnual
-                    ? "bg-text/10 text-(--color-text)"
-                    : "text-(--color-text-secondary) hover:bg-text/5 hover:text-(--color-text)"
+                    ? "bg-(--color-text)/10 text-(--color-text)"
+                    : "text-(--color-text-secondary) hover:bg-(--color-text)/5 hover:text-(--color-text)"
                 }`}
               >
                 Monthly
@@ -398,8 +392,8 @@ export default function PricingCards() {
                 onClick={() => setIsAnnual(true)}
                 className={`rounded-full px-4 py-1 text-sm/7 font-medium transition-colors duration-(--duration-normal) ${
                   isAnnual
-                    ? "bg-text/10 text-(--color-text)"
-                    : "text-(--color-text-secondary) hover:bg-text/5 hover:text-(--color-text)"
+                    ? "bg-(--color-text)/10 text-(--color-text)"
+                    : "text-(--color-text-secondary) hover:bg-(--color-text)/5 hover:text-(--color-text)"
                 }`}
               >
                 Annually

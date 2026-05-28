@@ -20,15 +20,15 @@ function CopyCommand({ command, id }: { command: string; id: string }) {
   };
 
   return (
-    <div className="flex items-center justify-between gap-6 rounded-full p-1 font-mono text-sm/7 ring-1 ring-inset bg-(--color-surface) text-(--color-text-secondary) ring-(--color-border)">
+    <div className="flex items-center justify-between gap-6 rounded-full bg-(--color-surface) p-1 font-mono text-sm/7 text-(--color-text-secondary) inset-ring-1 inset-ring-border">
       <div className="flex items-center gap-2 pl-3">
-        <div className="text-current/60 select-none">$</div>
+        <div className="select-none text-current/60">$</div>
         <span className="normal-case tracking-normal" id={id}>{command}</span>
       </div>
       <button
         type="button"
         onClick={handleCopy}
-        className="group relative flex size-9 items-center justify-center rounded-full after:absolute after:-inset-1 after:pointer-fine:hidden hover:bg-(--color-border)"
+        className="group relative flex size-9 items-center justify-center rounded-full after:pointer-fine:hidden after:absolute after:-inset-1 hover:bg-(--color-border)"
         aria-label={`Copy: ${command}`}
       >
         {copied ? <CheckmarkIcon /> : <CopyIcon />}
@@ -84,7 +84,7 @@ export default function Downloads() {
               Get Warp today
             </h2>
           </div>
-          <p className="text-(--color-text-secondary) text-pretty text-(length:--body-size) leading-(--body-line-height)">
+          <p className="text-pretty text-(--color-text-secondary) text-(length:--body-size) leading-(--body-line-height) [font-family:var(--font-body)] [font-weight:var(--body-weight)]">
             Get early access to unreleased and experimental features with{" "}
             <Link href="/download-preview" className="link-underline-reveal hover:opacity-80">
               Warp Preview

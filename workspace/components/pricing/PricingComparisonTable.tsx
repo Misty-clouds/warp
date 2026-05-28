@@ -6,7 +6,14 @@ import DottedTooltip from "@/components/shared/DottedTooltip";
 import CheckCircleIcon from "@/components/icons/CheckCircleIcon";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
 
-const plans = [
+interface Plan {
+  name: string;
+  price: string;
+  cta: string;
+  href: string;
+}
+
+const plans: Plan[] = [
   { name: "Free", price: "$0 /mo", cta: "Download Now", href: "https://app.warp.dev/get_warp" },
   { name: "Build", price: "Starts at $20 /mo", cta: "Start Today", href: "https://app.warp.dev/login?redirect_to=/upgrade" },
   { name: "Max", price: "Starts at $200 /mo", cta: "Start Today", href: "https://app.warp.dev/login?redirect_to=/upgrade" },
@@ -157,13 +164,18 @@ const tableData: Group[] = [
   },
 ];
 
-
 const DashCell = () => (
   <span aria-label="Not included" className="text-(--color-muted)">—</span>
 );
 
 function CellContent({ value }: { value: CellValue }) {
-  if (value === CHECK) return <CheckCircleIcon className="inline-block size-5 text-(--color-tertiary)" />;
+  if (value === CHECK)
+    return (
+      <CheckCircleIcon
+        className="inline-block size-5 text-(--color-tertiary)"
+        aria-label="Included"
+      />
+    );
   if (value === DASH) return <DashCell />;
   return <>{value}</>;
 }
@@ -175,52 +187,135 @@ function RowLabel({ row }: { row: Row }) {
   return <>{row.label}</>;
 }
 
+function PlanCta({ plan }: { plan: Plan }) {
+  return (
+    <div className="mt-auto *:h-10! *:w-full! *:px-0! [&>*>*]:w-full!">
+      <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
+        <Link
+          href={plan.href}
+          className="btn-hover inline-flex h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-4 py-2 text-sm/7 font-medium text-(--btn-text-color) [border:var(--btn-border)] [text-transform:var(--btn-transform)] hover:opacity-85 sm:w-auto"
+        >
+          {plan.cta}
+          <ArrowRightIcon
+            className="size-3.5 [display:var(--btn-icon-display)]"
+            aria-hidden="true"
+          />
+        </Link>
+      </div>
+    </div>
+  );
+}
 
-export default function PricingComparisonTable() {
+function PlanHeaderCell({ plan }: { plan: Plan }) {
+  return (
+    <div className="flex h-full flex-col items-stretch gap-3">
+      <div className="text-center">
+        <p className="text-base/7 font-semibold text-(--color-text)">{plan.name}</p>
+        <p className="text-sm/5 text-(--color-muted)">{plan.price}</p>
+      </div>
+      <PlanCta plan={plan} />
+    </div>
+  );
+}
+
+function DesktopTable() {
+  return (
+    <table className="w-full table-fixed border-collapse text-left text-sm/5 max-lg:hidden">
+      <colgroup>
+        <col className="w-1/5" />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+      </colgroup>
+      <thead className="sticky top-(--scroll-padding-top) z-10">
+        <tr>
+          <th className="bg-(--color-background) py-5 pr-3 align-bottom" />
+          {plans.map((plan) => (
+            <th
+              key={plan.name}
+              className="bg-(--color-background) p-3 text-center align-bottom"
+            >
+              <PlanHeaderCell plan={plan} />
+            </th>
+          ))}
+        </tr>
+      </thead>
+      {tableData.map((group) => (
+        <tbody key={group.title}>
+          <tr>
+            <th
+              colSpan={6}
+              scope="colgroup"
+              className="border-t border-border/20 pt-10 pb-4 text-base/7 font-semibold text-(--color-text)"
+            >
+              {group.title}
+            </th>
+          </tr>
+          {group.rows.map((row) => (
+            <tr key={row.label} className="group">
+              <th
+                scope="row"
+                className="border-t border-border/20 py-5 pl-0 pr-3 font-normal text-(--color-text-secondary)"
+              >
+                <RowLabel row={row} />
+              </th>
+              {row.values.map((val, i) => (
+                <td
+                  key={i}
+                  className="border-t border-border/20 px-3 py-5 text-center text-sm/5 text-(--color-text-secondary)"
+                >
+                  <CellContent value={val} />
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      ))}
+    </table>
+  );
+}
+
+function MobileTabs() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className="py-(--space-section)" id="comparison">
-      <div className="mx-auto w-full max-w-(--content-max-width) px-6 lg:px-10">
-        {/* Desktop table */}
-        <table className="w-full table-fixed border-collapse text-left text-sm/5 max-lg:hidden">
-          <colgroup>
-            <col className="w-1/5" />
-            <col />
-            <col />
-            <col />
-            <col />
-            <col />
-          </colgroup>
-          <thead className="sticky top-(--scroll-padding-top) z-10">
-            <tr>
-              <th className="bg-(--color-background) py-5 pr-3 align-bottom" />
-              {plans.map((plan) => (
-                <th key={plan.name} className="bg-(--color-background) p-3 text-center align-bottom">
-                  <div className="flex h-full flex-col items-stretch gap-3">
-                    <div className="text-center">
-                      <p className="text-base/7 font-semibold text-(--color-text)">{plan.name}</p>
-                      <p className="text-sm/5 text-(--color-muted)">{plan.price}</p>
-                    </div>
-                    <div className="mt-auto">
-                      <Link
-                        href={plan.href}
-                        className="btn-hover inline-flex h-10 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-0 text-sm/7 font-medium text-(--btn-text-color) [border:var(--btn-border)] hover:opacity-85"
-                      >
-                        {plan.cta}
-                        <ArrowRightIcon className="size-3.5" />
-                      </Link>
-                    </div>
-                  </div>
-                </th>
-              ))}
-            </tr>
-          </thead>
+    <div className="lg:hidden">
+      <div className="flex gap-6" role="tablist" aria-orientation="horizontal">
+        {plans.map((plan, i) => (
+          <button
+            key={plan.name}
+            type="button"
+            role="tab"
+            id={`pricing-tab-${i}`}
+            aria-controls={`pricing-panel-${i}`}
+            aria-selected={activeTab === i}
+            tabIndex={activeTab === i ? 0 : -1}
+            onClick={() => setActiveTab(i)}
+            className="relative -mb-px flex-1 border-b border-b-transparent px-2 py-6 text-sm/5 font-medium text-(--color-muted) transition-colors duration-(--duration-normal) aria-selected:border-(--color-text) aria-selected:text-(--color-text)"
+          >
+            {plan.name}
+          </button>
+        ))}
+      </div>
+      <table
+        className="w-full border-collapse text-left text-sm/5"
+        id={`pricing-panel-${activeTab}`}
+        aria-labelledby={`pricing-tab-${activeTab}`}
+        role="tabpanel"
+        tabIndex={0}
+      >
+        <colgroup>
+          <col className="w-3/4" />
+          <col className="w-1/4" />
+        </colgroup>
+        <tbody>
           {tableData.map((group) => (
-            <tbody key={group.title}>
+            <Fragment key={group.title}>
               <tr>
                 <th
-                  colSpan={6}
+                  colSpan={2}
                   scope="colgroup"
                   className="border-t border-border/20 pt-10 pb-4 text-base/7 font-semibold text-(--color-text)"
                 >
@@ -229,72 +324,31 @@ export default function PricingComparisonTable() {
               </tr>
               {group.rows.map((row) => (
                 <tr key={row.label} className="group">
-                  <th scope="row" className="border-t border-border/20 py-5 pl-0 pr-3 font-normal text-(--color-text-secondary)">
+                  <th
+                    scope="row"
+                    className="border-t border-border/20 py-5 pl-0 pr-3 font-normal text-(--color-text-secondary)"
+                  >
                     <RowLabel row={row} />
                   </th>
-                  {row.values.map((val, i) => (
-                    <td key={i} className="border-t border-border/20 px-3 py-5 text-center text-sm/5 text-(--color-text-secondary)">
-                      <CellContent value={val} />
-                    </td>
-                  ))}
+                  <td className="border-t border-border/20 px-3 py-5 text-center text-sm/5 text-(--color-text-secondary)">
+                    <CellContent value={row.values[activeTab]} />
+                  </td>
                 </tr>
               ))}
-            </tbody>
+            </Fragment>
           ))}
-        </table>
+        </tbody>
+      </table>
+    </div>
+  );
+}
 
-        {/* Mobile tabs */}
-        <div className="lg:hidden">
-          <div className="flex gap-6" role="tablist">
-            {plans.map((plan, i) => (
-              <button
-                key={plan.name}
-                type="button"
-                role="tab"
-                aria-selected={activeTab === i}
-                onClick={() => setActiveTab(i)}
-                className={`relative -mb-px flex-1 border-b px-2 py-6 text-sm/5 font-medium transition-colors ${
-                  activeTab === i
-                    ? "border-(--color-text) text-(--color-text)"
-                    : "border-b-transparent text-(--color-muted)"
-                }`}
-              >
-                {plan.name}
-              </button>
-            ))}
-          </div>
-          <table className="w-full border-collapse text-left text-sm/5">
-            <colgroup>
-              <col className="w-3/4" />
-              <col className="w-1/4" />
-            </colgroup>
-            <tbody>
-              {tableData.map((group) => (
-                <Fragment key={group.title}>
-                  <tr>
-                    <th
-                      colSpan={2}
-                      scope="colgroup"
-                      className="border-t border-border/20 pt-10 pb-4 text-base/7 font-semibold text-(--color-text)"
-                    >
-                      {group.title}
-                    </th>
-                  </tr>
-                  {group.rows.map((row) => (
-                    <tr key={row.label} className="group">
-                      <th scope="row" className="border-t border-border/20 py-5 pl-0 pr-3 font-normal text-(--color-text-secondary)">
-                        <RowLabel row={row} />
-                      </th>
-                      <td className="border-t border-border/20 px-3 py-5 text-center text-sm/5 text-(--color-text-secondary)">
-                        <CellContent value={row.values[activeTab]} />
-                      </td>
-                    </tr>
-                  ))}
-                </Fragment>
-              ))}
-            </tbody>
-          </table>
-        </div>
+export default function PricingComparisonTable() {
+  return (
+    <section className="py-(--space-section)" id="comparison">
+      <div className="mx-auto w-full max-w-(--content-max-width) px-6 lg:px-10">
+        <DesktopTable />
+        <MobileTabs />
       </div>
     </section>
   );

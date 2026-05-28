@@ -13,7 +13,7 @@ export default function DottedTooltip({ children, tooltip }: DottedTooltipProps)
   return (
     <span className="relative inline">
       <span
-        className="cursor-pointer decoration-text-secondary/50 decoration-dotted underline underline-offset-4"
+        className="cursor-pointer decoration-(--color-text-secondary)/50 decoration-dotted underline underline-offset-4"
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
       >

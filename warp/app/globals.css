@@ -16,6 +16,35 @@
   to { opacity: 1; }
 }
 
+@keyframes motion-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-motion-reveal-item] {
+  opacity: 0;
+  transform: translateY(1rem);
+}
+
+[data-motion-reveal="visible"] [data-motion-reveal-item] {
+  animation: motion-reveal calc(600ms * var(--motion-speed, 1)) var(--easing, cubic-bezier(0.4, 0, 0.2, 1)) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion-reveal-item] {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
 @keyframes fill-progress {
   from { width: 0%; }
   to { width: 100%; }
@@ -200,4 +229,21 @@ body {
   --testimonial-bg: var(--color-accent-purple);
   --testimonial-fg: var(--color-background);
   --testimonial-muted: color-mix(in oklch, var(--color-background) 65%, transparent);
+}
+
+.theme-invert {
+  --color-surface: #fff;
+  --color-text: #0a0907;
+  --color-text-body: #3c3a38;
+  --color-text-secondary: #5f5d59;
+  --color-border: rgb(0 0 0 / 0.1);
+  --card-bg: #fff;
+}
+
+@media (color-gamut: p3) {
+  .theme-invert {
+    --color-text: lab(2.48527% 0.0667796 0.668094);
+    --color-text-body: lab(24.6193% 0.160992 1.90949);
+    --color-text-secondary: lab(39.7069% 0.226021 2.6737);
+  }
 }

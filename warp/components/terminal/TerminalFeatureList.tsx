@@ -75,7 +75,7 @@ export default function TerminalFeatureList() {
             data-component="Text"
             className="text-pretty text-(--color-text-secondary) [font-family:var(--font-body)] [font-weight:var(--body-weight)] [font-size:var(--body-size)] leading-(--body-line-height)"
           >
-            <p>&nbsp;</p>
+         
           </div>
         </div>
 

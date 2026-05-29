@@ -156,7 +156,7 @@ export default function TerminalFeatureCarousel({
     >
       <div
         data-component="Container"
-        className="mx-auto m-4.75 flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10"
+        className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10"
       >
         <div
           aria-hidden="true"

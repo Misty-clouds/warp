@@ -26,38 +26,64 @@ const features = [
 
 export default function PricingPrivacySecurity() {
   return (
-    <section className="py-16" id="privacy-security">
-      <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10">
-        <div className="flex max-w-2xl flex-col gap-6">
+    <section
+      id="privacy-security"
+      data-component="Section"
+      data-motion-reveal="visible"
+      className="py-16"
+    >
+      <div
+        data-component="Container"
+        className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10"
+      >
+        <div
+          data-motion-reveal-item=""
+          className="flex max-w-2xl flex-col gap-6 [--reveal-delay:0ms]"
+        >
           <div className="flex flex-col gap-2">
             <div className="font-mono text-xs/7 font-medium uppercase tracking-widest text-(--color-text-secondary)">
               Your privacy and security
             </div>
-            <h2 className="text-pretty text-(--color-text) text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
+            <h2
+              data-component="Subheading"
+              className="text-pretty font-heading text-(--color-text) text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]"
+            >
               Transparency and control at every touchpoint.
             </h2>
           </div>
-          <div className="text-pretty text-(--color-text-secondary) text-(length:--body-size) leading-(--body-line-height) [font-family:var(--font-body)] [font-weight:var(--body-weight)]">
-            <p>&nbsp;</p>
+          <div
+            data-component="Text"
+            className="text-pretty text-(--color-text-secondary) text-(length:--body-size) leading-(--body-line-height) [font-family:var(--font-body)] [font-weight:var(--body-weight)]"
+          >
+        
           </div>
-          <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
+          <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
             <Link
               href="/privacy"
+              data-variant="plain"
+              data-size="lg"
               className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm/7 font-medium text-(--color-text) transition-colors duration-(--duration-normal) hover:bg-text/10 sm:w-auto"
             >
               Explore Privacy at Warp
             </Link>
           </div>
         </div>
-        <div>
+        <div
+          data-motion-reveal-item=""
+          className="[--reveal-delay:80ms]"
+        >
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
-              <div key={feature.title} className="flex flex-col gap-4 text-base/7">
+              <div
+                key={feature.title}
+                data-component="Feature"
+                className="flex flex-col gap-4 text-base/7"
+              >
                 <div className="flex size-6 items-center justify-start text-(--color-text) [&_svg]:size-full">
                   {feature.icon}
                 </div>
                 <div className="text-(--color-text-secondary) [&_p]:m-0 [&_p]:inline">
-                  <h3 className="inline font-semibold text-(--color-text)">{feature.title} </h3>
+                  <h3 className="inline font-semibold text-(--color-text)">{feature.title}</h3>{" "}
                   <p>{feature.description}</p>
                 </div>
               </div>

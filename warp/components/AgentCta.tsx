@@ -30,18 +30,12 @@ export default function AgentCta() {
           >
             Start shipping with agents.
           </h2>
-          <div
-            data-component="Text"
-            className="max-w-3xl text-pretty text-white/80! [font-family:var(--font-body)] [font-weight:var(--body-weight)] text-(length:--body-size) leading-(--body-line-height)"
-          >
-            <p>&nbsp;</p>
-          </div>
           <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
             <a
               href="https://app.warp.dev/get_warp?package=dmg"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center justify-center gap-1.5 text-sm/7 font-medium hover:opacity-85 transition-opacity w-full sm:w-auto h-11 bg-[var(--btn-bg)] text-[var(--btn-text-color)] [padding:var(--btn-padding)] rounded-[var(--btn-radius)] [text-transform:var(--btn-transform)]"
+              className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) p-(--btn-padding) text-sm/7 font-medium text-(--btn-text-color) [text-transform:var(--btn-transform)] transition-opacity hover:opacity-85 sm:w-auto"
             >
               Download
               <AppleIcon className="inline-block size-4 opacity-90" />

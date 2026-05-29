@@ -5,6 +5,7 @@ import Link from "next/link";
 import DottedTooltip from "@/components/shared/DottedTooltip";
 import InfoCircleIcon from "@/components/icons/InfoCircleIcon";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
+import XMarkIcon from "@/components/icons/XMarkIcon";
 
 interface Feature {
   text: string;
@@ -237,7 +238,7 @@ const ANNUAL_PLANS_ROW2: Plan[] = MONTHLY_PLANS_ROW2.map((p) => {
 function FeatureItem({ feature }: { feature: Feature }) {
   return (
     <li className="flex gap-4">
-      <span className="flex h-lh shrink-0 items-center" aria-hidden="true">○</span>
+      <span className="flex h-lh shrink-0 items-center text-xs" aria-hidden="true">○</span>
       <p>
         {feature.dotted && feature.tooltip ? (
           <DottedTooltip tooltip={feature.tooltip}>{feature.text}</DottedTooltip>
@@ -302,30 +303,37 @@ function CardInner({ plan, reloadOpen, onToggleReload }: {
         </ul>
       </div>
       {plan.hasReloadSection && (
-        <div className="contents">
-          <div className="relative mt-auto pt-6 border-t border-(--color-border)/20">
-            {reloadOpen && (
-              <div className="absolute bottom-full left-0 right-0 mb-2 rounded-xl bg-(--color-panel) p-4 text-xs/5 text-(--color-text-secondary) shadow-lg ring-1 ring-inset ring-(--color-border)/20 z-10">
-                <p className="mb-3 text-(--color-text-secondary)">Purchase additional credits when included monthly credits run out.</p>
-                <ul className="mb-3 space-y-1.5">
-                  <li>• $10 for 400 credits</li>
-                  <li>• $20 for 1,000 credits <span className="text-(--color-muted)">(20% discount)</span></li>
-                  <li>• $50 for 3,000 credits <span className="text-(--color-muted)">(35% discount)</span></li>
-                  <li>• $100 for 6,500 credits <span className="text-(--color-muted)">(40% discount)</span></li>
-                </ul>
-                <p className="text-(--color-muted)">Note: Reload Credits are tied to individual users, roll over to future billing cycles, and are valid for 12 months.</p>
-              </div>
-            )}
+        <div className="mt-auto border-t border-border/20 pt-6">
+          <button
+            type="button"
+            onClick={onToggleReload}
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-border/30 px-4 py-3 text-sm/6 text-(--color-text-secondary) transition-colors duration-(--duration-normal) hover:border-border/50 hover:text-(--color-text)"
+          >
+            <InfoCircleIcon className="size-5 shrink-0" />
+            Reload credit discounts
+          </button>
+        </div>
+      )}
+      {plan.hasReloadSection && reloadOpen && (
+        <div className="absolute inset-0 z-10 flex flex-col justify-end rounded-xl border border-border/20 bg-background/80">
+          <div className="flex-1" />
+          <div className="mx-(--space-lg) rounded-lg border border-border/30 bg-(--color-surface) p-4 text-sm/6 text-(--color-text-secondary) shadow-lg">
+            <p className="font-medium text-(--color-text)">Purchase additional credits when included monthly credits run out.</p>
+            <ul className="mt-3 space-y-1">
+              <li>• $10 for 400 credits</li>
+              <li>• $20 for 1,000 credits (20% discount)</li>
+              <li>• $50 for 3,000 credits (35% discount)</li>
+              <li>• $100 for 6,500 credits (40% discount)</li>
+            </ul>
+            <p className="mt-3 text-(--color-muted)">Note: Reload credits are tied to individual users, roll over to future billing cycles, and are valid for 12 months.</p>
+          </div>
+          <div className="p-(--space-lg)">
             <button
               type="button"
               onClick={onToggleReload}
-              className={`flex w-full items-center justify-center gap-2 rounded-lg border px-4 py-3 text-sm/6 transition-colors duration-(--duration-normal) ${
-                reloadOpen
-                  ? "border-(--color-border)/50 text-(--color-text)"
-                  : "border-(--color-border)/30 text-(--color-text-secondary) hover:border-(--color-border)/50 hover:text-(--color-text)"
-              }`}
+              className="flex w-full items-center justify-center gap-2 rounded-lg border border-transparent px-4 py-3 text-sm/6 text-(--color-text-secondary) hover:text-(--color-text)"
             >
-              <InfoCircleIcon className="size-5 shrink-0" />
+              <XMarkIcon className="size-5 shrink-0" />
               Reload credit discounts
             </button>
           </div>

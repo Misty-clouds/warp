@@ -98,7 +98,7 @@ function LogoMarquee() {
 
 function PartnerCard({ partner, className = "" }: { partner: typeof partners[0]; className?: string }) {
   return (
-    <div className={`relative flex h-full min-h-[140px] flex-col items-center justify-center gap-4 overflow-hidden rounded-2xl p-6 ${className}`}>
+    <div className={`relative flex h-full min-h-35 flex-col items-center justify-center gap-4 overflow-hidden rounded-2xl p-6 ${className}`}>
       <Image
         src={partner.bg}
         alt=""
@@ -128,15 +128,26 @@ function PartnerCard({ partner, className = "" }: { partner: typeof partners[0];
 
 export default function Partners() {
   return (
-    <section className="py-16" id="partners">
-      <div className="mx-auto w-full max-w-(--content-max-width) px-6 lg:px-10">
+    <section
+      id="partners"
+      data-component="PartnersBento"
+      data-motion-reveal="visible"
+      className="py-(--space-section)"
+    >
+      <div
+        data-component="Container"
+        className="mx-auto w-full max-w-(--content-max-width) px-6 lg:px-10"
+      >
         {/* Mobile layout */}
-        <div className="flex flex-col gap-10 sm:hidden">
+        <div
+          data-motion-reveal-item=""
+          className="flex flex-col gap-10 [--reveal-delay:0ms] sm:hidden"
+        >
           <div className="flex min-w-0 flex-col gap-6">
-            <h2 className={headingClassName}>
+            <h2 data-component="Subheading" className={headingClassName}>
               Proud partner of industry leaders
             </h2>
-            <div className={`${bodyClassName} max-w-xs lg:max-w-none`}>
+            <div data-component="Text" className={bodyClassName}>
               <p>Trusted by over 800,000 developers and thousands of engineering teams at leading companies</p>
             </div>
             <div className="pt-4">
@@ -149,12 +160,15 @@ export default function Partners() {
         </div>
 
         {/* Desktop layout */}
-        <div className="hidden sm:grid grid-cols-1 items-center gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
+        <div
+          data-motion-reveal-item=""
+          className="hidden grid-cols-1 items-center gap-10 [--reveal-delay:80ms] sm:grid lg:grid-cols-[2fr_3fr] lg:gap-16"
+        >
           <div className="flex min-w-0 flex-col gap-6">
-            <h2 className={headingClassName}>
+            <h2 data-component="Subheading" className={headingClassName}>
               Proud partner of industry leaders
             </h2>
-            <div className={`${bodyClassName} max-w-xs lg:max-w-none`}>
+            <div data-component="Text" className={bodyClassName}>
               <p>Trusted by over 800,000 developers and thousands of engineering teams at leading companies</p>
             </div>
             <div className="pt-4">

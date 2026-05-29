@@ -24,9 +24,9 @@ export default function Banner() {
   return (
     <div
       role="banner"
-      className="relative flex min-h-10 w-full items-center justify-center border-b border-black/10 bg-white px-10 py-1.5 text-sm text-gray-900"
+      className="theme-invert relative flex w-full items-center justify-center border-b border-(--color-border) bg-white px-10 py-2.5 text-sm text-(--color-text)"
     >
-      <p className="text-center text-[13px]/5">
+      <p className="text-center">
         Now available: Orchestrate Claude Code, Codex, and Warp Agent in Oz{" "}
         <Link
           href="/blog/multi-harness-cloud-agent-orchestration"
@@ -39,9 +39,9 @@ export default function Banner() {
         type="button"
         aria-label="Dismiss banner"
         onClick={dismiss}
-        className="absolute right-2 flex size-6 items-center justify-center rounded text-gray-500 transition-colors hover:bg-black/5 hover:text-gray-900"
+        className="absolute right-3 flex size-7 items-center justify-center rounded text-(--color-text-secondary) transition-colors hover:bg-black/5 hover:text-(--color-text)"
       >
-        <XIcon className="size-3.5" />
+        <XIcon className="size-4" />
       </button>
     </div>
   );

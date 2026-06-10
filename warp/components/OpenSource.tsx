@@ -5,14 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import PlayIcon from "./icons/PlayIcon";
 import XMarkIcon from "./icons/XMarkIcon";
-import WarpMark from "./icons/WarpMark";
+import ArrowRightIcon from "./icons/ArrowRightIcon";
 
 const YOUTUBE_ID = "eRsoRbJs8O0";
 
 export default function OpenSource() {
+  const sectionRef = useRef<HTMLElement>(null);
   const [open, setOpen] = useState(false);
-  const [revealPhase, setRevealPhase] = useState<"idle" | "in" | "out">("idle");
-  const posterRef = useRef<HTMLButtonElement>(null);
+  const [revealed, setRevealed] = useState(false);
 
   const close = useCallback(() => setOpen(false), []);
 
@@ -30,26 +30,34 @@ export default function OpenSource() {
   }, [open, close]);
 
   useEffect(() => {
-    const el = posterRef.current;
+    const el = sectionRef.current;
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) return;
-        setRevealPhase("in");
-        const fadeOut = window.setTimeout(() => setRevealPhase("out"), 2600);
-        obs.disconnect();
-        return () => window.clearTimeout(fadeOut);
+        if (entry.isIntersecting) {
+          setRevealed(true);
+          obs.disconnect();
+        }
       },
-      { threshold: 0.45 }
+      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
     );
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
 
   return (
-    <section className="py-16" id="open-source">
+    <section
+      ref={sectionRef}
+      id="open-source"
+      data-component="VideoWithStats"
+      data-motion-reveal={revealed ? "visible" : "hidden"}
+      className="py-(--space-section)"
+    >
       <div className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-10 px-6 sm:gap-16 lg:px-10">
-        <div className="flex max-w-2xl flex-col gap-6">
+        <div
+          data-motion-reveal-item=""
+          className="flex max-w-2xl flex-col gap-6 [--reveal-delay:0ms]"
+        >
           <div className="flex flex-col gap-2">
             <div className="font-mono text-xs/7 font-medium uppercase tracking-widest text-(--color-text-secondary)">
               Open-source
@@ -67,20 +75,21 @@ export default function OpenSource() {
           <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
             <Link
               href="/blog/warp-is-now-open-source"
-              className="btn-hover inline-flex h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) p-(--btn-padding) text-sm/7 font-medium text-(--btn-text-color) [border:var(--btn-border)] hover:opacity-85 sm:w-auto"
+              className="btn-hover inline-flex h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) p-(--btn-padding) text-sm/7 font-medium text-(--btn-text-color) [border:var(--btn-border)] [text-transform:var(--btn-transform)] hover:opacity-85 sm:w-auto"
             >
               Read more
+              <ArrowRightIcon className="size-3.5 [display:var(--btn-icon-display)]" />
             </Link>
           </div>
         </div>
 
         <button
-          ref={posterRef}
           type="button"
           onClick={() => setOpen(true)}
           aria-label="Play video: Warp Terminal is now open-source"
           aria-haspopup="dialog"
-          className="group/video relative block aspect-video w-full cursor-pointer overflow-hidden rounded-(--img-radius) border-0 bg-(--color-surface) p-0 text-inherit"
+          data-motion-reveal-item=""
+          className="group/video relative block aspect-video w-full cursor-pointer overflow-hidden rounded-(--img-radius) border-0 bg-(--color-surface) p-0 text-inherit [--reveal-delay:80ms]"
         >
           <div className="absolute inset-0 *:size-full *:object-cover">
             <Image
@@ -93,25 +102,6 @@ export default function OpenSource() {
             />
           </div>
           <span aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent" />
-
-          <span
-            aria-hidden="true"
-            className={`pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-5 transition-opacity duration-700 ease-out motion-reduce:hidden ${
-              revealPhase === "in" ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <span
-              className={`flex size-28 items-center justify-center rounded-3xl bg-linear-to-br from-[#9c7bff] via-[#7b5cf0] to-[#3d2484] p-7 shadow-2xl ring-1 ring-white/15 transition-transform duration-700 ease-out sm:size-36 ${
-                revealPhase === "in" ? "scale-100" : "scale-90"
-              }`}
-            >
-              <WarpMark className="size-full text-white" />
-            </span>
-            <span className="inline-flex items-center gap-3 rounded-full bg-black/40 px-5 py-3 backdrop-blur-md ring-1 ring-white/10">
-              <WarpMark className="size-5 text-white" />
-              <span className="text-base font-medium text-white sm:text-lg">Open-Source Terminal</span>
-            </span>
-          </span>
 
           <span aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-center justify-center">
             <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-black shadow-xl transition-transform duration-200 ease-out group-hover/video:scale-110">

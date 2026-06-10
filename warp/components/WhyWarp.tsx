@@ -129,18 +129,20 @@ const sections = [
   },
 ];
 
-function RevealItem({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  const delayClass = delay === 240 ? "delay-[240ms]" : delay === 160 ? "delay-[160ms]" : delay === 80 ? "delay-[80ms]" : "delay-0";
+export default function WhyWarp() {
+  const [activeId, setActiveId] = useState(sections[0].id);
+  const articleRefs = useRef<(HTMLElement | null)[]>([]);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [revealed, setRevealed] = useState(false);
 
+  // Scroll-triggered reveal (translateY 12px + fade), matching warp.dev.
   useEffect(() => {
-    const el = ref.current;
+    const el = sectionRef.current;
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true);
+          setRevealed(true);
           obs.disconnect();
         }
       },
@@ -149,20 +151,6 @@ function RevealItem({ children, delay = 0 }: { children: React.ReactNode; delay?
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-opacity duration-500 ease-out motion-reduce:opacity-100 ${delayClass} ${visible ? "opacity-100" : "opacity-0"}`}
-    >
-      {children}
-    </div>
-  );
-}
-
-export default function WhyWarp() {
-  const [activeId, setActiveId] = useState(sections[0].id);
-  const articleRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
@@ -185,28 +173,26 @@ export default function WhyWarp() {
 
   return (
     <section
+      ref={sectionRef}
       id="home-agent-control"
       data-component="WhyWarpStickyNav"
-      data-motion-reveal="visible"
+      data-motion-reveal={revealed ? "visible" : "hidden"}
       className="bg-(--color-background) py-(--space-section) text-(--color-text)"
     >
       <div
         data-component="Container"
         className="mx-auto flex w-full max-w-(--content-max-width) flex-col gap-14 px-6 lg:px-10"
       >
-        <RevealItem delay={0}>
-          <div className="max-w-3xl">
-            <div className="mb-5 text-xs font-medium tracking-[0.28em] text-(--color-text-secondary) uppercase">
-              Why Warp
-            </div>
-            <h2 className="text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-(--color-text) font-display [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
-              Be more productive. Stay in control.
-            </h2>
+        <div data-motion-reveal-item className="max-w-3xl [--reveal-delay:0ms]">
+          <div className="mb-5 text-xs font-medium tracking-[0.28em] text-(--color-text-secondary) uppercase">
+            Why Warp
           </div>
-        </RevealItem>
+          <h2 className="text-pretty text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] text-(--color-text) font-display [font-weight:var(--heading-weight)] [letter-spacing:var(--heading-letter-spacing)]">
+            Be more productive. Stay in control.
+          </h2>
+        </div>
 
-        <RevealItem delay={80}>
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-12">
+        <div data-motion-reveal-item className="grid grid-cols-1 gap-10 [--reveal-delay:80ms] lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-12">
             {/* Sticky sidebar nav (desktop only) */}
             <nav className="hidden lg:sticky lg:top-24 lg:block lg:self-start" aria-label="Why Warp sections">
               <div className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:gap-0 lg:overflow-visible lg:pb-0">
@@ -270,13 +256,13 @@ export default function WhyWarp() {
                       </div>
                     </div>
                   </div>
-                  <div className="overflow-hidden rounded-xl bg-(--color-surface) shadow-sm">
+                  <div className="overflow-hidden rounded-(--img-radius) shadow-(--img-shadow)">
                     <Image
                       src={section.screenshot}
                       alt={section.screenshotAlt}
                       width={section.screenshotWidth}
                       height={section.screenshotHeight}
-                      className="w-full h-auto"
+                      className="w-full h-auto object-cover"
                       quality={85}
                       sizes="(max-width: 1024px) 100vw, calc(100vw - 320px)"
                     />
@@ -285,7 +271,6 @@ export default function WhyWarp() {
               ))}
             </div>
           </div>
-        </RevealItem>
       </div>
     </section>
   );

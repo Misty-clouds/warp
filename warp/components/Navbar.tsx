@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useLayoutEffect, useCallback } from "react";
 import Link from "next/link";
 import WarpLogoFull from "./icons/WarpLogoFull";
 import WarpMark from "./icons/WarpMark";
@@ -14,6 +14,8 @@ import HamburgerIcon from "./icons/HamburgerIcon";
 import XMarkIcon from "./icons/XMarkIcon";
 import ShieldCheckIcon from "./icons/ShieldCheckIcon";
 import FileTextIcon from "./icons/FileTextIcon";
+import CodeIcon from "./icons/CodeIcon";
+import GitBranchIcon from "./icons/GitBranchIcon";
 import PencilIcon from "./icons/PencilIcon";
 import UsersIcon from "./icons/UsersIcon";
 import CalendarIcon from "./icons/CalendarIcon";
@@ -68,25 +70,17 @@ const productsItems: FlyoutItem[] = [
   },
 ];
 
-const solutionsItems: FlyoutItem[] = [
-  {
-    label: "Financial Services",
-    description: "Secure, compliant AI development",
-    href: "/enterprise/financial-services",
-    icon: <ShieldCheckIcon className="size-4" />,
-  },
-  {
-    label: "Insurance",
-    description: "Modernize policy & claims systems",
-    href: "/enterprise/insurance",
-    icon: <ShieldCheckIcon className="size-4" />,
-  },
-  {
-    label: "Telecommunications",
-    description: "Scale with your network",
-    href: "/enterprise/telecommunications",
-    icon: <GlobeIcon className="size-4" />,
-  },
+const solutionsUseCaseItems: FlyoutItem[] = [
+  { label: "Code Review", description: "First-pass review on every PR", href: "/use-cases/code-review", icon: <CodeIcon className="size-4" /> },
+  { label: "Bug Investigation", description: "Reproduce bugs and route fixes", href: "/use-cases/bug-investigation", icon: <FileTextIcon className="size-4" /> },
+  { label: "Refactors & Migration", description: "Scope, migrate, and validate changes", href: "/use-cases/refactors", icon: <GitBranchIcon className="size-4" /> },
+  { label: "Incident Response", description: "Investigate alerts and summarize next steps", href: "/use-cases/incident-response", icon: <LightningIcon className="size-4" /> },
+];
+
+const solutionsIndustryItems: FlyoutItem[] = [
+  { label: "Financial Services", description: "Secure, compliant AI development", href: "/enterprise/financial-services", icon: <ShieldCheckIcon className="size-4" /> },
+  { label: "Insurance", description: "Modernize policy & claims systems", href: "/enterprise/insurance", icon: <ShieldCheckIcon className="size-4" /> },
+  { label: "Telecommunications", description: "Scale with your network", href: "/enterprise/telecommunications", icon: <GlobeIcon className="size-4" /> },
 ];
 
 const resourceDevItems: FlyoutItem[] = [
@@ -104,6 +98,7 @@ const resourceCompanyItems: FlyoutItem[] = [
   { label: "How We Work", description: "Our culture and values", href: "https://notion.warp.dev/", icon: <BookOpenIcon className="size-4" /> },
   { label: "Careers", description: "Join the team at Warp", href: "/careers", icon: <BriefcaseIcon className="size-4" /> },
   { label: "Press", description: "Media coverage and press kit", href: "/press", icon: <NewspaperIcon className="size-4" /> },
+  { label: "Research", description: "Reports and insights", href: "/research", icon: <FileTextIcon className="size-4" /> },
   { label: "Newsroom", description: "Announcements and press releases", href: "/newsroom", icon: <LightningIcon className="size-4" /> },
 ];
 
@@ -160,7 +155,31 @@ function FlyoutItemProduct({ item }: { item: FlyoutItem }) {
   );
 }
 
-const flyoutPanelBase = "absolute top-full left-0 z-[9999] mt-[11px] rounded-(--img-radius) bg-[#0C0C0C] p-2 shadow-lg ring-1 ring-(--color-border)";
+function TwoColumnFlyout({ columns }: { columns: { title: string; items: FlyoutItem[] }[] }) {
+  return (
+    <div className="flex divide-x divide-(--color-border) p-2 *:flex-1 [&>*:first-child]:pr-4 [&>*:not(:first-child)]:pl-4">
+      {columns.map(col => (
+        <div key={col.title} className="min-w-44">
+          <div className="mb-1 flex items-center justify-between gap-2 px-3 py-1">
+            <span className="font-mono text-xs font-medium uppercase tracking-wider text-(--color-muted)">{col.title}</span>
+          </div>
+          <div className="flex flex-col">
+            {col.items.map(item => (
+              <FlyoutItemRow key={item.label} item={item} hoverOnWrapper />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Run before paint on the client (avoids a position flash) but fall back to a
+// plain effect during SSR so React doesn't warn about useLayoutEffect.
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+
+const flyoutPanelBase = "navbar-flyout fixed left-6 top-[calc(var(--scroll-padding-top)-0.75rem)] z-[9999] origin-top-left rounded-[calc(var(--radius)*3)] bg-(--color-background) p-2 shadow-lg ring-1 ring-(--color-border)";
 const flyoutSmallWidth = "w-max max-w-[calc(100vw-3rem)] lg:max-w-2xl";
 const flyoutWideWidth = "w-[calc(100vw-3rem)] max-w-3xl";
 
@@ -221,6 +240,39 @@ export default function Navbar() {
     setActiveFlyout(prev => prev === name ? null : name);
   };
 
+  // Position the open flyout like the real site: anchored to its trigger button,
+  // but clamped so it never overflows the 1.5rem viewport gutter on either side.
+  // left = clamp(gutter, buttonLeft, viewportWidth - gutter - panelWidth)
+  useIsomorphicLayoutEffect(() => {
+    if (!activeFlyout) return;
+    const nav = navRef.current;
+    if (!nav) return;
+    const panel = nav.querySelector<HTMLElement>(`[data-flyout-panel="${activeFlyout}"]`);
+    const trigger = nav.querySelector<HTMLElement>(`[data-flyout-trigger="${activeFlyout}"]`);
+    if (!panel || !trigger) return;
+
+    const position = () => {
+      const gutter = 24; // 1.5rem
+      const btn = trigger.getBoundingClientRect();
+      const width = panel.offsetWidth;
+      const maxLeft = window.innerWidth - gutter - width;
+      const left = Math.max(gutter, Math.min(btn.left, maxLeft));
+      // The sticky <header>'s backdrop-filter makes this fixed panel positioned
+      // relative to the header, not the viewport. Rather than guess which ancestor
+      // is the containing block, measure it: park the panel at 0,0 and read where
+      // that lands, then offset our viewport-space targets by that origin.
+      panel.style.left = "0px";
+      panel.style.top = "0px";
+      const origin = panel.getBoundingClientRect();
+      panel.style.left = `${left - origin.left}px`;
+      panel.style.top = `${btn.bottom + 11 - origin.top}px`;
+    };
+
+    position();
+    window.addEventListener("resize", position);
+    return () => window.removeEventListener("resize", position);
+  }, [activeFlyout]);
+
   return (
     <header className="sticky top-0 z-10 bg-background/70 backdrop-blur-md supports-backdrop-filter:bg-background/60">
       <nav ref={navRef}>
@@ -243,21 +295,23 @@ export default function Navbar() {
                 onMouseLeave={scheduleLeave}
               >
                 <button
+                  data-flyout-trigger="products"
                   onClick={() => toggleFlyout("products")}
                   className="inline-flex cursor-default items-center gap-1 rounded-lg px-2.5 py-1 text-sm/7 font-medium text-(--color-text) hover:bg-text/5"
                 >
                   Products
                   <ChevronDownIcon className={`mt-0.5 size-4 opacity-50 transition-transform duration-200 ${activeFlyout === "products" ? "rotate-180" : ""}`} />
                 </button>
-                {activeFlyout === "products" && (
-                  <div
-                    className={`${flyoutPanelBase} ${flyoutSmallWidth}`}
-                    onMouseEnter={cancelLeave}
-                    onMouseLeave={scheduleLeave}
-                  >
-                    {productsItems.map(item => <FlyoutItemProduct key={item.label} item={item} />)}
-                  </div>
-                )}
+                <div
+                  data-flyout-panel="products"
+                  data-open={activeFlyout === "products" || undefined}
+                  inert={activeFlyout !== "products"}
+                  className={`${flyoutPanelBase} ${flyoutSmallWidth}`}
+                  onMouseEnter={cancelLeave}
+                  onMouseLeave={scheduleLeave}
+                >
+                  {productsItems.map(item => <FlyoutItemProduct key={item.label} item={item} />)}
+                </div>
               </div>
 
               {/* Solutions */}
@@ -267,21 +321,28 @@ export default function Navbar() {
                 onMouseLeave={scheduleLeave}
               >
                 <button
+                  data-flyout-trigger="solutions"
                   onClick={() => toggleFlyout("solutions")}
                   className="inline-flex cursor-default items-center gap-1 rounded-lg px-2.5 py-1 text-sm/7 font-medium text-(--color-text) hover:bg-text/5"
                 >
                   Solutions
                   <ChevronDownIcon className={`mt-0.5 size-4 opacity-50 transition-transform duration-200 ${activeFlyout === "solutions" ? "rotate-180" : ""}`} />
                 </button>
-                {activeFlyout === "solutions" && (
-                  <div
-                    className={`${flyoutPanelBase} ${flyoutSmallWidth}`}
-                    onMouseEnter={cancelLeave}
-                    onMouseLeave={scheduleLeave}
-                  >
-                    {solutionsItems.map(item => <FlyoutItemRow key={item.label} item={item} />)}
-                  </div>
-                )}
+                <div
+                  data-flyout-panel="solutions"
+                  data-open={activeFlyout === "solutions" || undefined}
+                  inert={activeFlyout !== "solutions"}
+                  className={`${flyoutPanelBase} ${flyoutWideWidth}`}
+                  onMouseEnter={cancelLeave}
+                  onMouseLeave={scheduleLeave}
+                >
+                  <TwoColumnFlyout
+                    columns={[
+                      { title: "Use Cases", items: solutionsUseCaseItems },
+                      { title: "Industry", items: solutionsIndustryItems },
+                    ]}
+                  />
+                </div>
               </div>
 
               {/* Resources */}
@@ -291,42 +352,28 @@ export default function Navbar() {
                 onMouseLeave={scheduleLeave}
               >
                 <button
+                  data-flyout-trigger="resources"
                   onClick={() => toggleFlyout("resources")}
                   className="inline-flex cursor-default items-center gap-1 rounded-lg px-2.5 py-1 text-sm/7 font-medium text-(--color-text) hover:bg-text/5"
                 >
                   Resources
                   <ChevronDownIcon className={`mt-0.5 size-4 opacity-50 transition-transform duration-200 ${activeFlyout === "resources" ? "rotate-180" : ""}`} />
                 </button>
-                {activeFlyout === "resources" && (
-                  <div
-                    className={`${flyoutPanelBase} ${flyoutWideWidth}`}
-                    onMouseEnter={cancelLeave}
-                    onMouseLeave={scheduleLeave}
-                  >
-                    <div className="flex divide-x divide-(--color-border) p-2 *:flex-1 [&>*:first-child]:pr-4 [&>*:not(:first-child)]:pl-4">
-                      <div className="min-w-44">
-                        <div className="mb-1 flex items-center justify-between gap-2 px-3 py-1">
-                          <span className="font-mono text-xs font-medium uppercase tracking-wider text-(--color-muted)">Developers</span>
-                        </div>
-                        <div className="flex flex-col">
-                          {resourceDevItems.map(item => (
-                            <FlyoutItemRow key={item.label} item={item} hoverOnWrapper />
-                          ))}
-                        </div>
-                      </div>
-                      <div className="min-w-44">
-                        <div className="mb-1 flex items-center justify-between gap-2 px-3 py-1">
-                          <span className="font-mono text-xs font-medium uppercase tracking-wider text-(--color-muted)">Company</span>
-                        </div>
-                        <div className="flex flex-col">
-                          {resourceCompanyItems.map(item => (
-                            <FlyoutItemRow key={item.label} item={item} hoverOnWrapper />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <div
+                  data-flyout-panel="resources"
+                  data-open={activeFlyout === "resources" || undefined}
+                  inert={activeFlyout !== "resources"}
+                  className={`${flyoutPanelBase} ${flyoutWideWidth}`}
+                  onMouseEnter={cancelLeave}
+                  onMouseLeave={scheduleLeave}
+                >
+                  <TwoColumnFlyout
+                    columns={[
+                      { title: "Developers", items: resourceDevItems },
+                      { title: "Company", items: resourceCompanyItems },
+                    ]}
+                  />
+                </div>
               </div>
 
               {/* Enterprise */}
@@ -336,21 +383,23 @@ export default function Navbar() {
                 onMouseLeave={scheduleLeave}
               >
                 <button
+                  data-flyout-trigger="enterprise"
                   onClick={() => toggleFlyout("enterprise")}
                   className="inline-flex cursor-default items-center gap-1 rounded-lg px-2.5 py-1 text-sm/7 font-medium text-(--color-text) hover:bg-text/5"
                 >
                   Enterprise
                   <ChevronDownIcon className={`mt-0.5 size-4 opacity-50 transition-transform duration-200 ${activeFlyout === "enterprise" ? "rotate-180" : ""}`} />
                 </button>
-                {activeFlyout === "enterprise" && (
-                  <div
-                    className={`${flyoutPanelBase} ${flyoutSmallWidth}`}
-                    onMouseEnter={cancelLeave}
-                    onMouseLeave={scheduleLeave}
-                  >
-                    {enterpriseItems.map(item => <FlyoutItemRow key={item.label} item={item} />)}
-                  </div>
-                )}
+                <div
+                  data-flyout-panel="enterprise"
+                  data-open={activeFlyout === "enterprise" || undefined}
+                  inert={activeFlyout !== "enterprise"}
+                  className={`${flyoutPanelBase} ${flyoutSmallWidth}`}
+                  onMouseEnter={cancelLeave}
+                  onMouseLeave={scheduleLeave}
+                >
+                  {enterpriseItems.map(item => <FlyoutItemRow key={item.label} item={item} />)}
+                </div>
               </div>
 
               {/* Pricing */}
@@ -386,8 +435,8 @@ export default function Navbar() {
               </a>
               <a
                 className="group inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--btn-radius) bg-(--btn-bg) px-4 text-sm/7 font-medium text-(--btn-text-color) transition-opacity [border:var(--btn-border)] hover:opacity-85"
-                href="https://app.warp.dev/get_warp?package=dmg"
-                target="_blank"
+                href="/"
+              
                 rel="noopener noreferrer"
               >
                 Download
@@ -435,7 +484,9 @@ export default function Navbar() {
                   Solutions<ChevronDownLgIcon className="size-5 opacity-50 transition-transform group-open:rotate-180" />
                 </summary>
                 <div className="mt-4 flex flex-col gap-1 pl-1">
-                  {solutionsItems.map(item => <FlyoutItemRow key={item.label} item={item} />)}
+                  {[...solutionsUseCaseItems, ...solutionsIndustryItems].map(item => (
+                    <FlyoutItemRow key={item.label} item={item} />
+                  ))}
                 </div>
               </details>
               <details className="group">

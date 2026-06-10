@@ -81,7 +81,7 @@ export default function Hero() {
                 </div>
               </div>
               <a
-                className="inline-flex shrink-0 items-center justify-center gap-1 rounded-xl bg-text/10 text-sm/7 font-medium text-(--color-text) hover:bg-text/15 transition-colors duration-(--duration-normal) h-11 px-4 py-2 w-full sm:w-auto"
+                className="inline-flex shrink-0 items-center justify-center gap-1 rounded-(--btn-radius) bg-text/10 text-sm/7 font-medium text-(--color-text) hover:bg-text/15 transition-colors duration-(--duration-normal) h-11 px-4 py-2 w-full sm:w-auto"
                 href="/contact-sales"
               >
                 Contact Sales
@@ -90,7 +90,7 @@ export default function Hero() {
           </div>
 
           {/* Image carousel */}
-          <div className="overflow-hidden rounded-xl outline -outline-offset-1 outline-black/5 dark:outline-white/5">
+          <div className="overflow-hidden rounded-(--img-radius) outline -outline-offset-1 outline-black/5 dark:outline-white/5">
             <div className="relative grid bg-(--color-surface) sm:aspect-16/10">
               {slides.map((slide, i) => (
                 <div

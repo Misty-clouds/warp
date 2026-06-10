@@ -145,13 +145,10 @@ export default function TerminalNativeCarousel({
                     role="button"
                     tabIndex={0}
                     onClick={() => selectTab(i)}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && selectTab(i)
-                    }
-                    className={`group/tab flex h-full w-full cursor-pointer flex-col justify-between pb-6 text-left transition-colors duration-(--duration-normal) ${
+                    className={`group/tab flex h-full w-full cursor-pointer flex-col justify-between pb-6 text-left transition-colors ${
                       isActive
                         ? "bg-text/5"
-                        : "hover:bg-text/[0.02] focus-visible:bg-text/[0.02]"
+                        : "hover:bg-text/[0.02]"
                     }`}
                   >
                     <div>
@@ -167,7 +164,7 @@ export default function TerminalNativeCarousel({
                       </div>
                       <div className="px-6 pt-6">
                         <span
-                          className={`text-2xl/10 tracking-tight transition-colors duration-(--duration-normal) ${
+                          className={`text-2xl/10 tracking-tight transition-colors ${
                             isActive
                               ? "text-(--color-text)"
                               : "text-(--color-muted) group-hover/tab:text-(--color-text-secondary)"

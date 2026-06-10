@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const logos = [
   { name: "GitHub", src: "/logos/github-dark.svg", width: 88, height: 25, chip: "Since 2023", chipUrl: "https://github.com" },
@@ -98,7 +101,7 @@ function LogoMarquee() {
 
 function PartnerCard({ partner, className = "" }: { partner: typeof partners[0]; className?: string }) {
   return (
-    <div className={`relative flex h-full min-h-35 flex-col items-center justify-center gap-4 overflow-hidden rounded-2xl p-6 ${className}`}>
+    <div className={`relative flex h-full min-h-35 flex-col items-center justify-center gap-4 overflow-hidden rounded-[calc(var(--radius)*3)] p-6 ${className}`}>
       <Image
         src={partner.bg}
         alt=""
@@ -127,11 +130,31 @@ function PartnerCard({ partner, className = "" }: { partner: typeof partners[0];
 }
 
 export default function Partners() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRevealed(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="partners"
       data-component="PartnersBento"
-      data-motion-reveal="visible"
+      data-motion-reveal={revealed ? "visible" : "hidden"}
       className="py-(--space-section)"
     >
       <div

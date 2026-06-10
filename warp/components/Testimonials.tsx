@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const testimonials = [
@@ -38,11 +38,30 @@ const testimonials = [
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRevealed(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="testimonials"
-      data-motion-reveal="visible"
+      data-motion-reveal={revealed ? "visible" : "hidden"}
       className="relative overflow-hidden py-20 text-(--testimonial-fg) sm:py-28"
     >
       <div aria-hidden="true" className="absolute inset-0 bg-(--testimonial-bg)" />

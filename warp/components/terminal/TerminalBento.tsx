@@ -64,9 +64,9 @@ function BentoCard({
             </div>
           </div>
           <div className="p-8 pt-4 sm:p-10">
-            <h3 className="mt-2 text-lg font-medium tracking-tight text-(--color-text)">
+            <p className="mt-2 text-lg font-medium tracking-tight text-(--color-text)">
               {title}
-            </h3>
+            </p>
             <p className="mt-2 max-w-lg text-sm/6 text-(--color-text-secondary)">
               {description}
             </p>

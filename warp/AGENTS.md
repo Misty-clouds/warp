@@ -10,3 +10,15 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - The YouTube embed/link URL in the open-source video experience is intentional and must be excluded from external-asset/network cleanup. Do not delete or replace it unless explicitly requested.
 - External documentation URLs in `README.md` are allowed and should be left as-is.
 <!-- END:project-audit-exceptions -->
+
+<!-- BEGIN:verification-breakpoints -->
+# Verification breakpoints
+
+When verifying UI/layout/theming fidelity against the real site, always check BOTH
+**1024px** and **1440px** viewport widths (not just one). 1024px is the `lg` breakpoint
+edge where the desktop nav appears and where wide dropdowns/flyouts are most likely to
+collide with the viewport edge; 1440px is the standard wide-desktop reference. Use chrome devtools and 
+Playwright (driving system Chrome via `channel: 'chrome'` to avoid a browser download) to
+load the running dev server, exercise interactive states (hover/open flyouts, etc.), and
+screenshot at each width before declaring a change correct.
+<!-- END:verification-breakpoints -->

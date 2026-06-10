@@ -92,7 +92,7 @@ function CarouselBody({
             <div
               key={tab.label}
               aria-hidden={!isActive}
-              className={`absolute inset-0 transition-opacity duration-500 *:h-full *:w-full ${
+              className={`absolute inset-0 transition-opacity duration-400 *:h-full *:w-full ${
                 isActive ? "z-10 opacity-100" : "z-0 opacity-0"
               }`}
             >

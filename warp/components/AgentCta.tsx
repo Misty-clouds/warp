@@ -26,7 +26,7 @@ export default function AgentCta() {
         >
           <h2
             data-component="Subheading"
-            className="text-pretty max-w-4xl text-white! [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] [letter-spacing:var(--heading-letter-spacing)]"
+            className="text-pretty max-w-4xl text-(--color-text)! [font-family:var(--font-heading)] [font-weight:var(--heading-weight)] text-[clamp(1.75rem,3.5vw,calc(var(--heading-size)*0.7))] leading-[1.15] [letter-spacing:var(--heading-letter-spacing)]"
           >
             Start shipping with agents.
           </h2>
@@ -42,7 +42,7 @@ export default function AgentCta() {
             </a>
             <a
               href="/contact-sales"
-              className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-1 rounded-xl bg-text/10 px-4 py-2 text-sm/7 font-medium text-(--color-text) transition-colors duration-(--duration-normal) hover:bg-text/15 sm:w-auto"
+              className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-1 rounded-(--btn-radius) bg-text/10 px-4 py-2 text-sm/7 font-medium text-(--color-text) transition-colors duration-(--duration-normal) hover:bg-text/15 sm:w-auto"
             >
               Contact Sales
             </a>

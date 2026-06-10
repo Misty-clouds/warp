@@ -127,7 +127,7 @@ export default function TerminalAgentList() {
                 <div className="flex size-6 items-center justify-start text-(--color-text) [&_svg]:size-full">
                   <div
                     title={agent.name}
-                    className={`inline-flex size-6 shrink-0 items-center justify-center rounded-md ring-1 ring-white/10 ${agent.iconBg}`}
+                    className={`inline-flex size-6 shrink-0 items-center justify-center rounded-[6px] ring-1 ring-white/10 ${agent.iconBg}`}
                   >
                     <div className="flex items-center justify-center [&_svg]:fill-white! [&_svg]:text-white! [&_svg_path]:fill-white!">
                       {agent.icon}
@@ -148,7 +148,7 @@ export default function TerminalAgentList() {
                       href={agent.href}
                       data-variant="plain"
                       data-size="lg"
-                      className="-ml-4 inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm/7 font-medium text-(--color-text) transition-colors duration-(--duration-normal) hover:bg-text/10 sm:w-auto"
+                      className="-ml-4 inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-(--btn-radius) px-4 py-2 text-sm/7 font-medium text-(--color-text) transition-colors duration-(--duration-normal) hover:bg-text/10 sm:w-auto"
                     >
                       Learn more
                       <ArrowRightLgIcon />

@@ -1,5 +1,7 @@
 import LockIcon from "@/components/icons/LockIcon";
-import ShieldWarningIcon from "@/components/icons/ShieldWarningIcon";
+import ShieldIcon from "@/components/icons/ShieldIcon";
+import EyeSlashIcon from "@/components/icons/EyeSlashIcon";
+import GlobeIcon from "@/components/icons/GlobeIcon";
 import SlidersIcon from "@/components/icons/SlidersIcon";
 import KeyIcon from "@/components/icons/KeyIcon";
 
@@ -15,18 +17,18 @@ const features: {
       "SAML-based SSO, role based access control for permission management",
   },
   {
-    icon: <ShieldWarningIcon />,
+    icon: <ShieldIcon />,
     title: "Your data, your control.",
     description:
       "SOC2 Type 2 compliance; industry leading data policies including zero-data retention",
   },
   {
-    icon: null,
+    icon: <EyeSlashIcon />,
     title: "Privacy, even from agents.",
     description: "Secret redaction with custom regexes",
   },
   {
-    icon: null,
+    icon: <GlobeIcon />,
     title: "Flexible hosting and compute.",
     description:
       "BYOLLM support and flexible hosting so your code stays inside your infrastructure",

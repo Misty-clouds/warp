@@ -41,6 +41,9 @@ const footerNav = [
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/legal/terms-of-service" },
       { label: "Security", href: "/legal/security" },
+      { label: "Cookie Notice", href: "/legal/cookie-notice" },
+      { label: "Data Processing Addendum", href: "/legal/data-processing-addendum" },
+      { label: "Enterprise License", href: "/legal/enterprise-product-and-services-license-agreement" },
     ],
   },
   {
@@ -68,7 +71,7 @@ export default function Footer() {
             <nav className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5">
               {footerNav.map((col) => (
                 <div key={col.heading}>
-                  <h3 className="font-mono text-xs/7 font-medium uppercase tracking-widest">{col.heading}</h3>
+                  <h3 className="font-mono text-xs/7 font-medium uppercase tracking-wider">{col.heading}</h3>
                   <ul role="list" className="mt-2 flex flex-col gap-2">
                     {col.links.map((link) => (
                       <li key={link.label} className="text-(--color-text-secondary)">

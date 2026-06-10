@@ -260,7 +260,7 @@ function CardInner({ plan, reloadOpen, onToggleReload }: {
   onToggleReload: () => void;
 }) {
   return (
-    <div className="relative flex h-full flex-col gap-6 rounded-xl bg-(--color-surface) p-(--space-lg) shadow-(--shadow) transition-shadow duration-(--duration-normal)">
+    <div className="relative flex h-full flex-col gap-6 rounded-xl bg-(--color-surface) p-(--space-lg)">
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-3">
           <h3 className="text-2xl/8 tracking-tight text-(--color-text)">{plan.name}</h3>
@@ -363,7 +363,7 @@ function PlanCard({ plan }: { plan: Plan }) {
 }
 
 export default function PricingCards() {
-  const [isAnnual, setIsAnnual] = useState(true);
+  const [isAnnual, setIsAnnual] = useState(false);
 
   const row1 = isAnnual ? ANNUAL_PLANS : MONTHLY_PLANS;
   const row2 = isAnnual ? ANNUAL_PLANS_ROW2 : MONTHLY_PLANS_ROW2;

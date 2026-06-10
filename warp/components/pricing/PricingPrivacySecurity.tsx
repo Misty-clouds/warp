@@ -1,14 +1,14 @@
 import Link from "next/link";
-import ShieldWarningIcon from "@/components/icons/ShieldWarningIcon";
+import ShieldIcon from "@/components/icons/ShieldIcon";
 import SlidersIcon from "@/components/icons/SlidersIcon";
 import SearchIcon from "@/components/icons/SearchIcon";
 
 const features = [
   {
-    icon: <ShieldWarningIcon />,
+    icon: <ShieldIcon />,
     title: "Your data, secure and private.",
     description:
-      "Warp is SOC 2 compliant and has Zero Data Retention agreements with contracted LLM providers. These providers do not retain, store, or train models on customer data processed through Warp.",
+      "Warp is SOC 2 compliant and has Zero Data Retention agreements with contracted LLM providers. For supported models, these providers don’t retain, store, or train on your data.",
   },
   {
     icon: <SlidersIcon />,
@@ -62,7 +62,7 @@ export default function PricingPrivacySecurity() {
               href="/privacy"
               data-variant="plain"
               data-size="lg"
-              className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm/7 font-medium text-(--color-text) transition-colors duration-(--duration-normal) hover:bg-text/10 sm:w-auto"
+              className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-(--btn-radius) px-4 py-2 text-sm/7 font-medium text-(--color-text) transition-colors duration-(--duration-normal) hover:bg-text/10 sm:w-auto"
             >
               Explore Privacy at Warp
             </Link>

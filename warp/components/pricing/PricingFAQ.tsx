@@ -410,25 +410,17 @@ export default function PricingFAQ() {
                   type="button"
                   aria-expanded={isOpen}
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="flex w-full items-start justify-between gap-6 py-4 text-left text-base/7 text-[var(--color-text)] transition-opacity duration-200 hover:opacity-80 focus-visible:outline-none focus-visible:opacity-80"
+                  className="flex w-full items-start justify-between gap-6 py-4 text-left text-base/7 text-[var(--color-text)]"
                 >
                   <span>{faq.question}</span>
-                  {isOpen ? (
-                    <MinusIcon className="h-lh shrink-0" />
-                  ) : (
-                    <PlusIcon className="h-lh shrink-0" />
-                  )}
+                  <PlusIcon className="h-lh in-aria-expanded:hidden" />
+                  <MinusIcon className="h-lh not-in-aria-expanded:hidden" />
                 </button>
                 <div
-                  className={`grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                  }`}
+                  hidden={!isOpen}
+                  className="faq-answer -mt-2 flex flex-col gap-2 pr-12 pb-4 text-sm/7 text-[var(--color-text-secondary)]"
                 >
-                  <div className="overflow-hidden">
-                    <div className="-mt-2 flex flex-col gap-2 pr-12 pb-4 text-sm/7 text-[var(--color-text-secondary)]">
-                      {faq.answer}
-                    </div>
-                  </div>
+                  {faq.answer}
                 </div>
               </div>
             );

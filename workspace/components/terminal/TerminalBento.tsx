@@ -64,9 +64,9 @@ function BentoCard({
             </div>
           </div>
           <div className="p-8 pt-4 sm:p-10">
-            <p className="mt-2 text-lg font-medium tracking-tight text-(--color-text)">
+            <h3 className="mt-2 text-lg font-medium tracking-tight text-(--color-text)">
               {title}
-            </p>
+            </h3>
             <p className="mt-2 max-w-lg text-sm/6 text-(--color-text-secondary)">
               {description}
             </p>
@@ -79,6 +79,87 @@ function BentoCard({
     </div>
   );
 }
+
+const bentoCards: BentoCardProps[] = [
+  {
+    image: {
+      src: "/images/terminal/bento-vertical-tabs.jpg",
+      alt: "Vertical Tabs",
+      width: 792,
+      height: 495,
+    },
+    title: "Vertical Tabs",
+    description:
+      "Display terminal sessions as vertical tabs and configure metadata like git branch, worktrees, and pull-requests.",
+    colSpan: 3,
+    color: "neutral",
+    outerRounded:
+      "max-lg:rounded-t-[calc(var(--radius)*3)] lg:rounded-tl-[calc(var(--radius)*3)]",
+    innerRounded:
+      "max-lg:rounded-t-[calc(var(--radius)*3+1px)] lg:rounded-tl-[calc(var(--radius)*3+1px)]",
+  },
+  {
+    image: {
+      src: "/images/terminal/bento-review.jpg",
+      alt: "Review output",
+      width: 792,
+      height: 495,
+    },
+    title: "Interactive Code Review",
+    description:
+      "Take agent work from 80% to 100%. Review changes, leave comments, and send to agents with one click.",
+    colSpan: 3,
+    color: "dark",
+    outerRounded: "lg:rounded-tr-[calc(var(--radius)*3)]",
+    innerRounded: "lg:rounded-tr-[calc(var(--radius)*3+1px)]",
+  },
+  {
+    image: {
+      src: "/images/terminal/bento-themes.jpg",
+      alt: "Themes",
+      width: 1200,
+      height: 750,
+    },
+    title: "Customizable Appearance",
+    description:
+      "Customize your theme, input, default model, tab colors, and more.",
+    colSpan: 2,
+    color: "light",
+    outerRounded: "lg:rounded-bl-[calc(var(--radius)*3)]",
+    innerRounded: "lg:rounded-bl-[calc(var(--radius)*3+1px)]",
+  },
+  {
+    image: {
+      src: "/images/terminal/bento-drive.jpg",
+      alt: "Warp Drive",
+      width: 1200,
+      height: 750,
+    },
+    title: "Drive",
+    description:
+      "From MCP to rules to Drive, Warp centralizes knowledge for agents and teammates to build and ship high quality software.",
+    colSpan: 2,
+    color: "photo",
+    photoBgClass: "bg-[url('/photos/1.webp')]",
+  },
+  {
+    image: {
+      src: "/images/terminal/bento-notifications.jpg",
+      alt: "Notifications",
+      width: 1200,
+      height: 750,
+    },
+    title: "Notifications",
+    description:
+      "Agents will notify you when they need attention. Approving a command, reviewing a plan, and confirming they’ve finished a task.",
+    colSpan: 2,
+    color: "blue",
+    outerRounded:
+      "max-lg:rounded-b-[calc(var(--radius)*3)] lg:rounded-br-[calc(var(--radius)*3)]",
+    innerRounded:
+      "max-lg:rounded-b-[calc(var(--radius)*3+1px)] lg:rounded-br-[calc(var(--radius)*3+1px)]",
+  },
+];
 
 export default function TerminalBento() {
   return (
@@ -120,75 +201,9 @@ export default function TerminalBento() {
             data-component="BentoGrid"
             className="grid grid-cols-1 gap-4 lg:grid-cols-6 lg:grid-rows-[auto_auto]"
           >
-            <BentoCard
-              image={{
-                src: "/images/terminal/bento-vertical-tabs.jpg",
-                alt: "Vertical Tabs",
-                width: 792,
-                height: 495,
-              }}
-              title="Vertical Tabs"
-              description="Display terminal sessions as vertical tabs and configure metadata like git branch, worktrees, and pull-requests."
-              colSpan={3}
-              color="neutral"
-              outerRounded="max-lg:rounded-t-[calc(var(--radius)*3)] lg:rounded-tl-[calc(var(--radius)*3)]"
-              innerRounded="max-lg:rounded-t-[calc(var(--radius)*3+1px)] lg:rounded-tl-[calc(var(--radius)*3+1px)]"
-            />
-            <BentoCard
-              image={{
-                src: "/images/terminal/bento-review.jpg",
-                alt: "Review output",
-                width: 792,
-                height: 495,
-              }}
-              title="Interactive Code Review"
-              description="Take agent work from 80% to 100%. Review changes, leave comments, and send to agents with one click."
-              colSpan={3}
-              color="dark"
-              outerRounded="lg:rounded-tr-[calc(var(--radius)*3)]"
-              innerRounded="lg:rounded-tr-[calc(var(--radius)*3+1px)]"
-            />
-            <BentoCard
-              image={{
-                src: "/images/terminal/bento-themes.jpg",
-                alt: "Themes",
-                width: 1200,
-                height: 750,
-              }}
-              title="Customizable Appearance"
-              description="Customize your theme, input, default model, tab colors, and more."
-              colSpan={2}
-              color="light"
-              outerRounded="lg:rounded-bl-[calc(var(--radius)*3)]"
-              innerRounded="lg:rounded-bl-[calc(var(--radius)*3+1px)]"
-            />
-            <BentoCard
-              image={{
-                src: "/images/terminal/bento-drive.jpg",
-                alt: "Warp Drive",
-                width: 1200,
-                height: 750,
-              }}
-              title="Drive"
-              description="From MCP to rules to Drive, Warp centralizes knowledge for agents and teammates to build and ship high quality software."
-              colSpan={2}
-              color="photo"
-              photoBgClass="bg-[url('/photos/1.webp')]"
-            />
-            <BentoCard
-              image={{
-                src: "/images/terminal/bento-notifications.jpg",
-                alt: "Notifications",
-                width: 1200,
-                height: 750,
-              }}
-              title="Notifications"
-              description="Agents will notify you when they need attention. Approving a command, reviewing a plan, and confirming they’ve finished a task."
-              colSpan={2}
-              color="blue"
-              outerRounded="max-lg:rounded-b-[calc(var(--radius)*3)] lg:rounded-br-[calc(var(--radius)*3)]"
-              innerRounded="max-lg:rounded-b-[calc(var(--radius)*3+1px)] lg:rounded-br-[calc(var(--radius)*3+1px)]"
-            />
+            {bentoCards.map((card) => (
+              <BentoCard key={card.title} {...card} />
+            ))}
           </div>
         </div>
       </div>

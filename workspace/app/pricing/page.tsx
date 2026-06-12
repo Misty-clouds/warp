@@ -14,7 +14,7 @@ export default function PricingPage() {
     <>
       <Banner />
       <Navbar />
-      <main>
+      <main className="isolate overflow-clip">
         <PricingCards />
         <PricingLogoMarquee />
         <PricingComparisonTable />

@@ -274,6 +274,12 @@
 
 html {
   scroll-padding-top: var(--scroll-padding-top);
+  /* Hide horizontal overflow (e.g. the desktop nav's ~13px at the 1024px
+     breakpoint) so the page never scrolls sideways and the full-width banner
+     always covers the viewport. Applied to the root so it propagates to the
+     viewport; vertical scrolling stays on the viewport, so the sticky navbar
+     keeps working. */
+  overflow-x: hidden;
 }
 
 body {

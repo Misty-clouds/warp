@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Banner />
       <Navbar />
-      <main>
+      <main className="isolate overflow-clip">
         <Hero />
         <Partners />
         <WhyWarp />

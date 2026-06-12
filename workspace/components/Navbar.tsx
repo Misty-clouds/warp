@@ -185,6 +185,120 @@ const flyoutWideWidth = "w-[calc(100vw-3rem)] max-w-3xl";
 
 type ActiveFlyout = "products" | "solutions" | "resources" | "enterprise" | null;
 
+type FlyoutConfig = {
+  name: Exclude<ActiveFlyout, null>;
+  label: string;
+  width: string;
+  content: React.ReactNode;
+  mobileContent: React.ReactNode;
+};
+
+const flyouts: FlyoutConfig[] = [
+  {
+    name: "products",
+    label: "Products",
+    width: flyoutSmallWidth,
+    content: productsItems.map(item => <FlyoutItemProduct key={item.label} item={item} />),
+    mobileContent: productsItems.map(item => <FlyoutItemProduct key={item.label} item={item} />),
+  },
+  {
+    name: "solutions",
+    label: "Solutions",
+    width: flyoutWideWidth,
+    content: (
+      <TwoColumnFlyout
+        columns={[
+          { title: "Use Cases", items: solutionsUseCaseItems },
+          { title: "Industry", items: solutionsIndustryItems },
+        ]}
+      />
+    ),
+    mobileContent: [...solutionsUseCaseItems, ...solutionsIndustryItems].map(item => (
+      <FlyoutItemRow key={item.label} item={item} />
+    )),
+  },
+  {
+    name: "resources",
+    label: "Resources",
+    width: flyoutWideWidth,
+    content: (
+      <TwoColumnFlyout
+        columns={[
+          { title: "Developers", items: resourceDevItems },
+          { title: "Company", items: resourceCompanyItems },
+        ]}
+      />
+    ),
+    mobileContent: [...resourceDevItems, ...resourceCompanyItems].map(item => (
+      <FlyoutItemRow key={item.label} item={item} />
+    )),
+  },
+  {
+    name: "enterprise",
+    label: "Enterprise",
+    width: flyoutSmallWidth,
+    content: enterpriseItems.map(item => <FlyoutItemRow key={item.label} item={item} />),
+    mobileContent: enterpriseItems.map(item => <FlyoutItemRow key={item.label} item={item} />),
+  },
+];
+
+function DesktopFlyout({
+  config,
+  activeFlyout,
+  openFlyout,
+  toggleFlyout,
+  cancelLeave,
+  scheduleLeave,
+}: {
+  config: FlyoutConfig;
+  activeFlyout: ActiveFlyout;
+  openFlyout: (name: ActiveFlyout) => void;
+  toggleFlyout: (name: ActiveFlyout) => void;
+  cancelLeave: () => void;
+  scheduleLeave: () => void;
+}) {
+  const { name, label, width, content } = config;
+  return (
+    <div
+      className="relative flex items-center self-center"
+      onMouseEnter={() => openFlyout(name)}
+      onMouseLeave={scheduleLeave}
+    >
+      <button
+        data-flyout-trigger={name}
+        onClick={() => toggleFlyout(name)}
+        className="inline-flex cursor-default items-center gap-1 rounded-lg px-2.5 py-1 text-sm/7 font-medium text-(--color-text) hover:bg-text/5"
+      >
+        {label}
+        <ChevronDownIcon className={`mt-0.5 size-4 opacity-50 transition-transform duration-200 ${activeFlyout === name ? "rotate-180" : ""}`} />
+      </button>
+      <div
+        data-flyout-panel={name}
+        data-open={activeFlyout === name || undefined}
+        inert={activeFlyout !== name}
+        className={`${flyoutPanelBase} ${width}`}
+        onMouseEnter={cancelLeave}
+        onMouseLeave={scheduleLeave}
+      >
+        {content}
+      </div>
+    </div>
+  );
+}
+
+function MobileAccordion({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <details className="group">
+      <summary className="flex cursor-pointer list-none items-center justify-between text-3xl/10 font-medium text-(--color-text)">
+        {label}<ChevronDownLgIcon className="size-5 opacity-50 transition-transform group-open:rotate-180" />
+      </summary>
+      <div className="mt-4 flex flex-col gap-1 pl-1">
+        {children}
+      </div>
+    </details>
+  );
+}
+
 export default function Navbar() {
   const [activeFlyout, setActiveFlyout] = useState<ActiveFlyout>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -288,119 +402,17 @@ export default function Navbar() {
             {/* Desktop nav — items-stretch so each wrapper fills the full nav height */}
             <div className="flex items-stretch gap-1 max-lg:hidden">
 
-              {/* Products */}
-              <div
-                className="relative flex items-center self-center"
-                onMouseEnter={() => openFlyout("products")}
-                onMouseLeave={scheduleLeave}
-              >
-                <button
-                  data-flyout-trigger="products"
-                  onClick={() => toggleFlyout("products")}
-                  className="inline-flex cursor-default items-center gap-1 rounded-lg px-2.5 py-1 text-sm/7 font-medium text-(--color-text) hover:bg-text/5"
-                >
-                  Products
-                  <ChevronDownIcon className={`mt-0.5 size-4 opacity-50 transition-transform duration-200 ${activeFlyout === "products" ? "rotate-180" : ""}`} />
-                </button>
-                <div
-                  data-flyout-panel="products"
-                  data-open={activeFlyout === "products" || undefined}
-                  inert={activeFlyout !== "products"}
-                  className={`${flyoutPanelBase} ${flyoutSmallWidth}`}
-                  onMouseEnter={cancelLeave}
-                  onMouseLeave={scheduleLeave}
-                >
-                  {productsItems.map(item => <FlyoutItemProduct key={item.label} item={item} />)}
-                </div>
-              </div>
-
-              {/* Solutions */}
-              <div
-                className="relative flex items-center self-center"
-                onMouseEnter={() => openFlyout("solutions")}
-                onMouseLeave={scheduleLeave}
-              >
-                <button
-                  data-flyout-trigger="solutions"
-                  onClick={() => toggleFlyout("solutions")}
-                  className="inline-flex cursor-default items-center gap-1 rounded-lg px-2.5 py-1 text-sm/7 font-medium text-(--color-text) hover:bg-text/5"
-                >
-                  Solutions
-                  <ChevronDownIcon className={`mt-0.5 size-4 opacity-50 transition-transform duration-200 ${activeFlyout === "solutions" ? "rotate-180" : ""}`} />
-                </button>
-                <div
-                  data-flyout-panel="solutions"
-                  data-open={activeFlyout === "solutions" || undefined}
-                  inert={activeFlyout !== "solutions"}
-                  className={`${flyoutPanelBase} ${flyoutWideWidth}`}
-                  onMouseEnter={cancelLeave}
-                  onMouseLeave={scheduleLeave}
-                >
-                  <TwoColumnFlyout
-                    columns={[
-                      { title: "Use Cases", items: solutionsUseCaseItems },
-                      { title: "Industry", items: solutionsIndustryItems },
-                    ]}
-                  />
-                </div>
-              </div>
-
-              {/* Resources */}
-              <div
-                className="relative flex items-center self-center"
-                onMouseEnter={() => openFlyout("resources")}
-                onMouseLeave={scheduleLeave}
-              >
-                <button
-                  data-flyout-trigger="resources"
-                  onClick={() => toggleFlyout("resources")}
-                  className="inline-flex cursor-default items-center gap-1 rounded-lg px-2.5 py-1 text-sm/7 font-medium text-(--color-text) hover:bg-text/5"
-                >
-                  Resources
-                  <ChevronDownIcon className={`mt-0.5 size-4 opacity-50 transition-transform duration-200 ${activeFlyout === "resources" ? "rotate-180" : ""}`} />
-                </button>
-                <div
-                  data-flyout-panel="resources"
-                  data-open={activeFlyout === "resources" || undefined}
-                  inert={activeFlyout !== "resources"}
-                  className={`${flyoutPanelBase} ${flyoutWideWidth}`}
-                  onMouseEnter={cancelLeave}
-                  onMouseLeave={scheduleLeave}
-                >
-                  <TwoColumnFlyout
-                    columns={[
-                      { title: "Developers", items: resourceDevItems },
-                      { title: "Company", items: resourceCompanyItems },
-                    ]}
-                  />
-                </div>
-              </div>
-
-              {/* Enterprise */}
-              <div
-                className="relative flex items-center self-center"
-                onMouseEnter={() => openFlyout("enterprise")}
-                onMouseLeave={scheduleLeave}
-              >
-                <button
-                  data-flyout-trigger="enterprise"
-                  onClick={() => toggleFlyout("enterprise")}
-                  className="inline-flex cursor-default items-center gap-1 rounded-lg px-2.5 py-1 text-sm/7 font-medium text-(--color-text) hover:bg-text/5"
-                >
-                  Enterprise
-                  <ChevronDownIcon className={`mt-0.5 size-4 opacity-50 transition-transform duration-200 ${activeFlyout === "enterprise" ? "rotate-180" : ""}`} />
-                </button>
-                <div
-                  data-flyout-panel="enterprise"
-                  data-open={activeFlyout === "enterprise" || undefined}
-                  inert={activeFlyout !== "enterprise"}
-                  className={`${flyoutPanelBase} ${flyoutSmallWidth}`}
-                  onMouseEnter={cancelLeave}
-                  onMouseLeave={scheduleLeave}
-                >
-                  {enterpriseItems.map(item => <FlyoutItemRow key={item.label} item={item} />)}
-                </div>
-              </div>
+              {flyouts.map(config => (
+                <DesktopFlyout
+                  key={config.name}
+                  config={config}
+                  activeFlyout={activeFlyout}
+                  openFlyout={openFlyout}
+                  toggleFlyout={toggleFlyout}
+                  cancelLeave={cancelLeave}
+                  scheduleLeave={scheduleLeave}
+                />
+              ))}
 
               {/* Pricing */}
               <div className="flex items-center">
@@ -471,42 +483,11 @@ export default function Navbar() {
               </button>
             </div>
             <div className="mt-6 flex min-h-0 flex-1 flex-col gap-6">
-              <details className="group">
-                <summary className="flex cursor-pointer list-none items-center justify-between text-3xl/10 font-medium text-(--color-text)">
-                  Products<ChevronDownLgIcon className="size-5 opacity-50 transition-transform group-open:rotate-180" />
-                </summary>
-                <div className="mt-4 flex flex-col gap-1 pl-1">
-                  {productsItems.map(item => <FlyoutItemProduct key={item.label} item={item} />)}
-                </div>
-              </details>
-              <details className="group">
-                <summary className="flex cursor-pointer list-none items-center justify-between text-3xl/10 font-medium text-(--color-text)">
-                  Solutions<ChevronDownLgIcon className="size-5 opacity-50 transition-transform group-open:rotate-180" />
-                </summary>
-                <div className="mt-4 flex flex-col gap-1 pl-1">
-                  {[...solutionsUseCaseItems, ...solutionsIndustryItems].map(item => (
-                    <FlyoutItemRow key={item.label} item={item} />
-                  ))}
-                </div>
-              </details>
-              <details className="group">
-                <summary className="flex cursor-pointer list-none items-center justify-between text-3xl/10 font-medium text-(--color-text)">
-                  Resources<ChevronDownLgIcon className="size-5 opacity-50 transition-transform group-open:rotate-180" />
-                </summary>
-                <div className="mt-4 flex flex-col gap-1 pl-1">
-                  {[...resourceDevItems, ...resourceCompanyItems].map(item => (
-                    <FlyoutItemRow key={item.label} item={item} />
-                  ))}
-                </div>
-              </details>
-              <details className="group">
-                <summary className="flex cursor-pointer list-none items-center justify-between text-3xl/10 font-medium text-(--color-text)">
-                  Enterprise<ChevronDownLgIcon className="size-5 opacity-50 transition-transform group-open:rotate-180" />
-                </summary>
-                <div className="mt-4 flex flex-col gap-1 pl-1">
-                  {enterpriseItems.map(item => <FlyoutItemRow key={item.label} item={item} />)}
-                </div>
-              </details>
+              {flyouts.map(config => (
+                <MobileAccordion key={config.name} label={config.label}>
+                  {config.mobileContent}
+                </MobileAccordion>
+              ))}
               <Link
                 href="/pricing"
                 onClick={() => setMobileOpen(false)}

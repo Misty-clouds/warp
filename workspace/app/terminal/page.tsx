@@ -14,7 +14,7 @@ export default function TerminalPage() {
     <>
       <Banner />
       <Navbar />
-      <main>
+      <main className="isolate overflow-clip">
         <TerminalHero />
         <TerminalLogoMarquee />
         <TerminalBento />
